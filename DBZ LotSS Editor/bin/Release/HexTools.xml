@@ -1,0 +1,104 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>HexTools</name>
+    </assembly>
+    <members>
+        <member name="T:HexTools._LZ77RLE">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:HexTools.IHexCompress.Name">
+            <summary>
+            Known name, such as: LZ77, RLE, etc.
+            </summary>
+        </member>
+        <member name="M:HexTools.IHexCompress.Compress(System.Byte[],HexTools.IHexCompressionInformation@,HexTools.IHexCompressionOptions)">
+            <summary>
+            Compression algorithm.
+            </summary>
+            <param name="data"></param>
+            <param name="information"></param>
+            <param name="options"></param>
+            <returns></returns>
+        </member>
+        <member name="M:HexTools.IHexCompress.Decompress(System.IO.Stream,HexTools.IHexDecompressionInformation@,HexTools.IHexDecompressionOptions)">
+            <summary>
+            Decompression algorithm.
+            </summary>
+            <param name="data"></param>
+            <param name="information"></param>
+            <param name="options"></param>
+            <returns></returns>
+        </member>
+        <member name="T:HexTools.My.Resources.Resources">
+            <summary>
+              A strongly-typed resource class, for looking up localized strings, etc.
+            </summary>
+        </member>
+        <member name="P:HexTools.My.Resources.Resources.ResourceManager">
+            <summary>
+              Returns the cached ResourceManager instance used by this class.
+            </summary>
+        </member>
+        <member name="P:HexTools.My.Resources.Resources.Culture">
+            <summary>
+              Overrides the current thread's CurrentUICulture property for all
+              resource lookups using this strongly typed resource class.
+            </summary>
+        </member>
+        <member name="P:HexTools.My.Resources.Resources.Export">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:HexTools.My.Resources.Resources.Import">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="T:HexTools.BitmapHandler">
+            <summary>
+            Image loading toolset class which corrects the bug that prevents paletted PNG images with transparency from being loaded as paletted.
+            https://learn.microsoft.com/en-us/previous-versions/dotnet/articles/aa479306(v=msdn.10)?redirectedfrom=MSDN
+            http://www.libpng.org/pub/png/spec/1.2/PNG-Chunks.html
+            </summary>
+        </member>
+        <member name="M:HexTools.BitmapHandler.WritePngChunk(System.Byte[],System.Int32,System.String,System.Byte[])">
+            <summary>
+            Writes a png data chunk.
+            </summary>
+            <param name="target">Target array to write into.</param>
+            <param name="offset">Offset in the array to write the data to.</param>
+            <param name="chunkName">4-character chunk name.</param>
+            <param name="chunkData">Data to write into the new chunk.</param>
+            <returns>The new offset after writing the new chunk. Always equal to the offset plus the length of chunk data plus 12.</returns>
+        </member>
+        <member name="M:HexTools.BitmapHandler.LoadBitmap(System.Byte[])">
+            <summary>
+            Loads an image, checks if it is a PNG containing palette transparency, and if so, ensures it loads correctly.
+            The theory on the png internals can be found at http://www.libpng.org/pub/png/book/chapter08.html
+            </summary>
+            <param name="data">File data to load.</param>
+            <returns>The loaded image.</returns>
+        </member>
+        <member name="M:HexTools.BitmapHandler.FindChunk(System.Byte[],System.String)">
+            <summary>
+            Finds the start of a png chunk. This assumes the image is already identified as PNG.
+            It does not go over the first 8 bytes, but starts at the start of the header chunk.
+            </summary>
+            <param name="data">The bytes of the png image.</param>
+            <param name="chunkName">The name of the chunk to find.</param>
+            <returns>The index of the start of the png chunk, or -1 if the chunk was not found.</returns>
+        </member>
+        <member name="M:HexTools.BitmapHandler.CloneImage(System.Drawing.Bitmap)">
+            <summary>
+            Clones an image object to free it from any backing resources.
+            Code taken from http://stackoverflow.com/a/3661892/ with some extra fixes.
+            </summary>
+            <param name="sourceImage">The image to clone.</param>
+            <returns>The cloned image.</returns>
+        </member>
+    </members>
+</doc>

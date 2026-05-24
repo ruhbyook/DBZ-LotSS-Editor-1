@@ -1,0 +1,58 @@
+C:\Users\MakoInfused\Documents\Visual Studio 2017\Projects\DBZ LotSS Editor\DBZ LotSS Editor\obj\Release\DBZ LotSS Editor.csprojAssemblyReference.cache
+C:\Users\MakoInfused\Documents\Visual Studio 2017\Projects\DBZ LotSS Editor\DBZ LotSS Editor\obj\Release\DBZ_LotSS_Editor.Form_EditorPalette.resources
+C:\Users\MakoInfused\Documents\Visual Studio 2017\Projects\DBZ LotSS Editor\DBZ LotSS Editor\obj\Release\DBZ_LotSS_Editor.Form_ToolGraphic.resources
+C:\Users\MakoInfused\Documents\Visual Studio 2017\Projects\DBZ LotSS Editor\DBZ LotSS Editor\obj\Release\DBZ_LotSS_Editor.Form_ToolData.resources
+C:\Users\MakoInfused\Documents\Visual Studio 2017\Projects\DBZ LotSS Editor\DBZ LotSS Editor\obj\Release\DBZ_LotSS_Editor.Form_ToolHistory.resources
+C:\Users\MakoInfused\Documents\Visual Studio 2017\Projects\DBZ LotSS Editor\DBZ LotSS Editor\obj\Release\DBZ_LotSS_Editor.Form_OptionsPreferences.resources
+C:\Users\MakoInfused\Documents\Visual Studio 2017\Projects\DBZ LotSS Editor\DBZ LotSS Editor\obj\Release\DBZ_LotSS_Editor.Form_HelpAbout.resources
+C:\Users\MakoInfused\Documents\Visual Studio 2017\Projects\DBZ LotSS Editor\DBZ LotSS Editor\obj\Release\DBZ_LotSS_Editor.Form_ToolFont.resources
+C:\Users\MakoInfused\Documents\Visual Studio 2017\Projects\DBZ LotSS Editor\DBZ LotSS Editor\obj\Release\DBZ_LotSS_Editor.Form_EditorText.resources
+C:\Users\MakoInfused\Documents\Visual Studio 2017\Projects\DBZ LotSS Editor\DBZ LotSS Editor\obj\Release\DBZ_LotSS_Editor.Form_EditorSprite.resources
+C:\Users\MakoInfused\Documents\Visual Studio 2017\Projects\DBZ LotSS Editor\DBZ LotSS Editor\obj\Release\DBZ_LotSS_Editor.Form_EditorDatabase.resources
+C:\Users\MakoInfused\Documents\Visual Studio 2017\Projects\DBZ LotSS Editor\DBZ LotSS Editor\obj\Release\DBZ_LotSS_Editor.Data_Global.resources
+C:\Users\MakoInfused\Documents\Visual Studio 2017\Projects\DBZ LotSS Editor\DBZ LotSS Editor\obj\Release\DBZ_LotSS_Editor.Data_Groups.resources
+C:\Users\MakoInfused\Documents\Visual Studio 2017\Projects\DBZ LotSS Editor\DBZ LotSS Editor\obj\Release\DBZ_LotSS_Editor.Palette_Characters.resources
+C:\Users\MakoInfused\Documents\Visual Studio 2017\Projects\DBZ LotSS Editor\DBZ LotSS Editor\obj\Release\DBZ_LotSS_Editor.Palette_Rage.resources
+C:\Users\MakoInfused\Documents\Visual Studio 2017\Projects\DBZ LotSS Editor\DBZ LotSS Editor\obj\Release\DBZ_LotSS_Editor.Text_Skills.resources
+C:\Users\MakoInfused\Documents\Visual Studio 2017\Projects\DBZ LotSS Editor\DBZ LotSS Editor\obj\Release\DBZ_LotSS_Editor.Text_Items.resources
+C:\Users\MakoInfused\Documents\Visual Studio 2017\Projects\DBZ LotSS Editor\DBZ LotSS Editor\obj\Release\DBZ_LotSS_Editor.Text_Characters.resources
+C:\Users\MakoInfused\Documents\Visual Studio 2017\Projects\DBZ LotSS Editor\DBZ LotSS Editor\obj\Release\DBZ_LotSS_Editor.Text_Battlers.resources
+C:\Users\MakoInfused\Documents\Visual Studio 2017\Projects\DBZ LotSS Editor\DBZ LotSS Editor\obj\Release\DBZ_LotSS_Editor.Text_Game.resources
+C:\Users\MakoInfused\Documents\Visual Studio 2017\Projects\DBZ LotSS Editor\DBZ LotSS Editor\obj\Release\DBZ_LotSS_Editor.Data_Items.resources
+C:\Users\MakoInfused\Documents\Visual Studio 2017\Projects\DBZ LotSS Editor\DBZ LotSS Editor\obj\Release\DBZ_LotSS_Editor.Data_Maps.resources
+C:\Users\MakoInfused\Documents\Visual Studio 2017\Projects\DBZ LotSS Editor\DBZ LotSS Editor\obj\Release\DBZ_LotSS_Editor.Data_Skills.resources
+C:\Users\MakoInfused\Documents\Visual Studio 2017\Projects\DBZ LotSS Editor\DBZ LotSS Editor\obj\Release\DBZ_LotSS_Editor.Data_Characters.resources
+C:\Users\MakoInfused\Documents\Visual Studio 2017\Projects\DBZ LotSS Editor\DBZ LotSS Editor\obj\Release\DBZ_LotSS_Editor.Form_Main.resources
+C:\Users\MakoInfused\Documents\Visual Studio 2017\Projects\DBZ LotSS Editor\DBZ LotSS Editor\obj\Release\DBZ_LotSS_Editor.Sprite_Portrait.resources
+C:\Users\MakoInfused\Documents\Visual Studio 2017\Projects\DBZ LotSS Editor\DBZ LotSS Editor\obj\Release\DBZ_LotSS_Editor.Palette_Portrait.resources
+C:\Users\MakoInfused\Documents\Visual Studio 2017\Projects\DBZ LotSS Editor\DBZ LotSS Editor\obj\Release\DBZ_LotSS_Editor.Palette_Battlers.resources
+C:\Users\MakoInfused\Documents\Visual Studio 2017\Projects\DBZ LotSS Editor\DBZ LotSS Editor\obj\Release\DBZ_LotSS_Editor.Sprite_Battlers.resources
+C:\Users\MakoInfused\Documents\Visual Studio 2017\Projects\DBZ LotSS Editor\DBZ LotSS Editor\obj\Release\DBZ_LotSS_Editor.Resources.resources
+C:\Users\MakoInfused\Documents\Visual Studio 2017\Projects\DBZ LotSS Editor\DBZ LotSS Editor\obj\Release\DBZ_LotSS_Editor.Data_Battlers.resources
+C:\Users\MakoInfused\Documents\Visual Studio 2017\Projects\DBZ LotSS Editor\DBZ LotSS Editor\obj\Release\DBZ LotSS Editor.csproj.GenerateResource.cache
+C:\Users\MakoInfused\Documents\Visual Studio 2017\Projects\DBZ LotSS Editor\DBZ LotSS Editor\obj\Release\DBZ LotSS Editor.csproj.CoreCompileInputs.cache
+C:\Users\MakoInfused\Documents\Visual Studio 2017\Projects\DBZ LotSS Editor\DBZ LotSS Editor\obj\Release\DBZ LotSS Editor.exe
+C:\Users\MakoInfused\Documents\Visual Studio 2017\Projects\DBZ LotSS Editor\DBZ LotSS Editor\obj\Release\DBZ LotSS Editor.pdb
+C:\Users\MakoInfused\Documents\Visual Studio 2017\Projects\DBZ LotSS Editor\DBZ LotSS Editor\bin\Release\Resources\FontTable.tbl
+C:\Users\MakoInfused\Documents\Visual Studio 2017\Projects\DBZ LotSS Editor\DBZ LotSS Editor\bin\Release\DBZ LotSS Editor.exe.config
+C:\Users\MakoInfused\Documents\Visual Studio 2017\Projects\DBZ LotSS Editor\DBZ LotSS Editor\bin\Release\DBZ LotSS Editor.xml
+C:\Users\MakoInfused\Documents\Visual Studio 2017\Projects\DBZ LotSS Editor\DBZ LotSS Editor\bin\Release\DBZ LotSS Editor.exe
+C:\Users\MakoInfused\Documents\Visual Studio 2017\Projects\DBZ LotSS Editor\DBZ LotSS Editor\bin\Release\DBZ LotSS Editor.pdb
+C:\Users\MakoInfused\Documents\Visual Studio 2017\Projects\DBZ LotSS Editor\DBZ LotSS Editor\bin\Release\BasicTools.dll
+C:\Users\MakoInfused\Documents\Visual Studio 2017\Projects\DBZ LotSS Editor\DBZ LotSS Editor\bin\Release\HexTools.dll
+C:\Users\MakoInfused\Documents\Visual Studio 2017\Projects\DBZ LotSS Editor\DBZ LotSS Editor\bin\Release\Microsoft.VisualBasic.PowerPacks.dll
+C:\Users\MakoInfused\Documents\Visual Studio 2017\Projects\DBZ LotSS Editor\DBZ LotSS Editor\bin\Release\AnyClone.dll
+C:\Users\MakoInfused\Documents\Visual Studio 2017\Projects\DBZ LotSS Editor\DBZ LotSS Editor\bin\Release\WPFHexaEditor.dll
+C:\Users\MakoInfused\Documents\Visual Studio 2017\Projects\DBZ LotSS Editor\DBZ LotSS Editor\bin\Release\BasicTools.pdb
+C:\Users\MakoInfused\Documents\Visual Studio 2017\Projects\DBZ LotSS Editor\DBZ LotSS Editor\bin\Release\BasicTools.xml
+C:\Users\MakoInfused\Documents\Visual Studio 2017\Projects\DBZ LotSS Editor\DBZ LotSS Editor\bin\Release\BasicTools.dll.config
+C:\Users\MakoInfused\Documents\Visual Studio 2017\Projects\DBZ LotSS Editor\DBZ LotSS Editor\bin\Release\HexTools.pdb
+C:\Users\MakoInfused\Documents\Visual Studio 2017\Projects\DBZ LotSS Editor\DBZ LotSS Editor\bin\Release\HexTools.xml
+C:\Users\MakoInfused\Documents\Visual Studio 2017\Projects\DBZ LotSS Editor\DBZ LotSS Editor\bin\Release\HexTools.dll.config
+C:\Users\MakoInfused\Documents\Visual Studio 2017\Projects\DBZ LotSS Editor\DBZ LotSS Editor\bin\Release\Microsoft.VisualBasic.PowerPacks.xml
+C:\Users\MakoInfused\Documents\Visual Studio 2017\Projects\DBZ LotSS Editor\DBZ LotSS Editor\bin\Release\fr-CA\WPFHexaEditor.resources.dll
+C:\Users\MakoInfused\Documents\Visual Studio 2017\Projects\DBZ LotSS Editor\DBZ LotSS Editor\bin\Release\pl-PL\WPFHexaEditor.resources.dll
+C:\Users\MakoInfused\Documents\Visual Studio 2017\Projects\DBZ LotSS Editor\DBZ LotSS Editor\bin\Release\pt-BR\WPFHexaEditor.resources.dll
+C:\Users\MakoInfused\Documents\Visual Studio 2017\Projects\DBZ LotSS Editor\DBZ LotSS Editor\bin\Release\ru-RU\WPFHexaEditor.resources.dll
+C:\Users\MakoInfused\Documents\Visual Studio 2017\Projects\DBZ LotSS Editor\DBZ LotSS Editor\bin\Release\zh-CN\WPFHexaEditor.resources.dll
+C:\Users\MakoInfused\Documents\Visual Studio 2017\Projects\DBZ LotSS Editor\DBZ LotSS Editor\obj\Release\DBZ LotSS Editor.csproj.CopyComplete

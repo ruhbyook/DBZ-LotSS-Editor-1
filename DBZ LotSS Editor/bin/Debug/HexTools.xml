@@ -1,0 +1,1988 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>HexTools</name>
+    </assembly>
+    <members>
+        <member name="F:HexTools.Editor_HexAddress.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:HexTools.Editor_HexAddress.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:HexTools.Editor_HexAddress.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="F:HexTools.HexAddress.components">
+            <summary> 
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:HexTools.HexAddress.Dispose(System.Boolean)">
+            <summary> 
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:HexTools.HexAddress.InitializeComponent">
+            <summary> 
+            Required method for Designer support - do not modify 
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="F:HexTools.HexAddressBox.components">
+            <summary> 
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:HexTools.HexAddressBox.Dispose(System.Boolean)">
+            <summary> 
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:HexTools.HexAddressBox.InitializeComponent">
+            <summary> 
+            Required method for Designer support - do not modify 
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="T:HexTools._LZ77RLE">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="F:HexTools.HexPalette.components">
+            <summary> 
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:HexTools.HexPalette.Dispose(System.Boolean)">
+            <summary> 
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:HexTools.HexPalette.InitializeComponent">
+            <summary> 
+            Required method for Designer support - do not modify 
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="P:HexTools.IHexCompress.Name">
+            <summary>
+            Known name, such as: LZ77, RLE, etc.
+            </summary>
+        </member>
+        <member name="M:HexTools.IHexCompress.Compress(System.Byte[],HexTools.IHexCompressionInformation@,HexTools.IHexCompressionOptions)">
+            <summary>
+            Compression algorithm.
+            </summary>
+            <param name="data"></param>
+            <param name="information"></param>
+            <param name="options"></param>
+            <returns></returns>
+        </member>
+        <member name="M:HexTools.IHexCompress.Decompress(System.IO.Stream,HexTools.IHexDecompressionInformation@,HexTools.IHexDecompressionOptions)">
+            <summary>
+            Decompression algorithm.
+            </summary>
+            <param name="data"></param>
+            <param name="information"></param>
+            <param name="options"></param>
+            <returns></returns>
+        </member>
+        <member name="T:HexTools.UInt24">
+            <summary>Represents a 3-byte, 24-bit unsigned integer.</summary>
+            <remarks>
+            <para>
+            This class behaves like most other intrinsic unsigned integers but allows a 3-byte, 24-bit integer implementation
+            that is often found in many digital-signal processing arenas and different kinds of protocol parsing.  An unsigned
+            24-bit integer is typically used to save storage space on disk where its value range of 0 to 16777215 is sufficient,
+            but the unsigned Int16 value range of 0 to 65535 is too small.
+            </para>
+            <para>
+            This structure uses an UInt32 internally for storage and most other common expected integer functionality, so using
+            a 24-bit integer will not save memory.  However, if the 24-bit unsigned integer range (0 to 16777215) suits your
+            data needs you can save disk space by only storing the three bytes that this integer actually consumes.  You can do
+            this by calling the UInt24.GetBytes function to return a three byte binary array that can be serialized to the desired
+            destination and then calling the UInt24.GetValue function to restore the UInt24 value from those three bytes.
+            </para>
+            <para>
+            All the standard operators for the UInt24 have been fully defined for use with both UInt24 and UInt32 unsigned integers;
+            you should find that without the exception UInt24 can be compared and numerically calculated with an UInt24 or UInt32.
+            Necessary casting should be minimal and typical use should be very simple - just as if you are using any other native
+            unsigned integer.
+            </para>
+            </remarks>
+        </member>
+        <member name="F:HexTools.UInt24.BitMask">
+            <summary>High byte bit-mask used when a 24-bit integer is stored within a 32-bit integer. This field is constant.</summary>
+        </member>
+        <member name="M:HexTools.UInt24.#ctor(HexTools.UInt24)">
+            <summary>Creates 24-bit unsigned integer from an existing 24-bit unsigned integer.</summary>
+            <param name="value">A <see cref="T:HexTools.UInt24"/> to create the new value from. </param>
+        </member>
+        <member name="M:HexTools.UInt24.#ctor(System.UInt32)">
+            <summary>Creates 24-bit unsigned integer from a 32-bit unsigned integer.</summary>
+            <param name="value">32-bit unsigned integer to use as new 24-bit unsigned integer value.</param>
+            <exception cref="T:System.OverflowException">Source values over 24-bit max range will cause an overflow exception.</exception>
+        </member>
+        <member name="M:HexTools.UInt24.#ctor(System.Byte[],System.Int32)">
+            <summary>Creates 24-bit unsigned integer from three bytes at a specified position in a byte array.</summary>
+            <param name="value">An array of bytes.</param>
+            <param name="startIndex">The starting position within <paramref name="value"/>.</param>
+            <remarks>
+            <para>You can use this constructor in-lieu of a System.BitConverter.ToUInt24 function.</para>
+            <para>Bytes endian order assumed to match that of currently executing process architecture (little-endian on Intel platforms).</para>
+            </remarks>
+            <exception cref="T:System.ArgumentNullException"><paramref name="value"/> cannot be null.</exception>
+            <exception cref="T:System.ArgumentOutOfRangeException"><paramref name="startIndex"/> is greater than <paramref name="value"/> length.</exception>
+            <exception cref="T:System.ArgumentException"><paramref name="value"/> length from <paramref name="startIndex"/> is too small to represent a <see cref="T:HexTools.UInt24"/>.</exception>
+        </member>
+        <member name="M:HexTools.UInt24.GetBytes">
+            <summary>Returns the UInt24 value as an array of three bytes.</summary>
+            <returns>An array of bytes with length 3.</returns>
+            <remarks>
+            <para>You can use this function in-lieu of a System.BitConverter.GetBytes function.</para>
+            <para>Bytes will be returned in endian order of currently executing process architecture (little-endian on Intel platforms).</para>
+            </remarks>
+        </member>
+        <member name="M:HexTools.UInt24.CompareTo(System.Object)">
+            <summary>
+            Compares this instance to a specified object and returns an indication of their relative values.
+            </summary>
+            <param name="value">An object to compare, or null.</param>
+            <returns>
+            A signed number indicating the relative values of this instance and value. Returns less than zero
+            if this instance is less than value, zero if this instance is equal to value, or greater than zero
+            if this instance is greater than value.
+            </returns>
+            <exception cref="T:System.ArgumentException">value is not an UInt32 or UInt24.</exception>
+        </member>
+        <member name="M:HexTools.UInt24.CompareTo(HexTools.UInt24)">
+            <summary>
+            Compares this instance to a specified 24-bit unsigned integer and returns an indication of their
+            relative values.
+            </summary>
+            <param name="value">An integer to compare.</param>
+            <returns>
+            A signed number indicating the relative values of this instance and value. Returns less than zero
+            if this instance is less than value, zero if this instance is equal to value, or greater than zero
+            if this instance is greater than value.
+            </returns>
+        </member>
+        <member name="M:HexTools.UInt24.CompareTo(System.UInt32)">
+            <summary>
+            Compares this instance to a specified 32-bit unsigned integer and returns an indication of their
+            relative values.
+            </summary>
+            <param name="value">An integer to compare.</param>
+            <returns>
+            A signed number indicating the relative values of this instance and value. Returns less than zero
+            if this instance is less than value, zero if this instance is equal to value, or greater than zero
+            if this instance is greater than value.
+            </returns>
+        </member>
+        <member name="M:HexTools.UInt24.Equals(System.Object)">
+            <summary>
+            Returns a value indicating whether this instance is equal to a specified object.
+            </summary>
+            <param name="obj">An object to compare, or null.</param>
+            <returns>
+            True if obj is an instance of UInt32 or UInt24 and equals the value of this instance;
+            otherwise, False.
+            </returns>
+        </member>
+        <member name="M:HexTools.UInt24.Equals(HexTools.UInt24)">
+            <summary>
+            Returns a value indicating whether this instance is equal to a specified UInt24 value.
+            </summary>
+            <param name="obj">An UInt24 value to compare to this instance.</param>
+            <returns>
+            True if obj has the same value as this instance; otherwise, False.
+            </returns>
+        </member>
+        <member name="M:HexTools.UInt24.Equals(System.UInt32)">
+            <summary>
+            Returns a value indicating whether this instance is equal to a specified uint value.
+            </summary>
+            <param name="obj">An UInt32 value to compare to this instance.</param>
+            <returns>
+            True if obj has the same value as this instance; otherwise, False.
+            </returns>
+        </member>
+        <member name="M:HexTools.UInt24.GetHashCode">
+            <summary>
+            Returns the hash code for this instance.
+            </summary>
+            <returns>
+            A 32-bit unsigned integer hash code.
+            </returns>
+        </member>
+        <member name="M:HexTools.UInt24.ToString">
+            <summary>
+            Converts the numeric value of this instance to its equivalent string representation.
+            </summary>
+            <returns>
+            The string representation of the value of this instance, consisting of a minus sign if
+            the value is negative, and a sequence of digits ranging from 0 to 9 with no leading zeroes.
+            </returns>
+        </member>
+        <member name="M:HexTools.UInt24.ToString(System.String)">
+            <summary>
+            Converts the numeric value of this instance to its equivalent string representation, using
+            the specified format.
+            </summary>
+            <param name="format">A format string.</param>
+            <returns>
+            The string representation of the value of this instance as specified by format.
+            </returns>
+        </member>
+        <member name="M:HexTools.UInt24.ToString(System.IFormatProvider)">
+            <summary>
+            Converts the numeric value of this instance to its equivalent string representation using the
+            specified culture-specific format information.
+            </summary>
+            <param name="provider">
+            A <see cref="T:System.IFormatProvider"/> that supplies culture-specific formatting information.
+            </param>
+            <returns>
+            The string representation of the value of this instance as specified by provider.
+            </returns>
+        </member>
+        <member name="M:HexTools.UInt24.ToString(System.String,System.IFormatProvider)">
+            <summary>
+            Converts the numeric value of this instance to its equivalent string representation using the
+            specified format and culture-specific format information.
+            </summary>
+            <param name="format">A format specification.</param>
+            <param name="provider">
+            A <see cref="T:System.IFormatProvider"/> that supplies culture-specific formatting information.
+            </param>
+            <returns>
+            The string representation of the value of this instance as specified by format and provider.
+            </returns>
+        </member>
+        <member name="M:HexTools.UInt24.Parse(System.String)">
+            <summary>
+            Converts the string representation of a number to its 24-bit unsigned integer equivalent.
+            </summary>
+            <param name="s">A string containing a number to convert.</param>
+            <returns>
+            A 24-bit unsigned integer equivalent to the number contained in s.
+            </returns>
+            <exception cref="T:System.ArgumentNullException">s is null.</exception>
+            <exception cref="T:System.OverflowException">
+            s represents a number less than UInt24.MinValue or greater than UInt24.MaxValue.
+            </exception>
+            <exception cref="T:System.FormatException">s is not in the correct format.</exception>
+        </member>
+        <member name="M:HexTools.UInt24.Parse(System.String,System.Globalization.NumberStyles)">
+            <summary>
+            Converts the string representation of a number in a specified style to its 24-bit unsigned integer equivalent.
+            </summary>
+            <param name="s">A string containing a number to convert.</param>
+            <param name="style">
+            A bitwise combination of System.Globalization.NumberStyles values that indicates the permitted format of s.
+            A typical value to specify is System.Globalization.NumberStyles.Integer.
+            </param>
+            <returns>
+            A 24-bit unsigned integer equivalent to the number contained in s.
+            </returns>
+            <exception cref="T:System.ArgumentException">
+            style is not a System.Globalization.NumberStyles value. -or- style is not a combination of
+            System.Globalization.NumberStyles.AllowHexSpecifier and System.Globalization.NumberStyles.HexNumber values.
+            </exception>
+            <exception cref="T:System.ArgumentNullException">s is null.</exception>
+            <exception cref="T:System.OverflowException">
+            s represents a number less than UInt24.MinValue or greater than UInt24.MaxValue.
+            </exception>
+            <exception cref="T:System.FormatException">s is not in a format compliant with style.</exception>
+        </member>
+        <member name="M:HexTools.UInt24.Parse(System.String,System.IFormatProvider)">
+            <summary>
+            Converts the string representation of a number in a specified culture-specific format to its 24-bit
+            unsigned integer equivalent.
+            </summary>
+            <param name="s">A string containing a number to convert.</param>
+            <param name="provider">
+            A <see cref="T:System.IFormatProvider"/> that supplies culture-specific formatting information about s.
+            </param>
+            <returns>
+            A 24-bit unsigned integer equivalent to the number contained in s.
+            </returns>
+            <exception cref="T:System.ArgumentNullException">s is null.</exception>
+            <exception cref="T:System.OverflowException">
+            s represents a number less than UInt24.MinValue or greater than UInt24.MaxValue.
+            </exception>
+            <exception cref="T:System.FormatException">s is not in the correct format.</exception>
+        </member>
+        <member name="M:HexTools.UInt24.Parse(System.String,System.Globalization.NumberStyles,System.IFormatProvider)">
+            <summary>
+            Converts the string representation of a number in a specified style and culture-specific format to its 24-bit
+            unsigned integer equivalent.
+            </summary>
+            <param name="s">A string containing a number to convert.</param>
+            <param name="style">
+            A bitwise combination of System.Globalization.NumberStyles values that indicates the permitted format of s.
+            A typical value to specify is System.Globalization.NumberStyles.Integer.
+            </param>
+            <param name="provider">
+            A <see cref="T:System.IFormatProvider"/> that supplies culture-specific formatting information about s.
+            </param>
+            <returns>
+            A 24-bit unsigned integer equivalent to the number contained in s.
+            </returns>
+            <exception cref="T:System.ArgumentException">
+            style is not a System.Globalization.NumberStyles value. -or- style is not a combination of
+            System.Globalization.NumberStyles.AllowHexSpecifier and System.Globalization.NumberStyles.HexNumber values.
+            </exception>
+            <exception cref="T:System.ArgumentNullException">s is null.</exception>
+            <exception cref="T:System.OverflowException">
+            s represents a number less than UInt24.MinValue or greater than UInt24.MaxValue.
+            </exception>
+            <exception cref="T:System.FormatException">s is not in a format compliant with style.</exception>
+        </member>
+        <member name="M:HexTools.UInt24.TryParse(System.String,HexTools.UInt24@)">
+            <summary>
+            Converts the string representation of a number to its 24-bit unsigned integer equivalent. A return value
+            indicates whether the conversion succeeded or failed.
+            </summary>
+            <param name="s">A string containing a number to convert.</param>
+            <param name="result">
+            When this method returns, contains the 24-bit unsigned integer value equivalent to the number contained in s,
+            if the conversion succeeded, or zero if the conversion failed. The conversion fails if the s parameter is null,
+            is not of the correct format, or represents a number less than UInt24.MinValue or greater than UInt24.MaxValue.
+            This parameter is passed uninitialized.
+            </param>
+            <returns>true if s was converted successfully; otherwise, false.</returns>
+        </member>
+        <member name="M:HexTools.UInt24.TryParse(System.String,System.Globalization.NumberStyles,System.IFormatProvider,HexTools.UInt24@)">
+            <summary>
+            Converts the string representation of a number in a specified style and culture-specific format to its
+            24-bit unsigned integer equivalent. A return value indicates whether the conversion succeeded or failed.
+            </summary>
+            <param name="s">A string containing a number to convert.</param>
+            <param name="style">
+            A bitwise combination of System.Globalization.NumberStyles values that indicates the permitted format of s.
+            A typical value to specify is System.Globalization.NumberStyles.Integer.
+            </param>
+            <param name="result">
+            When this method returns, contains the 24-bit unsigned integer value equivalent to the number contained in s,
+            if the conversion succeeded, or zero if the conversion failed. The conversion fails if the s parameter is null,
+            is not in a format compliant with style, or represents a number less than UInt24.MinValue or greater than
+            UInt24.MaxValue. This parameter is passed uninitialized.
+            </param>
+            <param name="provider">
+            A <see cref="T:System.IFormatProvider"/> object that supplies culture-specific formatting information about s.
+            </param>
+            <returns>true if s was converted successfully; otherwise, false.</returns>
+            <exception cref="T:System.ArgumentException">
+            style is not a System.Globalization.NumberStyles value. -or- style is not a combination of
+            System.Globalization.NumberStyles.AllowHexSpecifier and System.Globalization.NumberStyles.HexNumber values.
+            </exception>
+        </member>
+        <member name="M:HexTools.UInt24.GetTypeCode">
+            <summary>
+            Returns the System.TypeCode for value type System.UInt32 (there is no defined type code for an UInt24).
+            </summary>
+            <returns>The enumerated constant, System.TypeCode.UInt32.</returns>
+            <remarks>
+            There is no defined UInt24 type code and since an UInt24 will easily fit inside an UInt32, the
+            UInt32 type code is returned.
+            </remarks>
+        </member>
+        <member name="M:HexTools.UInt24.op_Equality(HexTools.UInt24,HexTools.UInt24)">
+            <summary>
+            Compares the two values for equality.
+            </summary>
+            <param name="value1"><see cref="T:HexTools.UInt24"/> left hand operand.</param>
+            <param name="value2"><see cref="T:HexTools.UInt24"/> right hand operand.</param>
+            <returns><see cref="T:System.Boolean"/> value representing the result.</returns>
+        </member>
+        <member name="M:HexTools.UInt24.op_Equality(System.UInt32,HexTools.UInt24)">
+            <summary>
+            Compares the two values for equality.
+            </summary>
+            <param name="value1"><see cref="T:System.UInt32"/> left hand operand.</param>
+            <param name="value2"><see cref="T:HexTools.UInt24"/> right hand operand.</param>
+            <returns><see cref="T:System.Boolean"/> value representing the result.</returns>
+        </member>
+        <member name="M:HexTools.UInt24.op_Equality(HexTools.UInt24,System.UInt32)">
+            <summary>
+            Compares the two values for equality.
+            </summary>
+            <param name="value1"><see cref="T:HexTools.UInt24"/> left hand operand.</param>
+            <param name="value2"><see cref="T:System.UInt32"/> right hand operand.</param>
+            <returns><see cref="T:System.Boolean"/> value representing the result.</returns>
+        </member>
+        <member name="M:HexTools.UInt24.op_Inequality(HexTools.UInt24,HexTools.UInt24)">
+            <summary>
+            Compares the two values for inequality.
+            </summary>
+            <param name="value1"><see cref="T:HexTools.UInt24"/> left hand operand.</param>
+            <param name="value2"><see cref="T:HexTools.UInt24"/> right hand operand.</param>
+            <returns><see cref="T:System.Boolean"/> value representing the result.</returns>
+        </member>
+        <member name="M:HexTools.UInt24.op_Inequality(System.UInt32,HexTools.UInt24)">
+            <summary>
+            Compares the two values for inequality.
+            </summary>
+            <param name="value1"><see cref="T:System.UInt32"/> left hand operand.</param>
+            <param name="value2"><see cref="T:HexTools.UInt24"/> right hand operand.</param>
+            <returns><see cref="T:System.Boolean"/> value representing the result.</returns>
+        </member>
+        <member name="M:HexTools.UInt24.op_Inequality(HexTools.UInt24,System.UInt32)">
+            <summary>
+            Compares the two values for inequality.
+            </summary>
+            <param name="value1"><see cref="T:HexTools.UInt24"/> left hand operand.</param>
+            <param name="value2"><see cref="T:System.UInt32"/> right hand operand.</param>
+            <returns><see cref="T:System.Boolean"/> value representing the result.</returns>
+        </member>
+        <member name="M:HexTools.UInt24.op_LessThan(HexTools.UInt24,HexTools.UInt24)">
+            <summary>
+            Returns true if left value is less than right value.
+            </summary>
+            <param name="value1"><see cref="T:HexTools.UInt24"/> left hand operand.</param>
+            <param name="value2"><see cref="T:HexTools.UInt24"/> right hand operand.</param>
+            <returns><see cref="T:System.Boolean"/> value representing the result.</returns>
+        </member>
+        <member name="M:HexTools.UInt24.op_LessThan(System.UInt32,HexTools.UInt24)">
+            <summary>
+            Returns true if left value is less than right value.
+            </summary>
+            <param name="value1"><see cref="T:System.UInt32"/> left hand operand.</param>
+            <param name="value2"><see cref="T:HexTools.UInt24"/> right hand operand.</param>
+            <returns><see cref="T:System.Boolean"/> value representing the result.</returns>
+        </member>
+        <member name="M:HexTools.UInt24.op_LessThan(HexTools.UInt24,System.UInt32)">
+            <summary>
+            Returns true if left value is less than right value.
+            </summary>
+            <param name="value1"><see cref="T:HexTools.UInt24"/> left hand operand.</param>
+            <param name="value2"><see cref="T:System.UInt32"/> right hand operand.</param>
+            <returns><see cref="T:System.Boolean"/> value representing the result.</returns>
+        </member>
+        <member name="M:HexTools.UInt24.op_LessThanOrEqual(HexTools.UInt24,HexTools.UInt24)">
+            <summary>
+            Returns true if left value is less or equal to than right value.
+            </summary>
+            <param name="value1"><see cref="T:HexTools.UInt24"/> left hand operand.</param>
+            <param name="value2"><see cref="T:HexTools.UInt24"/> right hand operand.</param>
+            <returns><see cref="T:System.Boolean"/> value representing the result.</returns>
+        </member>
+        <member name="M:HexTools.UInt24.op_LessThanOrEqual(System.UInt32,HexTools.UInt24)">
+            <summary>
+            Returns true if left value is less or equal to than right value.
+            </summary>
+            <param name="value1"><see cref="T:System.UInt32"/> left hand operand.</param>
+            <param name="value2"><see cref="T:HexTools.UInt24"/> right hand operand.</param>
+            <returns><see cref="T:System.Boolean"/> value representing the result.</returns>
+        </member>
+        <member name="M:HexTools.UInt24.op_LessThanOrEqual(HexTools.UInt24,System.UInt32)">
+            <summary>
+            Returns true if left value is less or equal to than right value.
+            </summary>
+            <param name="value1"><see cref="T:HexTools.UInt24"/> left hand operand.</param>
+            <param name="value2"><see cref="T:System.UInt32"/> right hand operand.</param>
+            <returns><see cref="T:System.Boolean"/> value representing the result.</returns>
+        </member>
+        <member name="M:HexTools.UInt24.op_GreaterThan(HexTools.UInt24,HexTools.UInt24)">
+            <summary>
+            Returns true if left value is greater than right value.
+            </summary>
+            <param name="value1"><see cref="T:HexTools.UInt24"/> left hand operand.</param>
+            <param name="value2"><see cref="T:HexTools.UInt24"/> right hand operand.</param>
+            <returns><see cref="T:System.Boolean"/> value representing the result.</returns>
+        </member>
+        <member name="M:HexTools.UInt24.op_GreaterThan(System.UInt32,HexTools.UInt24)">
+            <summary>
+            Returns true if left value is greater than right value.
+            </summary>
+            <param name="value1"><see cref="T:System.UInt32"/> left hand operand.</param>
+            <param name="value2"><see cref="T:HexTools.UInt24"/> right hand operand.</param>
+            <returns><see cref="T:System.Boolean"/> value representing the result.</returns>
+        </member>
+        <member name="M:HexTools.UInt24.op_GreaterThan(HexTools.UInt24,System.UInt32)">
+            <summary>
+            Returns true if left value is greater than right value.
+            </summary>
+            <param name="value1"><see cref="T:HexTools.UInt24"/> left hand operand.</param>
+            <param name="value2"><see cref="T:System.UInt32"/> right hand operand.</param>
+            <returns><see cref="T:System.Boolean"/> value representing the result.</returns>
+        </member>
+        <member name="M:HexTools.UInt24.op_GreaterThanOrEqual(HexTools.UInt24,HexTools.UInt24)">
+            <summary>
+            Returns true if left value is greater than or equal to right value.
+            </summary>
+            <param name="value1"><see cref="T:HexTools.UInt24"/> left hand operand.</param>
+            <param name="value2"><see cref="T:HexTools.UInt24"/> right hand operand.</param>
+            <returns><see cref="T:System.Boolean"/> value representing the result.</returns>
+        </member>
+        <member name="M:HexTools.UInt24.op_GreaterThanOrEqual(System.UInt32,HexTools.UInt24)">
+            <summary>
+            Returns true if left value is greater than or equal to right value.
+            </summary>
+            <param name="value1"><see cref="T:System.UInt32"/> left hand operand.</param>
+            <param name="value2"><see cref="T:HexTools.UInt24"/> right hand operand.</param>
+            <returns><see cref="T:System.Boolean"/> value representing the result.</returns>
+        </member>
+        <member name="M:HexTools.UInt24.op_GreaterThanOrEqual(HexTools.UInt24,System.UInt32)">
+            <summary>
+            Returns true if left value is greater than or equal to right value.
+            </summary>
+            <param name="value1"><see cref="T:HexTools.UInt24"/> left hand operand.</param>
+            <param name="value2"><see cref="T:System.UInt32"/> right hand operand.</param>
+            <returns><see cref="T:System.Boolean"/> value representing the result.</returns>
+        </member>
+        <member name="M:HexTools.UInt24.op_Explicit(System.Enum)~HexTools.UInt24">
+            <summary>
+            Explicitly converts value to an <see cref="T:HexTools.UInt24"/>.
+            </summary>
+            <param name="value"><see cref="T:System.Enum"/> value to be converted.</param>
+            <returns><see cref="T:HexTools.UInt24"/> value that is the result of the conversion.</returns>
+        </member>
+        <member name="M:HexTools.UInt24.op_Explicit(System.String)~HexTools.UInt24">
+            <summary>
+            Explicitly converts value to an <see cref="T:HexTools.UInt24"/>.
+            </summary>
+            <param name="value"><see cref="T:System.String"/> value to be converted.</param>
+            <returns><see cref="T:HexTools.UInt24"/> value that is the result of the conversion.</returns>
+        </member>
+        <member name="M:HexTools.UInt24.op_Explicit(System.Decimal)~HexTools.UInt24">
+            <summary>
+            Explicitly converts value to an <see cref="T:HexTools.UInt24"/>.
+            </summary>
+            <param name="value"><see cref="T:System.Decimal"/> value to be converted.</param>
+            <returns><see cref="T:HexTools.UInt24"/> value that is the result of the conversion.</returns>
+        </member>
+        <member name="M:HexTools.UInt24.op_Explicit(System.Double)~HexTools.UInt24">
+            <summary>
+            Explicitly converts value to an <see cref="T:HexTools.UInt24"/>.
+            </summary>
+            <param name="value"><see cref="T:System.Double"/> value to be converted.</param>
+            <returns><see cref="T:HexTools.UInt24"/> value that is the result of the conversion.</returns>
+        </member>
+        <member name="M:HexTools.UInt24.op_Explicit(System.Single)~HexTools.UInt24">
+            <summary>
+            Explicitly converts value to an <see cref="T:HexTools.UInt24"/>.
+            </summary>
+            <param name="value"><see cref="T:System.Single"/> value to be converted.</param>
+            <returns><see cref="T:HexTools.UInt24"/> value that is the result of the conversion.</returns>
+        </member>
+        <member name="M:HexTools.UInt24.op_Explicit(System.UInt64)~HexTools.UInt24">
+            <summary>
+            Explicitly converts value to an <see cref="T:HexTools.UInt24"/>.
+            </summary>
+            <param name="value"><see cref="T:System.UInt64"/> value to be converted.</param>
+            <returns><see cref="T:HexTools.UInt24"/> value that is the result of the conversion.</returns>
+        </member>
+        <member name="M:HexTools.UInt24.op_Explicit(System.UInt32)~HexTools.UInt24">
+            <summary>
+            Explicitly converts value to an <see cref="T:HexTools.UInt24"/>.
+            </summary>
+            <param name="value"><see cref="T:System.UInt32"/> value to be converted.</param>
+            <returns><see cref="T:HexTools.UInt24"/> value that is the result of the conversion.</returns>
+        </member>
+        <member name="M:HexTools.UInt24.op_Explicit(HexTools.Int24)~HexTools.UInt24">
+            <summary>
+            Explicitly converts value to an <see cref="T:HexTools.UInt24"/>.
+            </summary>
+            <param name="value"><see cref="T:HexTools.Int24"/> value to be converted.</param>
+            <returns><see cref="T:HexTools.UInt24"/> value that is the result of the conversion.</returns>
+        </member>
+        <member name="M:HexTools.UInt24.op_Explicit(HexTools.UInt24)~HexTools.Int24">
+            <summary>
+            Explicitly converts value to an <see cref="T:HexTools.Int24"/>.
+            </summary>
+            <param name="value"><see cref="T:HexTools.UInt24"/> value to be converted.</param>
+            <returns><see cref="T:HexTools.Int24"/> value that is the result of the conversion.</returns>
+        </member>
+        <member name="M:HexTools.UInt24.op_Explicit(HexTools.UInt24)~System.Int16">
+            <summary>
+            Explicitly converts <see cref="T:HexTools.UInt24"/> to <see cref="T:System.Int16"/>.
+            </summary>
+            <param name="value"><see cref="T:HexTools.UInt24"/> value to be converted.</param>
+            <returns><see cref="T:System.Int16"/> value that is the result of the conversion.</returns>
+        </member>
+        <member name="M:HexTools.UInt24.op_Explicit(HexTools.UInt24)~System.UInt16">
+            <summary>
+            Explicitly converts <see cref="T:HexTools.UInt24"/> to <see cref="T:System.UInt16"/>.
+            </summary>
+            <param name="value"><see cref="T:HexTools.UInt24"/> value to be converted.</param>
+            <returns><see cref="T:System.UInt16"/> value that is the result of the conversion.</returns>
+        </member>
+        <member name="M:HexTools.UInt24.op_Explicit(HexTools.UInt24)~System.Byte">
+            <summary>
+            Explicitly converts <see cref="T:HexTools.UInt24"/> to <see cref="T:System.Byte"/>.
+            </summary>
+            <param name="value"><see cref="T:HexTools.UInt24"/> value to be converted.</param>
+            <returns><see cref="T:System.Byte"/> value that is the result of the conversion.</returns>
+        </member>
+        <member name="M:HexTools.UInt24.op_Implicit(System.Byte)~HexTools.UInt24">
+            <summary>
+            Implicitly converts value to an <see cref="T:HexTools.UInt24"/>.
+            </summary>
+            <param name="value"><see cref="T:System.Byte"/> value to be converted.</param>
+            <returns><see cref="T:HexTools.UInt24"/> value that is the result of the conversion.</returns>
+        </member>
+        <member name="M:HexTools.UInt24.op_Implicit(System.Char)~HexTools.UInt24">
+            <summary>
+            Implicitly converts value to an <see cref="T:HexTools.UInt24"/>.
+            </summary>
+            <param name="value"><see cref="T:System.Char"/> value to be converted.</param>
+            <returns><see cref="T:HexTools.UInt24"/> value that is the result of the conversion.</returns>
+        </member>
+        <member name="M:HexTools.UInt24.op_Implicit(System.UInt16)~HexTools.UInt24">
+            <summary>
+            Implicitly converts value to an <see cref="T:HexTools.UInt24"/>.
+            </summary>
+            <param name="value"><see cref="T:System.UInt16"/> value to be converted.</param>
+            <returns><see cref="T:HexTools.UInt24"/> value that is the result of the conversion.</returns>
+        </member>
+        <member name="M:HexTools.UInt24.op_Implicit(HexTools.UInt24)~System.Int32">
+            <summary>
+            Implicitly converts <see cref="T:HexTools.UInt24"/> to <see cref="T:System.Int32"/>.
+            </summary>
+            <param name="value"><see cref="T:HexTools.UInt24"/> value to be converted.</param>
+            <returns><see cref="T:System.Int32"/> value that is the result of the conversion.</returns>
+        </member>
+        <member name="M:HexTools.UInt24.op_Implicit(HexTools.UInt24)~System.UInt32">
+            <summary>
+            Implicitly converts <see cref="T:HexTools.UInt24"/> to <see cref="T:System.UInt32"/>.
+            </summary>
+            <param name="value"><see cref="T:HexTools.UInt24"/> value to be converted.</param>
+            <returns><see cref="T:System.UInt32"/> value that is the result of the conversion.</returns>
+        </member>
+        <member name="M:HexTools.UInt24.op_Implicit(HexTools.UInt24)~System.Int64">
+            <summary>
+            Implicitly converts <see cref="T:HexTools.UInt24"/> to <see cref="T:System.Int64"/>.
+            </summary>
+            <param name="value"><see cref="T:HexTools.UInt24"/> value to be converted.</param>
+            <returns><see cref="T:System.Int64"/> value that is the result of the conversion.</returns>
+        </member>
+        <member name="M:HexTools.UInt24.op_Implicit(HexTools.UInt24)~System.UInt64">
+            <summary>
+            Implicitly converts <see cref="T:HexTools.UInt24"/> to <see cref="T:System.UInt64"/>.
+            </summary>
+            <param name="value"><see cref="T:HexTools.UInt24"/> value to be converted.</param>
+            <returns><see cref="T:System.UInt64"/> value that is the result of the conversion.</returns>
+        </member>
+        <member name="M:HexTools.UInt24.op_Implicit(HexTools.UInt24)~System.Double">
+            <summary>
+            Implicitly converts <see cref="T:HexTools.UInt24"/> to <see cref="T:System.Double"/>.
+            </summary>
+            <param name="value"><see cref="T:HexTools.UInt24"/> value to be converted.</param>
+            <returns><see cref="T:System.Double"/> value that is the result of the conversion.</returns>
+        </member>
+        <member name="M:HexTools.UInt24.op_Implicit(HexTools.UInt24)~System.Single">
+            <summary>
+            Implicitly converts <see cref="T:HexTools.UInt24"/> to <see cref="T:System.Single"/>.
+            </summary>
+            <param name="value"><see cref="T:HexTools.UInt24"/> value to be converted.</param>
+            <returns><see cref="T:System.Single"/> value that is the result of the conversion.</returns>
+        </member>
+        <member name="M:HexTools.UInt24.op_Implicit(HexTools.UInt24)~System.Decimal">
+            <summary>
+            Implicitly converts <see cref="T:HexTools.UInt24"/> to <see cref="T:System.Decimal"/>.
+            </summary>
+            <param name="value"><see cref="T:HexTools.UInt24"/> value to be converted.</param>
+            <returns><see cref="T:System.Decimal"/> value that is the result of the conversion.</returns>
+        </member>
+        <member name="M:HexTools.UInt24.op_Implicit(HexTools.UInt24)~System.String">
+            <summary>
+            Implicitly converts <see cref="T:HexTools.UInt24"/> to <see cref="T:System.String"/>.
+            </summary>
+            <param name="value"><see cref="T:HexTools.UInt24"/> value to be converted.</param>
+            <returns><see cref="T:System.String"/> value that is the result of the conversion.</returns>
+        </member>
+        <member name="M:HexTools.UInt24.op_True(HexTools.UInt24)">
+            <summary>
+            Returns true if value is greater than zero.
+            </summary>
+            <param name="value"><see cref="T:HexTools.UInt24"/> value to evaluate.</param>
+            <returns><see cref="T:System.Boolean"/> value indicating whether the value is greater than zero.</returns>
+        </member>
+        <member name="M:HexTools.UInt24.op_False(HexTools.UInt24)">
+            <summary>
+            Returns true if value is equal to zero.
+            </summary>
+            <param name="value"><see cref="T:HexTools.UInt24"/> value to evaluate.</param>
+            <returns><see cref="T:System.Boolean"/> value indicating whether the value is equal than zero.</returns>
+        </member>
+        <member name="M:HexTools.UInt24.op_OnesComplement(HexTools.UInt24)">
+            <summary>
+            Returns bitwise complement of value.
+            </summary>
+            <param name="value"><see cref="T:HexTools.UInt24"/> value to evaluate.</param>
+            <returns><see cref="T:HexTools.UInt24"/> value representing the complement of the input value.</returns>
+        </member>
+        <member name="M:HexTools.UInt24.op_BitwiseAnd(HexTools.UInt24,HexTools.UInt24)">
+            <summary>
+            Returns logical bitwise AND of values.
+            </summary>
+            <param name="value1"><see cref="T:HexTools.UInt24"/> left hand operand.</param>
+            <param name="value2"><see cref="T:HexTools.UInt24"/> right hand operand.</param>
+            <returns><see cref="T:HexTools.UInt24"/> value representing the logical bitwise AND of the values.</returns>
+        </member>
+        <member name="M:HexTools.UInt24.op_BitwiseAnd(System.UInt32,HexTools.UInt24)">
+            <summary>
+            Returns logical bitwise AND of values.
+            </summary>
+            <param name="value1"><see cref="T:System.UInt32"/> left hand operand.</param>
+            <param name="value2"><see cref="T:HexTools.UInt24"/> right hand operand.</param>
+            <returns><see cref="T:System.UInt32"/> value representing the logical bitwise AND of the values.</returns>
+        </member>
+        <member name="M:HexTools.UInt24.op_BitwiseAnd(HexTools.UInt24,System.UInt32)">
+            <summary>
+            Returns logical bitwise AND of values.
+            </summary>
+            <param name="value1"><see cref="T:HexTools.UInt24"/> left hand operand.</param>
+            <param name="value2"><see cref="T:System.UInt32"/> right hand operand.</param>
+            <returns><see cref="T:System.UInt32"/> value representing the logical bitwise AND of the values.</returns>
+        </member>
+        <member name="M:HexTools.UInt24.op_BitwiseOr(HexTools.UInt24,HexTools.UInt24)">
+            <summary>
+            Returns logical bitwise OR of values.
+            </summary>
+            <param name="value1"><see cref="T:HexTools.UInt24"/> left hand operand.</param>
+            <param name="value2"><see cref="T:HexTools.UInt24"/> right hand operand.</param>
+            <returns><see cref="T:HexTools.UInt24"/> value representing the logical bitwise OR of the values.</returns>
+        </member>
+        <member name="M:HexTools.UInt24.op_BitwiseOr(System.UInt32,HexTools.UInt24)">
+            <summary>
+            Returns logical bitwise OR of values.
+            </summary>
+            <param name="value1"><see cref="T:System.UInt32"/> left hand operand.</param>
+            <param name="value2"><see cref="T:HexTools.UInt24"/> right hand operand.</param>
+            <returns><see cref="T:System.UInt32"/> value representing the logical bitwise OR of the values.</returns>
+        </member>
+        <member name="M:HexTools.UInt24.op_BitwiseOr(HexTools.UInt24,System.UInt32)">
+            <summary>
+            Returns logical bitwise OR of values.
+            </summary>
+            <param name="value1"><see cref="T:HexTools.UInt24"/> left hand operand.</param>
+            <param name="value2"><see cref="T:System.UInt32"/> right hand operand.</param>
+            <returns><see cref="T:System.UInt32"/> value representing the logical bitwise OR of the values.</returns>
+        </member>
+        <member name="M:HexTools.UInt24.op_ExclusiveOr(HexTools.UInt24,HexTools.UInt24)">
+            <summary>
+            Returns logical bitwise exclusive-OR of values.
+            </summary>
+            <param name="value1"><see cref="T:HexTools.UInt24"/> left hand operand.</param>
+            <param name="value2"><see cref="T:HexTools.UInt24"/> right hand operand.</param>
+            <returns><see cref="T:HexTools.UInt24"/> value representing the logical bitwise exclusive-OR of the values.</returns>
+        </member>
+        <member name="M:HexTools.UInt24.op_ExclusiveOr(System.UInt32,HexTools.UInt24)">
+            <summary>
+            Returns logical bitwise exclusive-OR of values.
+            </summary>
+            <param name="value1"><see cref="T:System.UInt32"/> left hand operand.</param>
+            <param name="value2"><see cref="T:HexTools.UInt24"/> right hand operand.</param>
+            <returns><see cref="T:System.UInt32"/> value representing the logical bitwise exclusive-OR of the values.</returns>
+        </member>
+        <member name="M:HexTools.UInt24.op_ExclusiveOr(HexTools.UInt24,System.UInt32)">
+            <summary>
+            Returns logical bitwise exclusive-OR of values.
+            </summary>
+            <param name="value1"><see cref="T:HexTools.UInt24"/> left hand operand.</param>
+            <param name="value2"><see cref="T:System.UInt32"/> right hand operand.</param>
+            <returns><see cref="T:System.UInt32"/> value representing the logical bitwise exclusive-OR of the values.</returns>
+        </member>
+        <member name="M:HexTools.UInt24.op_RightShift(HexTools.UInt24,System.Int32)">
+            <summary>
+            Returns value after right shifts of first value by the number of bits specified by second value.
+            </summary>
+            <param name="value"><see cref="T:HexTools.UInt24"/> value to right shift.</param>
+            <param name="shifts"><see cref="T:System.Int32"/> value indicating the number of bits to right shift by.</param>
+            <returns><see cref="T:HexTools.UInt24"/> value as result of right shift operation.</returns>
+        </member>
+        <member name="M:HexTools.UInt24.op_LeftShift(HexTools.UInt24,System.Int32)">
+            <summary>
+            Returns value after left shifts of first value by the number of bits specified by second value.
+            </summary>
+            <param name="value"><see cref="T:HexTools.UInt24"/> value to left shift.</param>
+            <param name="shifts"><see cref="T:System.Int32"/> value indicating the number of bits to left shift by.</param>
+            <returns><see cref="T:HexTools.UInt24"/> value as result of left shift operation.</returns>
+        </member>
+        <member name="M:HexTools.UInt24.op_Modulus(HexTools.UInt24,HexTools.UInt24)">
+            <summary>
+            Returns computed remainder after dividing first value by the second.
+            </summary>
+            <param name="value1"><see cref="T:HexTools.UInt24"/> left hand operand.</param>
+            <param name="value2"><see cref="T:HexTools.UInt24"/> right hand operand.</param>
+            <returns><see cref="T:HexTools.UInt24"/> value as result of modulus operation.</returns>
+        </member>
+        <member name="M:HexTools.UInt24.op_Modulus(System.UInt32,HexTools.UInt24)">
+            <summary>
+            Returns computed remainder after dividing first value by the second.
+            </summary>
+            <param name="value1"><see cref="T:System.UInt32"/> left hand operand.</param>
+            <param name="value2"><see cref="T:HexTools.UInt24"/> right hand operand.</param>
+            <returns><see cref="T:System.UInt32"/> value as result of modulus operation.</returns>
+        </member>
+        <member name="M:HexTools.UInt24.op_Modulus(HexTools.UInt24,System.UInt32)">
+            <summary>
+            Returns computed remainder after dividing first value by the second.
+            </summary>
+            <param name="value1"><see cref="T:HexTools.UInt24"/> left hand operand.</param>
+            <param name="value2"><see cref="T:System.UInt32"/> right hand operand.</param>
+            <returns><see cref="T:System.UInt32"/> value as result of modulus operation.</returns>
+        </member>
+        <member name="M:HexTools.UInt24.op_Addition(HexTools.UInt24,HexTools.UInt24)">
+            <summary>
+            Returns computed sum of values.
+            </summary>
+            <param name="value1"><see cref="T:HexTools.UInt24"/> left hand operand.</param>
+            <param name="value2"><see cref="T:HexTools.UInt24"/> right hand operand.</param>
+            <returns><see cref="T:HexTools.UInt24"/> value as result of addition operation.</returns>
+        </member>
+        <member name="M:HexTools.UInt24.op_Addition(System.UInt32,HexTools.UInt24)">
+            <summary>
+            Returns computed sum of values.
+            </summary>
+            <param name="value1"><see cref="T:System.UInt32"/> left hand operand.</param>
+            <param name="value2"><see cref="T:HexTools.UInt24"/> right hand operand.</param>
+            <returns><see cref="T:System.UInt32"/> value as result of addition operation.</returns>
+        </member>
+        <member name="M:HexTools.UInt24.op_Addition(HexTools.UInt24,System.UInt32)">
+            <summary>
+            Returns computed sum of values.
+            </summary>
+            <param name="value1"><see cref="T:HexTools.UInt24"/> left hand operand.</param>
+            <param name="value2"><see cref="T:System.UInt32"/> right hand operand.</param>
+            <returns><see cref="T:System.UInt32"/> value as result of addition operation.</returns>
+        </member>
+        <member name="M:HexTools.UInt24.op_Subtraction(HexTools.UInt24,HexTools.UInt24)">
+            <summary>
+            Returns computed difference of values.
+            </summary>
+            <param name="value1"><see cref="T:HexTools.UInt24"/> left hand operand.</param>
+            <param name="value2"><see cref="T:HexTools.UInt24"/> right hand operand.</param>
+            <returns><see cref="T:HexTools.UInt24"/> value as result of subtraction operation.</returns>
+        </member>
+        <member name="M:HexTools.UInt24.op_Subtraction(System.UInt32,HexTools.UInt24)">
+            <summary>
+            Returns computed difference of values.
+            </summary>
+            <param name="value1"><see cref="T:System.UInt32"/> left hand operand.</param>
+            <param name="value2"><see cref="T:HexTools.UInt24"/> right hand operand.</param>
+            <returns><see cref="T:System.UInt32"/> value as result of subtraction operation.</returns>
+        </member>
+        <member name="M:HexTools.UInt24.op_Subtraction(HexTools.UInt24,System.UInt32)">
+            <summary>
+            Returns computed difference of values.
+            </summary>
+            <param name="value1"><see cref="T:HexTools.UInt24"/> left hand operand.</param>
+            <param name="value2"><see cref="T:System.UInt32"/> right hand operand.</param>
+            <returns><see cref="T:System.UInt32"/> value as result of subtraction operation.</returns>
+        </member>
+        <member name="M:HexTools.UInt24.op_Increment(HexTools.UInt24)">
+            <summary>
+            Returns incremented value.
+            </summary>
+            <param name="value">The operand.</param>
+            <returns><see cref="T:HexTools.UInt24"/> result of increment.</returns>
+        </member>
+        <member name="M:HexTools.UInt24.op_Decrement(HexTools.UInt24)">
+            <summary>
+            Returns decremented value.
+            </summary>
+            <param name="value">The operand.</param>
+            <returns><see cref="T:HexTools.UInt24"/> result of decrement.</returns>
+        </member>
+        <member name="M:HexTools.UInt24.op_Multiply(HexTools.UInt24,HexTools.UInt24)">
+            <summary>
+            Returns computed product of values.
+            </summary>
+            <param name="value1"><see cref="T:HexTools.UInt24"/> left hand operand.</param>
+            <param name="value2"><see cref="T:HexTools.UInt24"/> right hand operand.</param>
+            <returns><see cref="T:HexTools.UInt24"/> value as result of multiplication operation.</returns>
+        </member>
+        <member name="M:HexTools.UInt24.op_Multiply(System.UInt32,HexTools.UInt24)">
+            <summary>
+            Returns computed product of values.
+            </summary>
+            <param name="value1"><see cref="T:System.UInt32"/> left hand operand.</param>
+            <param name="value2"><see cref="T:HexTools.UInt24"/> right hand operand.</param>
+            <returns><see cref="T:System.UInt32"/> value as result of multiplication operation.</returns>
+        </member>
+        <member name="M:HexTools.UInt24.op_Multiply(HexTools.UInt24,System.UInt32)">
+            <summary>
+            Returns computed product of values.
+            </summary>
+            <param name="value1"><see cref="T:HexTools.UInt24"/> left hand operand.</param>
+            <param name="value2"><see cref="T:System.UInt32"/> right hand operand.</param>
+            <returns><see cref="T:System.UInt32"/> value as result of multiplication operation.</returns>
+        </member>
+        <member name="M:HexTools.UInt24.op_Division(HexTools.UInt24,HexTools.UInt24)">
+            <summary>
+            Returns computed division of values.
+            </summary>
+            <param name="value1"><see cref="T:HexTools.UInt24"/> left hand operand.</param>
+            <param name="value2"><see cref="T:HexTools.UInt24"/> right hand operand.</param>
+            <returns><see cref="T:HexTools.UInt24"/> value as result of division operation.</returns>
+        </member>
+        <member name="M:HexTools.UInt24.op_Division(System.UInt32,HexTools.UInt24)">
+            <summary>
+            Returns computed division of values.
+            </summary>
+            <param name="value1"><see cref="T:System.UInt32"/> left hand operand.</param>
+            <param name="value2"><see cref="T:HexTools.UInt24"/> right hand operand.</param>
+            <returns><see cref="T:System.UInt32"/> value as result of division operation.</returns>
+        </member>
+        <member name="M:HexTools.UInt24.op_Division(HexTools.UInt24,System.UInt32)">
+            <summary>
+            Returns computed division of values.
+            </summary>
+            <param name="value1"><see cref="T:HexTools.UInt24"/> left hand operand.</param>
+            <param name="value2"><see cref="T:System.UInt32"/> right hand operand.</param>
+            <returns><see cref="T:System.UInt32"/> value as result of division operation.</returns>
+        </member>
+        <member name="M:HexTools.UInt24.op_Exponent(HexTools.UInt24,HexTools.UInt24)">
+            <summary>
+            Returns result of first value raised to power of second value.
+            </summary>
+            <param name="value1"><see cref="T:HexTools.UInt24"/> left hand operand.</param>
+            <param name="value2"><see cref="T:HexTools.UInt24"/> right hand operand.</param>
+            <returns><see cref="T:System.Double"/> value as result of operation.</returns>
+        </member>
+        <member name="M:HexTools.UInt24.op_Exponent(System.Int32,HexTools.UInt24)">
+            <summary>
+            Returns result of first value raised to power of second value.
+            </summary>
+            <param name="value1"><see cref="T:System.UInt32"/> left hand operand.</param>
+            <param name="value2"><see cref="T:HexTools.UInt24"/> right hand operand.</param>
+            <returns><see cref="T:System.Double"/> value as result of operation.</returns>
+        </member>
+        <member name="M:HexTools.UInt24.op_Exponent(HexTools.UInt24,System.Int32)">
+            <summary>
+            Returns result of first value raised to power of second value.
+            </summary>
+            <param name="value1"><see cref="T:HexTools.UInt24"/> left hand operand.</param>
+            <param name="value2"><see cref="T:System.UInt32"/> right hand operand.</param>
+            <returns><see cref="T:System.Double"/> value as result of operation.</returns>
+        </member>
+        <member name="F:HexTools.UInt24.MaxValue">
+            <summary>
+            Represents the largest possible value of an Int24. This field is constant.
+            </summary>
+        </member>
+        <member name="F:HexTools.UInt24.MinValue">
+            <summary>
+            Represents the smallest possible value of an Int24. This field is constant.
+            </summary>
+        </member>
+        <member name="M:HexTools.UInt24.GetBytes(HexTools.UInt24)">
+            <summary>Returns the specified UInt24 value as an array of three bytes.</summary>
+            <param name="value">UInt24 value to convert to bytes.</param>
+            <returns>An array of bytes with length 3.</returns>
+            <remarks>
+            <para>You can use this function in-lieu of a System.BitConverter.GetBytes(UInt24) function.</para>
+            <para>Bytes will be returned in endian order of currently executing process architecture (little-endian on Intel platforms).</para>
+            </remarks>
+        </member>
+        <member name="M:HexTools.UInt24.GetValue(System.Byte[],System.Int32)">
+            <summary>Returns a 24-bit unsigned integer from three bytes at a specified position in a byte array.</summary>
+            <param name="value">An array of bytes.</param>
+            <param name="startIndex">The starting position within value.</param>
+            <returns>A 24-bit unsigned integer formed by three bytes beginning at startIndex.</returns>
+            <remarks>
+            <para>You can use this function in-lieu of a System.BitConverter.ToUInt24 function.</para>
+            <para>Bytes endian order assumed to match that of currently executing process architecture (little-endian on Intel platforms).</para>
+            </remarks>
+            <exception cref="T:System.ArgumentNullException"><paramref name="value"/> cannot be null.</exception>
+            <exception cref="T:System.ArgumentOutOfRangeException"><paramref name="startIndex"/> is greater than <paramref name="value"/> length.</exception>
+            <exception cref="T:System.ArgumentException"><paramref name="value"/> length from <paramref name="startIndex"/> is too small to represent an <see cref="T:HexTools.UInt24"/>.</exception>
+        </member>
+        <member name="T:HexTools.Int24">
+            <summary>Represents a 3-byte, 24-bit signed integer.</summary>
+            <remarks>
+            <para>
+            This class behaves like most other intrinsic signed integers but allows a 3-byte, 24-bit integer implementation
+            that is often found in many digital-signal processing arenas and different kinds of protocol parsing.  A signed
+            24-bit integer is typically used to save storage space on disk where its value range of -8388608 to 8388607 is
+            sufficient, but the signed Int16 value range of -32768 to 32767 is too small.
+            </para>
+            <para>
+            This structure uses an Int32 internally for storage and most other common expected integer functionality, so using
+            a 24-bit integer will not save memory.  However, if the 24-bit signed integer range (-8388608 to 8388607) suits your
+            data needs you can save disk space by only storing the three bytes that this integer actually consumes.  You can do
+            this by calling the Int24.GetBytes function to return a three byte binary array that can be serialized to the desired
+            destination and then calling the Int24.GetValue function to restore the Int24 value from those three bytes.
+            </para>
+            <para>
+            All the standard operators for the Int24 have been fully defined for use with both Int24 and Int32 signed integers;
+            you should find that without the exception Int24 can be compared and numerically calculated with an Int24 or Int32.
+            Necessary casting should be minimal and typical use should be very simple - just as if you are using any other native
+            signed integer.
+            </para>
+            </remarks>
+        </member>
+        <member name="F:HexTools.Int24.BitMask">
+            <summary>High byte bit-mask used when a 24-bit integer is stored within a 32-bit integer. This field is constant.</summary>
+        </member>
+        <member name="M:HexTools.Int24.#ctor(HexTools.Int24)">
+            <summary>Creates 24-bit signed integer from an existing 24-bit signed integer.</summary>
+            <param name="value">24-but signed integer to create new Int24 from.</param>
+        </member>
+        <member name="M:HexTools.Int24.#ctor(System.Int32)">
+            <summary>Creates 24-bit signed integer from a 32-bit signed integer.</summary>
+            <param name="value">32-bit signed integer to use as new 24-bit signed integer value.</param>
+            <exception cref="T:System.OverflowException">Source values outside 24-bit min/max range will cause an overflow exception.</exception>
+        </member>
+        <member name="M:HexTools.Int24.#ctor(System.Byte[],System.Int32)">
+            <summary>Creates 24-bit signed integer from three bytes at a specified position in a byte array.</summary>
+            <param name="value">An array of bytes.</param>
+            <param name="startIndex">The starting position within <paramref name="value"/>.</param>
+            <remarks>
+            <para>You can use this constructor in-lieu of a System.BitConverter.ToInt24 function.</para>
+            <para>Bytes endian order assumed to match that of currently executing process architecture (little-endian on Intel platforms).</para>
+            </remarks>
+            <exception cref="T:System.ArgumentNullException"><paramref name="value"/> cannot be null.</exception>
+            <exception cref="T:System.ArgumentOutOfRangeException"><paramref name="startIndex"/> is greater than <paramref name="value"/> length.</exception>
+            <exception cref="T:System.ArgumentException"><paramref name="value"/> length from <paramref name="startIndex"/> is too small to represent a <see cref="T:HexTools.UInt24"/>.</exception>
+        </member>
+        <member name="M:HexTools.Int24.GetBytes">
+            <summary>Returns the Int24 value as an array of three bytes.</summary>
+            <returns>An array of bytes with length 3.</returns>
+            <remarks>
+            <para>You can use this function in-lieu of a System.BitConverter.GetBytes function.</para>
+            <para>Bytes will be returned in endian order of currently executing process architecture (little-endian on Intel platforms).</para>
+            </remarks>
+        </member>
+        <member name="M:HexTools.Int24.CompareTo(System.Object)">
+            <summary>
+            Compares this instance to a specified object and returns an indication of their relative values.
+            </summary>
+            <param name="value">An object to compare, or null.</param>
+            <returns>
+            A signed number indicating the relative values of this instance and value. Returns less than zero
+            if this instance is less than value, zero if this instance is equal to value, or greater than zero
+            if this instance is greater than value.
+            </returns>
+            <exception cref="T:System.ArgumentException">value is not an Int32 or Int24.</exception>
+        </member>
+        <member name="M:HexTools.Int24.CompareTo(HexTools.Int24)">
+            <summary>
+            Compares this instance to a specified 24-bit signed integer and returns an indication of their
+            relative values.
+            </summary>
+            <param name="value">An integer to compare.</param>
+            <returns>
+            A signed number indicating the relative values of this instance and value. Returns less than zero
+            if this instance is less than value, zero if this instance is equal to value, or greater than zero
+            if this instance is greater than value.
+            </returns>
+        </member>
+        <member name="M:HexTools.Int24.CompareTo(System.Int32)">
+            <summary>
+            Compares this instance to a specified 32-bit signed integer and returns an indication of their
+            relative values.
+            </summary>
+            <param name="value">An integer to compare.</param>
+            <returns>
+            A signed number indicating the relative values of this instance and value. Returns less than zero
+            if this instance is less than value, zero if this instance is equal to value, or greater than zero
+            if this instance is greater than value.
+            </returns>
+        </member>
+        <member name="M:HexTools.Int24.Equals(System.Object)">
+            <summary>
+            Returns a value indicating whether this instance is equal to a specified object.
+            </summary>
+            <param name="obj">An object to compare, or null.</param>
+            <returns>
+            True if obj is an instance of Int32 or Int24 and equals the value of this instance;
+            otherwise, False.
+            </returns>
+        </member>
+        <member name="M:HexTools.Int24.Equals(HexTools.Int24)">
+            <summary>
+            Returns a value indicating whether this instance is equal to a specified Int24 value.
+            </summary>
+            <param name="obj">An Int24 value to compare to this instance.</param>
+            <returns>
+            True if obj has the same value as this instance; otherwise, False.
+            </returns>
+        </member>
+        <member name="M:HexTools.Int24.Equals(System.Int32)">
+            <summary>
+            Returns a value indicating whether this instance is equal to a specified Int32 value.
+            </summary>
+            <param name="obj">An Int32 value to compare to this instance.</param>
+            <returns>
+            True if obj has the same value as this instance; otherwise, False.
+            </returns>
+        </member>
+        <member name="M:HexTools.Int24.GetHashCode">
+            <summary>
+            Returns the hash code for this instance.
+            </summary>
+            <returns>
+            A 32-bit signed integer hash code.
+            </returns>
+        </member>
+        <member name="M:HexTools.Int24.ToString">
+            <summary>
+            Converts the numeric value of this instance to its equivalent string representation.
+            </summary>
+            <returns>
+            The string representation of the value of this instance, consisting of a minus sign if
+            the value is negative, and a sequence of digits ranging from 0 to 9 with no leading zeroes.
+            </returns>
+        </member>
+        <member name="M:HexTools.Int24.ToString(System.String)">
+            <summary>
+            Converts the numeric value of this instance to its equivalent string representation, using
+            the specified format.
+            </summary>
+            <param name="format">A format string.</param>
+            <returns>
+            The string representation of the value of this instance as specified by format.
+            </returns>
+        </member>
+        <member name="M:HexTools.Int24.ToString(System.IFormatProvider)">
+            <summary>
+            Converts the numeric value of this instance to its equivalent string representation using the
+            specified culture-specific format information.
+            </summary>
+            <param name="provider">
+            A <see cref="T:System.IFormatProvider"/> that supplies culture-specific formatting information.
+            </param>
+            <returns>
+            The string representation of the value of this instance as specified by provider.
+            </returns>
+        </member>
+        <member name="M:HexTools.Int24.ToString(System.String,System.IFormatProvider)">
+            <summary>
+            Converts the numeric value of this instance to its equivalent string representation using the
+            specified format and culture-specific format information.
+            </summary>
+            <param name="format">A format specification.</param>
+            <param name="provider">
+            A <see cref="T:System.IFormatProvider"/> that supplies culture-specific formatting information.
+            </param>
+            <returns>
+            The string representation of the value of this instance as specified by format and provider.
+            </returns>
+        </member>
+        <member name="M:HexTools.Int24.Parse(System.String)">
+            <summary>
+            Converts the string representation of a number to its 24-bit signed integer equivalent.
+            </summary>
+            <param name="s">A string containing a number to convert.</param>
+            <returns>
+            A 24-bit signed integer equivalent to the number contained in s.
+            </returns>
+            <exception cref="T:System.ArgumentNullException">s is null.</exception>
+            <exception cref="T:System.OverflowException">
+            s represents a number less than Int24.MinValue or greater than Int24.MaxValue.
+            </exception>
+            <exception cref="T:System.FormatException">s is not in the correct format.</exception>
+        </member>
+        <member name="M:HexTools.Int24.Parse(System.String,System.Globalization.NumberStyles)">
+            <summary>
+            Converts the string representation of a number in a specified style to its 24-bit signed integer equivalent.
+            </summary>
+            <param name="s">A string containing a number to convert.</param>
+            <param name="style">
+            A bitwise combination of System.Globalization.NumberStyles values that indicates the permitted format of s.
+            A typical value to specify is System.Globalization.NumberStyles.Integer.
+            </param>
+            <returns>
+            A 24-bit signed integer equivalent to the number contained in s.
+            </returns>
+            <exception cref="T:System.ArgumentException">
+            style is not a System.Globalization.NumberStyles value. -or- style is not a combination of
+            System.Globalization.NumberStyles.AllowHexSpecifier and System.Globalization.NumberStyles.HexNumber values.
+            </exception>
+            <exception cref="T:System.ArgumentNullException">s is null.</exception>
+            <exception cref="T:System.OverflowException">
+            s represents a number less than Int24.MinValue or greater than Int24.MaxValue.
+            </exception>
+            <exception cref="T:System.FormatException">s is not in a format compliant with style.</exception>
+        </member>
+        <member name="M:HexTools.Int24.Parse(System.String,System.IFormatProvider)">
+            <summary>
+            Converts the string representation of a number in a specified culture-specific format to its 24-bit
+            signed integer equivalent.
+            </summary>
+            <param name="s">A string containing a number to convert.</param>
+            <param name="provider">
+            A <see cref="T:System.IFormatProvider"/> that supplies culture-specific formatting information about s.
+            </param>
+            <returns>
+            A 24-bit signed integer equivalent to the number contained in s.
+            </returns>
+            <exception cref="T:System.ArgumentNullException">s is null.</exception>
+            <exception cref="T:System.OverflowException">
+            s represents a number less than Int24.MinValue or greater than Int24.MaxValue.
+            </exception>
+            <exception cref="T:System.FormatException">s is not in the correct format.</exception>
+        </member>
+        <member name="M:HexTools.Int24.Parse(System.String,System.Globalization.NumberStyles,System.IFormatProvider)">
+            <summary>
+            Converts the string representation of a number in a specified style and culture-specific format to its 24-bit
+            signed integer equivalent.
+            </summary>
+            <param name="s">A string containing a number to convert.</param>
+            <param name="style">
+            A bitwise combination of System.Globalization.NumberStyles values that indicates the permitted format of s.
+            A typical value to specify is System.Globalization.NumberStyles.Integer.
+            </param>
+            <param name="provider">
+            A <see cref="T:System.IFormatProvider"/> that supplies culture-specific formatting information about s.
+            </param>
+            <returns>
+            A 24-bit signed integer equivalent to the number contained in s.
+            </returns>
+            <exception cref="T:System.ArgumentException">
+            style is not a System.Globalization.NumberStyles value. -or- style is not a combination of
+            System.Globalization.NumberStyles.AllowHexSpecifier and System.Globalization.NumberStyles.HexNumber values.
+            </exception>
+            <exception cref="T:System.ArgumentNullException">s is null.</exception>
+            <exception cref="T:System.OverflowException">
+            s represents a number less than Int24.MinValue or greater than Int24.MaxValue.
+            </exception>
+            <exception cref="T:System.FormatException">s is not in a format compliant with style.</exception>
+        </member>
+        <member name="M:HexTools.Int24.TryParse(System.String,HexTools.Int24@)">
+            <summary>
+            Converts the string representation of a number to its 24-bit signed integer equivalent. A return value
+            indicates whether the conversion succeeded or failed.
+            </summary>
+            <param name="s">A string containing a number to convert.</param>
+            <param name="result">
+            When this method returns, contains the 24-bit signed integer value equivalent to the number contained in s,
+            if the conversion succeeded, or zero if the conversion failed. The conversion fails if the s parameter is null,
+            is not of the correct format, or represents a number less than Int24.MinValue or greater than Int24.MaxValue.
+            This parameter is passed uninitialized.
+            </param>
+            <returns>true if s was converted successfully; otherwise, false.</returns>
+        </member>
+        <member name="M:HexTools.Int24.TryParse(System.String,System.Globalization.NumberStyles,System.IFormatProvider,HexTools.Int24@)">
+            <summary>
+            Converts the string representation of a number in a specified style and culture-specific format to its
+            24-bit signed integer equivalent. A return value indicates whether the conversion succeeded or failed.
+            </summary>
+            <param name="s">A string containing a number to convert.</param>
+            <param name="style">
+            A bitwise combination of System.Globalization.NumberStyles values that indicates the permitted format of s.
+            A typical value to specify is System.Globalization.NumberStyles.Integer.
+            </param>
+            <param name="result">
+            When this method returns, contains the 24-bit signed integer value equivalent to the number contained in s,
+            if the conversion succeeded, or zero if the conversion failed. The conversion fails if the s parameter is null,
+            is not in a format compliant with style, or represents a number less than Int24.MinValue or greater than
+            Int24.MaxValue. This parameter is passed uninitialized.
+            </param>
+            <param name="provider">
+            A <see cref="T:System.IFormatProvider"/> object that supplies culture-specific formatting information about s.
+            </param>
+            <returns>true if s was converted successfully; otherwise, false.</returns>
+            <exception cref="T:System.ArgumentException">
+            style is not a System.Globalization.NumberStyles value. -or- style is not a combination of
+            System.Globalization.NumberStyles.AllowHexSpecifier and System.Globalization.NumberStyles.HexNumber values.
+            </exception>
+        </member>
+        <member name="M:HexTools.Int24.GetTypeCode">
+            <summary>
+            Returns the System.TypeCode for value type System.Int32 (there is no defined type code for an Int24).
+            </summary>
+            <returns>The enumerated constant, System.TypeCode.Int32.</returns>
+            <remarks>
+            There is no defined Int24 type code and since an Int24 will easily fit inside an Int32, the
+            Int32 type code is returned.
+            </remarks>
+        </member>
+        <member name="M:HexTools.Int24.op_Equality(HexTools.Int24,HexTools.Int24)">
+            <summary>
+            Compares the two values for equality.
+            </summary>
+            <param name="value1">Left hand operand.</param>
+            <param name="value2">Right hand operand.</param>
+            <returns>Boolean value indicating equality.</returns>
+        </member>
+        <member name="M:HexTools.Int24.op_Equality(System.Int32,HexTools.Int24)">
+            <summary>
+            Compares the two values for equality.
+            </summary>
+            <param name="value1">Left hand operand.</param>
+            <param name="value2">Right hand operand.</param>
+            <returns>Boolean value indicating equality.</returns>
+        </member>
+        <member name="M:HexTools.Int24.op_Equality(HexTools.Int24,System.Int32)">
+            <summary>
+            Compares the two values for equality.
+            </summary>
+            <param name="value1">Left hand operand.</param>
+            <param name="value2">Right hand operand.</param>
+            <returns>Boolean value indicating equality.</returns>
+        </member>
+        <member name="M:HexTools.Int24.op_Inequality(HexTools.Int24,HexTools.Int24)">
+            <summary>
+            Compares the two values for inequality.
+            </summary>
+            <param name="value1">Left hand operand.</param>
+            <param name="value2">Right hand operand.</param>
+            <returns>Boolean indicating the result of the inequality.</returns>
+        </member>
+        <member name="M:HexTools.Int24.op_Inequality(System.Int32,HexTools.Int24)">
+            <summary>
+            Compares the two values for inequality.
+            </summary>
+            <param name="value1">Left hand operand.</param>
+            <param name="value2">Right hand operand.</param>
+            <returns>Boolean indicating the result of the inequality.</returns>
+        </member>
+        <member name="M:HexTools.Int24.op_Inequality(HexTools.Int24,System.Int32)">
+            <summary>
+            Compares the two values for inequality.
+            </summary>
+            <param name="value1">Left hand operand.</param>
+            <param name="value2">Right hand operand.</param>
+            <returns>Boolean indicating the result of the inequality.</returns>
+        </member>
+        <member name="M:HexTools.Int24.op_LessThan(HexTools.Int24,HexTools.Int24)">
+            <summary>
+            Returns true if left value is less than right value.
+            </summary>
+            <param name="value1">Left hand operand.</param>
+            <param name="value2">Right hand operand.</param>
+            <returns>Boolean indicating whether the left value was less than the right value.</returns>
+        </member>
+        <member name="M:HexTools.Int24.op_LessThan(System.Int32,HexTools.Int24)">
+            <summary>
+            Returns true if left value is less than right value.
+            </summary>
+            <param name="value1">Left hand operand.</param>
+            <param name="value2">Right hand operand.</param>
+            <returns>Boolean indicating whether the left value was less than the right value.</returns>
+        </member>
+        <member name="M:HexTools.Int24.op_LessThan(HexTools.Int24,System.Int32)">
+            <summary>
+            Returns true if left value is less than right value.
+            </summary>
+            <param name="value1">Left hand operand.</param>
+            <param name="value2">Right hand operand.</param>
+            <returns>Boolean indicating whether the left value was less than the right value.</returns>
+        </member>
+        <member name="M:HexTools.Int24.op_LessThanOrEqual(HexTools.Int24,HexTools.Int24)">
+            <summary>
+            Returns true if left value is less or equal to than right value.
+            </summary>
+            <param name="value1">Left hand operand.</param>
+            <param name="value2">Right hand operand.</param>
+            <returns>Boolean indicating whether the left value was less than the right value.</returns>
+        </member>
+        <member name="M:HexTools.Int24.op_LessThanOrEqual(System.Int32,HexTools.Int24)">
+            <summary>
+            Returns true if left value is less or equal to than right value.
+            </summary>
+            <param name="value1">Left hand operand.</param>
+            <param name="value2">Right hand operand.</param>
+            <returns>Boolean indicating whether the left value was less than the right value.</returns>
+        </member>
+        <member name="M:HexTools.Int24.op_LessThanOrEqual(HexTools.Int24,System.Int32)">
+            <summary>
+            Returns true if left value is less or equal to than right value.
+            </summary>
+            <param name="value1">Left hand operand.</param>
+            <param name="value2">Right hand operand.</param>
+            <returns>Boolean indicating whether the left value was less than the right value.</returns>
+        </member>
+        <member name="M:HexTools.Int24.op_GreaterThan(HexTools.Int24,HexTools.Int24)">
+            <summary>
+            Returns true if left value is greater than right value.
+            </summary>
+            <param name="value1">Left hand operand.</param>
+            <param name="value2">Right hand operand.</param>
+            <returns>Boolean indicating whether the left value was greater than the right value.</returns>
+        </member>
+        <member name="M:HexTools.Int24.op_GreaterThan(System.Int32,HexTools.Int24)">
+            <summary>
+            Returns true if left value is greater than right value.
+            </summary>
+            <param name="value1">Left hand operand.</param>
+            <param name="value2">Right hand operand.</param>
+            <returns>Boolean indicating whether the left value was greater than the right value.</returns>
+        </member>
+        <member name="M:HexTools.Int24.op_GreaterThan(HexTools.Int24,System.Int32)">
+            <summary>
+            Returns true if left value is greater than right value.
+            </summary>
+            <param name="value1">Left hand operand.</param>
+            <param name="value2">Right hand operand.</param>
+            <returns>Boolean indicating whether the left value was greater than the right value.</returns>
+        </member>
+        <member name="M:HexTools.Int24.op_GreaterThanOrEqual(HexTools.Int24,HexTools.Int24)">
+            <summary>
+            Returns true if left value is greater than or equal to right value.
+            </summary>
+            <param name="value1">Left hand operand.</param>
+            <param name="value2">Right hand operand.</param>
+            <returns>Boolean indicating whether the left value was greater than or equal to the right value.</returns>
+        </member>
+        <member name="M:HexTools.Int24.op_GreaterThanOrEqual(System.Int32,HexTools.Int24)">
+            <summary>
+            Returns true if left value is greater than or equal to right value.
+            </summary>
+            <param name="value1">Left hand operand.</param>
+            <param name="value2">Right hand operand.</param>
+            <returns>Boolean indicating whether the left value was greater than or equal to the right value.</returns>
+        </member>
+        <member name="M:HexTools.Int24.op_GreaterThanOrEqual(HexTools.Int24,System.Int32)">
+            <summary>
+            Returns true if left value is greater than or equal to right value.
+            </summary>
+            <param name="value1">Left hand operand.</param>
+            <param name="value2">Right hand operand.</param>
+            <returns>Boolean indicating whether the left value was greater than or equal to the right value.</returns>
+        </member>
+        <member name="M:HexTools.Int24.op_Explicit(System.Enum)~HexTools.Int24">
+            <summary>
+            Explicitly converts value to an <see cref="T:HexTools.Int24"/>.
+            </summary>
+            <param name="value">Enum value that is converted.</param>
+            <returns>Int24</returns>
+        </member>
+        <member name="M:HexTools.Int24.op_Explicit(System.String)~HexTools.Int24">
+            <summary>
+            Explicitly converts value to an <see cref="T:HexTools.Int24"/>.
+            </summary>
+            <param name="value">String value that is converted.</param>
+            <returns>Int24</returns>
+        </member>
+        <member name="M:HexTools.Int24.op_Explicit(System.Decimal)~HexTools.Int24">
+            <summary>
+            Explicitly converts value to an <see cref="T:HexTools.Int24"/>.
+            </summary>
+            <param name="value">Decimal value that is converted.</param>
+            <returns>Int24</returns>
+        </member>
+        <member name="M:HexTools.Int24.op_Explicit(System.Double)~HexTools.Int24">
+            <summary>
+            Explicitly converts value to an <see cref="T:HexTools.Int24"/>.
+            </summary>
+            <param name="value">Double value that is converted.</param>
+            <returns>Int24</returns>
+        </member>
+        <member name="M:HexTools.Int24.op_Explicit(System.Single)~HexTools.Int24">
+            <summary>
+            Explicitly converts value to an <see cref="T:HexTools.Int24"/>.
+            </summary>
+            <param name="value">Float value that is converted.</param>
+            <returns>Int24</returns>
+        </member>
+        <member name="M:HexTools.Int24.op_Explicit(System.Int64)~HexTools.Int24">
+            <summary>
+            Explicitly converts value to an <see cref="T:HexTools.Int24"/>.
+            </summary>
+            <param name="value">Long value that is converted.</param>
+            <returns>Int24</returns>
+        </member>
+        <member name="M:HexTools.Int24.op_Explicit(System.Int32)~HexTools.Int24">
+            <summary>
+            Explicitly converts value to an <see cref="T:HexTools.Int24"/>.
+            </summary>
+            <param name="value">Integer value that is converted.</param>
+            <returns>Int24</returns>
+        </member>
+        <member name="M:HexTools.Int24.op_Explicit(HexTools.Int24)~System.Int16">
+            <summary>
+            Explicitly converts <see cref="T:HexTools.Int24"/> to <see cref="T:System.Int16"/>.
+            </summary>
+            <param name="value">Int24 value that is converted.</param>
+            <returns>Short</returns>
+        </member>
+        <member name="M:HexTools.Int24.op_Explicit(HexTools.Int24)~System.UInt16">
+            <summary>
+            Explicitly converts <see cref="T:HexTools.Int24"/> to <see cref="T:System.UInt16"/>.
+            </summary>
+            <param name="value">Int24 value that is converted.</param>
+            <returns>Unsigned Short</returns>
+        </member>
+        <member name="M:HexTools.Int24.op_Explicit(HexTools.Int24)~System.Byte">
+            <summary>
+            Explicitly converts <see cref="T:HexTools.Int24"/> to <see cref="T:System.Byte"/>.
+            </summary>
+            <param name="value">Int24 value that is converted.</param>
+            <returns>Byte</returns>
+        </member>
+        <member name="M:HexTools.Int24.op_Implicit(System.Byte)~HexTools.Int24">
+            <summary>
+            Implicitly converts value to an <see cref="T:HexTools.Int24"/>.
+            </summary>
+            <param name="value">Byte value that is converted to an <see cref="T:HexTools.Int24"/>.</param>
+            <returns>An <see cref="T:HexTools.Int24"/> value.</returns>
+        </member>
+        <member name="M:HexTools.Int24.op_Implicit(System.Char)~HexTools.Int24">
+            <summary>
+            Implicitly converts value to an <see cref="T:HexTools.Int24"/>.
+            </summary>
+            <param name="value">Char value that is converted to an <see cref="T:HexTools.Int24"/>.</param>
+            <returns>An <see cref="T:HexTools.Int24"/> value.</returns>
+        </member>
+        <member name="M:HexTools.Int24.op_Implicit(System.Int16)~HexTools.Int24">
+            <summary>
+            Implicitly converts value to an <see cref="T:HexTools.Int24"/>.
+            </summary>
+            <param name="value">Short value that is converted to an <see cref="T:HexTools.Int24"/>.</param>
+            <returns>An <see cref="T:HexTools.Int24"/> value.</returns>
+        </member>
+        <member name="M:HexTools.Int24.op_Implicit(HexTools.Int24)~System.Int32">
+            <summary>
+            Implicitly converts <see cref="T:HexTools.Int24"/> to <see cref="T:System.Int32"/>.
+            </summary>
+            <param name="value"><see cref="T:HexTools.Int24"/> value that is converted to an <see cref="T:System.Int32"/>.</param>
+            <returns>An <see cref="T:System.Int32"/> value.</returns>
+        </member>
+        <member name="M:HexTools.Int24.op_Implicit(HexTools.Int24)~System.UInt32">
+            <summary>
+            Implicitly converts <see cref="T:HexTools.Int24"/> to <see cref="T:System.UInt32"/>.
+            </summary>
+            <param name="value"><see cref="T:HexTools.Int24"/> value that is converted to an unsigned integer.</param>
+            <returns>Unsigned integer</returns>
+        </member>
+        <member name="M:HexTools.Int24.op_Implicit(HexTools.Int24)~System.Int64">
+            <summary>
+            Implicitly converts <see cref="T:HexTools.Int24"/> to <see cref="T:System.Int64"/>.
+            </summary>
+            <param name="value"><see cref="T:HexTools.Int24"/> value that is converted to an <see cref="T:System.Int64"/>.</param>
+            <returns>An <see cref="T:System.Int64"/> value.</returns>
+        </member>
+        <member name="M:HexTools.Int24.op_Implicit(HexTools.Int24)~System.UInt64">
+            <summary>
+            Implicitly converts <see cref="T:HexTools.Int24"/> to <see cref="T:System.UInt64"/>.
+            </summary>
+            <param name="value"><see cref="T:HexTools.Int24"/> value that is converted to an <see cref="T:System.UInt64"/>.</param>
+            <returns>An <see cref="T:System.UInt64"/> value.</returns>
+        </member>
+        <member name="M:HexTools.Int24.op_Implicit(HexTools.Int24)~System.Double">
+            <summary>
+            Implicitly converts <see cref="T:HexTools.Int24"/> to <see cref="T:System.Double"/>.
+            </summary>
+            <param name="value"><see cref="T:HexTools.Int24"/> value that is converted to an <see cref="T:System.Double"/>.</param>
+            <returns>A <see cref="T:System.Double"/> value.</returns>
+        </member>
+        <member name="M:HexTools.Int24.op_Implicit(HexTools.Int24)~System.Single">
+            <summary>
+            Implicitly converts <see cref="T:HexTools.Int24"/> to <see cref="T:System.Single"/>.
+            </summary>
+            <param name="value"><see cref="T:HexTools.Int24"/> value that is converted to an <see cref="T:System.Single"/>.</param>
+            <returns>A <see cref="T:System.Single"/> value.</returns>
+        </member>
+        <member name="M:HexTools.Int24.op_Implicit(HexTools.Int24)~System.Decimal">
+            <summary>
+            Implicitly converts <see cref="T:HexTools.Int24"/> to <see cref="T:System.Decimal"/>.
+            </summary>
+            <param name="value"><see cref="T:HexTools.Int24"/> value that is converted to an <see cref="T:System.Decimal"/>.</param>
+            <returns>A <see cref="T:System.Decimal"/> value.</returns>
+        </member>
+        <member name="M:HexTools.Int24.op_Implicit(HexTools.Int24)~System.String">
+            <summary>
+            Implicitly converts <see cref="T:HexTools.Int24"/> to <see cref="T:System.String"/>.
+            </summary>
+            <param name="value"><see cref="T:HexTools.Int24"/> value that is converted to an <see cref="T:System.String"/>.</param>
+            <returns>A <see cref="T:System.String"/> value.</returns>
+        </member>
+        <member name="M:HexTools.Int24.op_True(HexTools.Int24)">
+            <summary>
+            Returns true if value is not zero.
+            </summary>
+            <param name="value">Int24 value to test.</param>
+            <returns>Boolean to indicate whether the value was not equal to zero.</returns>
+        </member>
+        <member name="M:HexTools.Int24.op_False(HexTools.Int24)">
+            <summary>
+            Returns true if value is equal to zero.
+            </summary>
+            <param name="value">Int24 value to test.</param>
+            <returns>Boolean to indicate whether the value was equal to zero.</returns>
+        </member>
+        <member name="M:HexTools.Int24.op_OnesComplement(HexTools.Int24)">
+            <summary>
+            Returns bitwise complement of value.
+            </summary>
+            <param name="value"><see cref="T:HexTools.Int24"/> value as operand.</param>
+            <returns><see cref="T:HexTools.Int24"/> as result.</returns>
+        </member>
+        <member name="M:HexTools.Int24.op_BitwiseAnd(HexTools.Int24,HexTools.Int24)">
+            <summary>
+            Returns logical bitwise AND of values.
+            </summary>
+            <param name="value1">Left hand operand.</param>
+            <param name="value2">Right hand operand.</param>
+            <returns>Int24 as result of operation.</returns>
+        </member>
+        <member name="M:HexTools.Int24.op_BitwiseAnd(System.Int32,HexTools.Int24)">
+            <summary>
+            Returns logical bitwise AND of values.
+            </summary>
+            <param name="value1">Left hand operand.</param>
+            <param name="value2">Right hand operand.</param>
+            <returns>Integer as result of operation.</returns>
+        </member>
+        <member name="M:HexTools.Int24.op_BitwiseAnd(HexTools.Int24,System.Int32)">
+            <summary>
+            Returns logical bitwise AND of values.
+            </summary>
+            <param name="value1">Left hand operand.</param>
+            <param name="value2">Right hand operand.</param>
+            <returns>Integer as result of operation.</returns>
+        </member>
+        <member name="M:HexTools.Int24.op_BitwiseOr(HexTools.Int24,HexTools.Int24)">
+            <summary>
+            Returns logical bitwise OR of values.
+            </summary>
+            <param name="value1">Left hand operand.</param>
+            <param name="value2">Right hand operand.</param>
+            <returns>Int24 as result of operation.</returns>
+        </member>
+        <member name="M:HexTools.Int24.op_BitwiseOr(System.Int32,HexTools.Int24)">
+            <summary>
+            Returns logical bitwise OR of values.
+            </summary>
+            <param name="value1">Left hand operand.</param>
+            <param name="value2">Right hand operand.</param>
+            <returns>Integer as result of operation.</returns>
+        </member>
+        <member name="M:HexTools.Int24.op_BitwiseOr(HexTools.Int24,System.Int32)">
+            <summary>
+            Returns logical bitwise OR of values.
+            </summary>
+            <param name="value1">Left hand operand.</param>
+            <param name="value2">Right hand operand.</param>
+            <returns>Integer as result of operation.</returns>
+        </member>
+        <member name="M:HexTools.Int24.op_ExclusiveOr(HexTools.Int24,HexTools.Int24)">
+            <summary>
+            Returns logical bitwise exclusive-OR of values.
+            </summary>
+            <param name="value1">Left hand operand.</param>
+            <param name="value2">Right hand operand.</param>
+            <returns>Integer value of the resulting exclusive-OR operation.</returns>
+        </member>
+        <member name="M:HexTools.Int24.op_ExclusiveOr(System.Int32,HexTools.Int24)">
+            <summary>
+            Returns logical bitwise exclusive-OR of values.
+            </summary>
+            <param name="value1">Left hand operand.</param>
+            <param name="value2">Right hand operand.</param>
+            <returns>Integer value of the resulting exclusive-OR operation.</returns>
+        </member>
+        <member name="M:HexTools.Int24.op_ExclusiveOr(HexTools.Int24,System.Int32)">
+            <summary>
+            Returns logical bitwise exclusive-OR of values.
+            </summary>
+            <param name="value1">Left hand operand.</param>
+            <param name="value2">Right hand operand.</param>
+            <returns>Integer value of the resulting exclusive-OR operation.</returns>
+        </member>
+        <member name="M:HexTools.Int24.op_RightShift(HexTools.Int24,System.Int32)">
+            <summary>
+            Returns value after right shifts of first value by the number of bits specified by second value.
+            </summary>
+            <param name="value"><see cref="T:HexTools.Int24"/> value to shift.</param>
+            <param name="shifts"><see cref="T:System.Int32"/> shifts indicates how many places to shift.</param>
+            <returns>An <see cref="T:HexTools.Int24"/> value.</returns>
+        </member>
+        <member name="M:HexTools.Int24.op_LeftShift(HexTools.Int24,System.Int32)">
+            <summary>
+            Returns value after left shifts of first value by the number of bits specified by second value.
+            </summary>
+            <param name="value"><see cref="T:HexTools.Int24"/> value to shift.</param>
+            <param name="shifts"><see cref="T:System.Int32"/> shifts indicates how many places to shift.</param>
+            <returns>An <see cref="T:HexTools.Int24"/> value.</returns>
+        </member>
+        <member name="M:HexTools.Int24.op_Modulus(HexTools.Int24,HexTools.Int24)">
+            <summary>
+            Returns computed remainder after dividing first value by the second.
+            </summary>
+            <param name="value1"><see cref="T:HexTools.Int24"/> value as numerator.</param>
+            <param name="value2"><see cref="T:HexTools.Int24"/> value as denominator.</param>
+            <returns><see cref="T:HexTools.Int24"/> as remainder</returns>
+        </member>
+        <member name="M:HexTools.Int24.op_Modulus(System.Int32,HexTools.Int24)">
+            <summary>
+            Returns computed remainder after dividing first value by the second.
+            </summary>
+            <param name="value1"><see cref="T:System.Int32"/> value as numerator.</param>
+            <param name="value2"><see cref="T:HexTools.Int24"/> value as denominator.</param>
+            <returns><see cref="T:System.Int32"/> as remainder</returns>
+        </member>
+        <member name="M:HexTools.Int24.op_Modulus(HexTools.Int24,System.Int32)">
+            <summary>
+            Returns computed remainder after dividing first value by the second.
+            </summary>
+            <param name="value1"><see cref="T:HexTools.Int24"/> value as numerator.</param>
+            <param name="value2"><see cref="T:System.Int32"/> value as denominator.</param>
+            <returns><see cref="T:System.Int32"/> as remainder</returns>
+        </member>
+        <member name="M:HexTools.Int24.op_Addition(HexTools.Int24,HexTools.Int24)">
+            <summary>
+            Returns computed sum of values.
+            </summary>
+            <param name="value1">Left hand operand.</param>
+            <param name="value2">Right hand operand.</param>
+            <returns>Int24 result of addition.</returns>
+        </member>
+        <member name="M:HexTools.Int24.op_Addition(System.Int32,HexTools.Int24)">
+            <summary>
+            Returns computed sum of values.
+            </summary>
+            <param name="value1">Left hand operand.</param>
+            <param name="value2">Right hand operand.</param>
+            <returns>Integer result of addition.</returns>
+        </member>
+        <member name="M:HexTools.Int24.op_Addition(HexTools.Int24,System.Int32)">
+            <summary>
+            Returns computed sum of values.
+            </summary>
+            <param name="value1">Left hand operand.</param>
+            <param name="value2">Right hand operand.</param>
+            <returns>Integer result of addition.</returns>
+        </member>
+        <member name="M:HexTools.Int24.op_Subtraction(HexTools.Int24,HexTools.Int24)">
+            <summary>
+            Returns computed difference of values.
+            </summary>
+            <param name="value1">Left hand operand.</param>
+            <param name="value2">Right hand operand.</param>
+            <returns>Int24 result of subtraction.</returns>
+        </member>
+        <member name="M:HexTools.Int24.op_Subtraction(System.Int32,HexTools.Int24)">
+            <summary>
+            Returns computed difference of values.
+            </summary>
+            <param name="value1">Left hand operand.</param>
+            <param name="value2">Right hand operand.</param>
+            <returns>Integer result of subtraction.</returns>
+        </member>
+        <member name="M:HexTools.Int24.op_Subtraction(HexTools.Int24,System.Int32)">
+            <summary>
+            Returns computed difference of values.
+            </summary>
+            <param name="value1">Left hand operand.</param>
+            <param name="value2">Right hand operand.</param>
+            <returns>Integer result of subtraction.</returns>
+        </member>
+        <member name="M:HexTools.Int24.op_Increment(HexTools.Int24)">
+            <summary>
+            Returns incremented value.
+            </summary>
+            <param name="value">The operand.</param>
+            <returns>Int24 result of increment.</returns>
+        </member>
+        <member name="M:HexTools.Int24.op_Decrement(HexTools.Int24)">
+            <summary>
+            Returns decremented value.
+            </summary>
+            <param name="value">The operand.</param>
+            <returns>Int24 result of decrement.</returns>
+        </member>
+        <member name="M:HexTools.Int24.op_Multiply(HexTools.Int24,HexTools.Int24)">
+            <summary>
+            Returns computed product of values.
+            </summary>
+            <param name="value1"><see cref="T:HexTools.Int24"/> value as left hand operand.</param>
+            <param name="value2"><see cref="T:HexTools.Int24"/> value as right hand operand.</param>
+            <returns><see cref="T:HexTools.Int24"/> as result</returns>
+        </member>
+        <member name="M:HexTools.Int24.op_Multiply(System.Int32,HexTools.Int24)">
+            <summary>
+            Returns computed product of values.
+            </summary>
+            <param name="value1"><see cref="T:System.Int32"/> value as left hand operand.</param>
+            <param name="value2"><see cref="T:HexTools.Int24"/> value as right hand operand.</param>
+            <returns><see cref="T:System.Int32"/> as result</returns>
+        </member>
+        <member name="M:HexTools.Int24.op_Multiply(HexTools.Int24,System.Int32)">
+            <summary>
+            Returns computed product of values.
+            </summary>
+            <param name="value1"><see cref="T:HexTools.Int24"/> value as left hand operand.</param>
+            <param name="value2"><see cref="T:System.Int32"/> value as right hand operand.</param>
+            <returns><see cref="T:System.Int32"/> as result</returns>
+        </member>
+        <member name="M:HexTools.Int24.op_Division(HexTools.Int24,HexTools.Int24)">
+            <summary>
+            Returns computed division of values.
+            </summary>
+            <param name="value1">Left hand operand.</param>
+            <param name="value2">Right hand operand.</param>
+            <returns>Int24 result of operation.</returns>
+        </member>
+        <member name="M:HexTools.Int24.op_Division(System.Int32,HexTools.Int24)">
+            <summary>
+            Returns computed division of values.
+            </summary>
+            <param name="value1">Left hand operand.</param>
+            <param name="value2">Right hand operand.</param>
+            <returns>Integer result of operation.</returns>
+        </member>
+        <member name="M:HexTools.Int24.op_Division(HexTools.Int24,System.Int32)">
+            <summary>
+            Returns computed division of values.
+            </summary>
+            <param name="value1">Left hand operand.</param>
+            <param name="value2">Right hand operand.</param>
+            <returns>Integer result of operation.</returns>
+        </member>
+        <member name="M:HexTools.Int24.op_Exponent(HexTools.Int24,HexTools.Int24)">
+            <summary>
+            Returns result of first value raised to power of second value.
+            </summary>
+            <param name="value1">Left hand operand.</param>
+            <param name="value2">Right hand operand.</param>
+            <returns>Double that is the result of the operation.</returns>
+        </member>
+        <member name="M:HexTools.Int24.op_Exponent(System.Int32,HexTools.Int24)">
+            <summary>
+            Returns result of first value raised to power of second value.
+            </summary>
+            <param name="value1">Left hand operand.</param>
+            <param name="value2">Right hand operand.</param>
+            <returns>Double that is the result of the operation.</returns>
+        </member>
+        <member name="M:HexTools.Int24.op_Exponent(HexTools.Int24,System.Int32)">
+            <summary>
+            Returns result of first value raised to power of second value.
+            </summary>
+            <param name="value1">Left hand operand.</param>
+            <param name="value2">Right hand operand.</param>
+            <returns>Double that is the result of the operation.</returns>
+        </member>
+        <member name="F:HexTools.Int24.MaxValue">
+            <summary>
+            Represents the largest possible value of an Int24. This field is constant.
+            </summary>
+        </member>
+        <member name="F:HexTools.Int24.MinValue">
+            <summary>
+            Represents the smallest possible value of an Int24. This field is constant.
+            </summary>
+        </member>
+        <member name="M:HexTools.Int24.GetBytes(HexTools.Int24)">
+            <summary>Returns the specified Int24 value as an array of three bytes.</summary>
+            <param name="value">Int24 value to convert to bytes.</param>
+            <returns>An array of bytes with length 3.</returns>
+            <remarks>
+            <para>You can use this function in-lieu of a System.BitConverter.GetBytes(Int24) function.</para>
+            <para>Bytes will be returned in endian order of currently executing process architecture (little-endian on Intel platforms).</para>
+            </remarks>
+        </member>
+        <member name="M:HexTools.Int24.GetValue(System.Byte[],System.Int32)">
+            <summary>Returns a 24-bit signed integer from three bytes at a specified position in a byte array.</summary>
+            <param name="value">An array of bytes.</param>
+            <param name="startIndex">The starting position within value.</param>
+            <returns>A 24-bit signed integer formed by three bytes beginning at startIndex.</returns>
+            <remarks>
+            <para>You can use this function in-lieu of a System.BitConverter.ToInt24 function.</para>
+            <para>Bytes endian order assumed to match that of currently executing process architecture (little-endian on Intel platforms).</para>
+            </remarks>
+            <exception cref="T:System.ArgumentNullException"><paramref name="value"/> cannot be null.</exception>
+            <exception cref="T:System.ArgumentOutOfRangeException"><paramref name="startIndex"/> is greater than <paramref name="value"/> length.</exception>
+            <exception cref="T:System.ArgumentException"><paramref name="value"/> length from <paramref name="startIndex"/> is too small to represent an <see cref="T:HexTools.Int24"/>.</exception>
+        </member>
+        <member name="T:HexTools.My.Resources.Resources">
+            <summary>
+              A strongly-typed resource class, for looking up localized strings, etc.
+            </summary>
+        </member>
+        <member name="P:HexTools.My.Resources.Resources.ResourceManager">
+            <summary>
+              Returns the cached ResourceManager instance used by this class.
+            </summary>
+        </member>
+        <member name="P:HexTools.My.Resources.Resources.Culture">
+            <summary>
+              Overrides the current thread's CurrentUICulture property for all
+              resource lookups using this strongly typed resource class.
+            </summary>
+        </member>
+        <member name="P:HexTools.My.Resources.Resources.Edit">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:HexTools.My.Resources.Resources.Export">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:HexTools.My.Resources.Resources.Import">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:HexTools.My.Resources.Resources.MagnifyMinus">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:HexTools.My.Resources.Resources.MagnifyPlus">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:HexTools.My.Resources.Resources.Preview">
+            <summary>
+              Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="T:HexTools.BitmapHandler">
+            <summary>
+            Image loading toolset class which corrects the bug that prevents paletted PNG images with transparency from being loaded as paletted.
+            https://learn.microsoft.com/en-us/previous-versions/dotnet/articles/aa479306(v=msdn.10)?redirectedfrom=MSDN
+            http://www.libpng.org/pub/png/spec/1.2/PNG-Chunks.html
+            </summary>
+        </member>
+        <member name="M:HexTools.BitmapHandler.WritePngChunk(System.Byte[],System.Int32,System.String,System.Byte[])">
+            <summary>
+            Writes a png data chunk.
+            </summary>
+            <param name="target">Target array to write into.</param>
+            <param name="offset">Offset in the array to write the data to.</param>
+            <param name="chunkName">4-character chunk name.</param>
+            <param name="chunkData">Data to write into the new chunk.</param>
+            <returns>The new offset after writing the new chunk. Always equal to the offset plus the length of chunk data plus 12.</returns>
+        </member>
+        <member name="M:HexTools.BitmapHandler.LoadBitmap(System.Byte[])">
+            <summary>
+            Loads an image, checks if it is a PNG containing palette transparency, and if so, ensures it loads correctly.
+            The theory on the png internals can be found at http://www.libpng.org/pub/png/book/chapter08.html
+            </summary>
+            <param name="data">File data to load.</param>
+            <returns>The loaded image.</returns>
+        </member>
+        <member name="M:HexTools.BitmapHandler.FindChunk(System.Byte[],System.String)">
+            <summary>
+            Finds the start of a png chunk. This assumes the image is already identified as PNG.
+            It does not go over the first 8 bytes, but starts at the start of the header chunk.
+            </summary>
+            <param name="data">The bytes of the png image.</param>
+            <param name="chunkName">The name of the chunk to find.</param>
+            <returns>The index of the start of the png chunk, or -1 if the chunk was not found.</returns>
+        </member>
+        <member name="M:HexTools.BitmapHandler.CloneImage(System.Drawing.Bitmap)">
+            <summary>
+            Clones an image object to free it from any backing resources.
+            Code taken from http://stackoverflow.com/a/3661892/ with some extra fixes.
+            </summary>
+            <param name="sourceImage">The image to clone.</param>
+            <returns>The cloned image.</returns>
+        </member>
+    </members>
+</doc>

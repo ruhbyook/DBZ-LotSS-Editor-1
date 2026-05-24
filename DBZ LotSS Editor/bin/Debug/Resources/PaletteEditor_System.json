@@ -1,0 +1,12 @@
+{
+    "List": [
+        { "Offset": "0x045D44", "Name": "Card Symbol Generic" },
+        { "Offset": "0x045D4C", "Name": "Font" },
+        { "Offset": "0x045D54", "Name": "Menu Border" },
+        { "Offset": "0x045D5C", "Name": "Card Border" },
+        { "Offset": "0x045D64", "Name": "Scouter Font" },
+        { "Offset": "0x045D6C", "Name": "Item Cost" },
+        { "Offset": "0x045D74", "Name": "Card Symbol Super" },
+        { "Offset": "0x045D7C", "Name": "Unknown" }
+    ]
+}

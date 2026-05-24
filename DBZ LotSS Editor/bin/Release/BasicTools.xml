@@ -1,0 +1,269 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>BasicTools</name>
+    </assembly>
+    <members>
+        <member name="T:BasicTools.My.Resources.Resources">
+            <summary>
+            A strongly-typed resource class, for looking up localized strings, etc.
+            </summary>
+        </member>
+        <member name="P:BasicTools.My.Resources.Resources.ResourceManager">
+            <summary>
+            Returns the cached ResourceManager instance used by this class.
+            </summary>
+        </member>
+        <member name="P:BasicTools.My.Resources.Resources.Culture">
+            <summary>
+            Overrides the current thread's CurrentUICulture property for all
+            resource lookups using this strongly typed resource class.
+            </summary>
+        </member>
+        <member name="P:BasicTools.My.Resources.Resources.AddMore">
+            <summary>
+            Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:BasicTools.My.Resources.Resources.Copy">
+            <summary>
+            Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:BasicTools.My.Resources.Resources.CopyData">
+            <summary>
+            Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:BasicTools.My.Resources.Resources.CopyHS">
+            <summary>
+            Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:BasicTools.My.Resources.Resources.Cut">
+            <summary>
+            Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:BasicTools.My.Resources.Resources.Down">
+            <summary>
+            Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:BasicTools.My.Resources.Resources.Order">
+            <summary>
+            Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:BasicTools.My.Resources.Resources.Paste">
+            <summary>
+            Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:BasicTools.My.Resources.Resources.PasteHS">
+            <summary>
+            Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:BasicTools.My.Resources.Resources.redo16">
+            <summary>
+            Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:BasicTools.My.Resources.Resources.select16">
+            <summary>
+            Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:BasicTools.My.Resources.Resources.trash32">
+            <summary>
+            Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:BasicTools.My.Resources.Resources.undo16">
+            <summary>
+            Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:BasicTools.My.Resources.Resources.Up">
+            <summary>
+            Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:BasicTools.BasicControls.BasicComboBox.InitialSelection">
+            <summary>
+            Which item should initially be selected?
+            </summary>
+        </member>
+        <member name="T:BasicTools.BasicControls.SubItemEventHandler">
+            <summary>
+            Event Handler for SubItem events
+            </summary>
+        </member>
+        <member name="T:BasicTools.BasicControls.SubItemEndEditingEventHandler">
+            <summary>
+            Event Handler for SubItemEndEditing events
+            </summary>
+        </member>
+        <member name="T:BasicTools.BasicControls.SubItemEventArgs">
+            <summary>
+            Event Args for SubItemClicked event
+            </summary>
+        </member>
+        <member name="T:BasicTools.BasicControls.SubItemEndEditingEventArgs">
+            <summary>
+            Event Args for SubItemEndEditingClicked event
+            </summary>
+        </member>
+        <member name="T:BasicTools.BasicControls.BasicTableView.NMHDR">
+            <summary>
+            MessageHeader for WM_NOTIFY
+            </summary>
+        </member>
+        <member name="F:BasicTools.BasicControls.BasicTableView.components">
+            	<summary>
+            	Required designer variable.
+            	</summary>
+        </member>
+        <member name="M:BasicTools.BasicControls.BasicTableView.InitializeComponent">
+            	<summary>
+            	Required method	for	Designer support - do not modify 
+            	the	contents of	this method	with the code editor.
+            	</summary>
+        </member>
+        <member name="P:BasicTools.BasicControls.BasicTableView.ScrollBars">
+            <summary>
+            How should scroll bars be displayed?
+            </summary>
+        </member>
+        <member name="P:BasicTools.BasicControls.BasicTableView.DoubleClickActivation">
+            <summary>
+            Is a double click required to start editing a cell?
+            </summary>
+        </member>
+        <member name="P:BasicTools.BasicControls.BasicTableView.AllowNullValue">
+            <summary>
+            Is a null value accepted?
+            </summary>
+        </member>
+        <member name="M:BasicTools.BasicControls.BasicTableView.GetColumnOrder">
+            <summary>
+            Retrieve the order in which columns appear
+            </summary>
+            <returns>Current display order of column indices</returns>
+        </member>
+        <member name="M:BasicTools.BasicControls.BasicTableView.GetSubItemAt(System.Int32,System.Int32,System.Windows.Forms.ListViewItem@)">
+            <summary>
+            Find ListViewItem and SubItem Index at position (x,y)
+            </summary>
+            <param name="x">relative to ListView</param>
+            <param name="y">relative to ListView</param>
+            <param name="item">Item at position (x,y)</param>
+            <returns>SubItem index</returns>
+        </member>
+        <member name="M:BasicTools.BasicControls.BasicTableView.GetSubItemBounds(System.Windows.Forms.ListViewItem,System.Int32)">
+            <summary>
+            Get bounds for a SubItem
+            </summary>
+            <param name="Item">Target ListViewItem</param>
+            <param name="SubItem">Target SubItem index</param>
+            <returns>Bounds of SubItem (relative to ListView)</returns>
+        </member>
+        <member name="M:BasicTools.BasicControls.BasicTableView.GetColumnHeaderBounds(System.Int32)">
+            <summary>
+            Get bounds for a ColumnHeader
+            </summary>
+            <param name="Index">Target ColumnHeader index</param>
+            <returns>Bounds of ColumnHeader (relative to ListView)</returns>
+        </member>
+        <member name="M:BasicTools.BasicControls.BasicTableView.EditSubitemAt(System.Drawing.Point)">
+            <summary>
+            Fire SubItemClicked
+            </summary>
+            <param name="p">Point of click/doubleclick</param>
+        </member>
+        <member name="M:BasicTools.BasicControls.BasicTableView.StartEditing(System.Windows.Forms.Control,System.Windows.Forms.ListViewItem,System.Int32)">
+            <summary>
+            Begin in-place editing of given cell
+            </summary>
+            <param name="c">Control used as cell editor</param>
+            <param name="Item">ListViewItem to edit</param>
+            <param name="SubItem">SubItem index to edit</param>
+        </member>
+        <member name="M:BasicTools.BasicControls.BasicTableView.EndEditing(System.Boolean)">
+            <summary>
+            Accept or discard current value of cell editor control
+            </summary>
+            <param name="AcceptChanges">Use the _editingControl's Text as new SubItem text or discard changes?</param>
+        </member>
+        <member name="M:BasicTools.FormExtension.FindAllChildren(System.Windows.Forms.Form@)">
+            <summary>
+            Recursively find all child controls for a form
+            </summary>
+            <param name="StartingContainer"><c><seealso cref="T:System.Windows.Forms.Form">Form
+            </seealso></c> that is the starting container to check for children.</param>
+            <returns><c><seealso cref="!:List(Of System.Windows.Forms.Control)">List(Of Control)
+            </seealso></c> that contains a reference to all child controls.</returns>
+            <remarks>If you put this module in a separate namespace from your form, Visual Studio 
+            2010 does not recognize the extension to the form.</remarks>
+        </member>
+        <member name="M:BasicTools.ControlExtension.FindAllChildren(System.Windows.Forms.Control@)">
+            <summary>
+            Recursively find all child controls for a control
+            </summary>
+            <param name="StartingContainer"><c><seealso cref="T:System.Windows.Forms.Control">Control
+            </seealso></c> that is the starting container to check for children.</param>
+            <returns><c><seealso cref="!:List(Of System.Windows.Forms.Control)">List(Of Control)
+            </seealso></c> that contains a reference to all child controls.</returns>
+            <remarks></remarks>
+        </member>
+        <member name="E:BasicTools.SystemKeyboardEvent.KeyPressed">
+            <summary>
+            A hot key has been pressed.
+            </summary>
+        </member>
+        <member name="T:BasicTools.SystemKeyboardEvent.Window">
+            <summary>
+            Represents the window that is used internally to get the messages.
+            </summary>
+        </member>
+        <member name="M:BasicTools.SystemKeyboardEvent.Window.WndProc(System.Windows.Forms.Message@)">
+            <summary>
+            Overridden to get the notifications.
+            </summary>
+            <param name="m"></param>
+        </member>
+        <member name="M:BasicTools.SystemKeyboardEvent.RegisterHotKey(BasicTools.KeyboardModifierKeys,System.Windows.Forms.Keys)">
+            <summary>
+            Registers a hot key in the system.
+            </summary>
+            <param name="modifier">The modifiers that are associated with the hot key.</param>
+            <param name="key">The key itself that is associated with the hot key.</param>
+        </member>
+        <member name="T:BasicTools.KeyPressedEventArgs">
+            <summary>
+            Event Args for the event that is fired after the hot key has been pressed.
+            </summary>
+        </member>
+        <member name="T:BasicTools.KeyboardModifierKeys">
+            <summary>
+            The enumeration of possible modifiers.
+            </summary>
+        </member>
+        <member name="E:BasicTools.SystemMouseEvent.MouseUsed">
+            <summary>
+            A mouse has been used.
+            </summary>
+        </member>
+        <member name="T:BasicTools.MouseUsedEventArgs">
+            <summary>
+            Event Args for the event that is fired after the mouse has been used.
+            </summary>
+        </member>
+        <member name="T:BasicTools.MouseInputButtons">
+            <summary>
+            The enumeration of possible modifiers.
+            </summary>
+        </member>
+    </members>
+</doc>
