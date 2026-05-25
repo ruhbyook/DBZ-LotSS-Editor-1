@@ -7,6 +7,7 @@ namespace DBZ_LotSS_Editor
         public Data_Battlers()
         {
             InitializeComponent();
+            InitializeMultiActionEditor();
         }
 
         private void HexListBox1_SelectedIndexChanged(object sender, EventArgs e)

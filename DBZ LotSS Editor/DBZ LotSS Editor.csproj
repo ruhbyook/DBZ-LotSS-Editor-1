@@ -315,6 +315,9 @@
     <Compile Include="Data_Battlers.cs">
       <SubType>UserControl</SubType>
     </Compile>
+    <Compile Include="Data_Battlers.MultiAction.cs">
+      <DependentUpon>Data_Battlers.cs</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="!Form_EditorPalette.resx">
