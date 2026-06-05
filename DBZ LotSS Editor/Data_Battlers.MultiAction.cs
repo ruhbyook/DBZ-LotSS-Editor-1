@@ -79,7 +79,7 @@ namespace DBZ_LotSS_Editor
 				"Controls whether this battler can act again in the same round with a refreshed card.");
 			this.MultiActionToolTip.SetToolTip(
 				this.MultiActionSummary,
-				"Derived from the battler action list and card attack profile. ROM selector values are shown in parentheses.");
+				"Shows when this battler's action list can grant extra actions in one turn.");
 
 			this.HexListBox1.SelectedIndexChanged += this.MultiAction_SelectedBattlerChanged;
 			this.HandleCreated += this.MultiAction_HandleCreated;
@@ -374,12 +374,13 @@ namespace DBZ_LotSS_Editor
 		{
 			var odds = this.GetSelectorOdds(action, attackProfile);
 			return string.Format(
-				"Multi-action selector {0} (ROM ${1:X2}){4}{2}{4}Reserved follow-up slots: {3}; card odds profile: {5}",
+				"Extra action rule {0}{4}{2}{4}Uses {3} follow-up action slot{5}.{4}Internal: selector ${1:X2}, odds profile {6}",
 				action - 0x37,
 				action,
 				odds,
 				continuationSlots,
 				Environment.NewLine,
+				continuationSlots == 1 ? string.Empty : "s",
 				attackProfile);
 		}
 
@@ -414,10 +415,10 @@ namespace DBZ_LotSS_Editor
 
 			if (action == 0x39 || action == 0x3A)
 			{
-				return string.Format("Extra action chance by card tier: low/no extra {0}/{3}, mid/+1 action {1}/{3}, high/+2 actions {2}/{3}", extra0, extra1, extra2, profileLength);
+				return string.Format("Chance: low cards give no extra action {0}/{3}; mid cards give +1 action {1}/{3}; high cards give +2 actions {2}/{3}.", extra0, extra1, extra2, profileLength);
 			}
 
-			return string.Format("Extra action chance: none {0}/{3}, +1 action {1}/{3}, +2 actions {2}/{3}", extra0, extra1, extra2, profileLength);
+			return string.Format("Chance: {1}/{3} cards give +1 action; {0}/{3} give no extra action; {2}/{3} give +2 actions.", extra0, extra1, extra2, profileLength);
 		}
 
 		private int GetExtraSlotCount(int action, int cardAttack)
