@@ -8,14 +8,6 @@ namespace DBZ_LotSS_Editor
 {
 	public partial class Data_Battlers
 	{
-		private const int BattlerTurnProfileOffset = 0x068269;
-		private const int BattlerTurnProfileCount = 6;
-		private const int BattlerSkillPointerOffset = 0x0137D2;
-		private const int BattlerSkillBankIndex = 2;
-		private const int CardSetupActorWordOffset = 0x06829E;
-		private const int CardSetupValueProfileOffset = 0x0E8CD0;
-		private const int CardSetupValueProfileCount = 5;
-		private const int CardSetupValueProfileLength = 32;
 		private const int BattlerEditorGroupWidth = 720;
 		private const int BattlerEditorLeftMargin = 12;
 		private const int BattlerEditorInputLeft = 107;
@@ -51,15 +43,7 @@ namespace DBZ_LotSS_Editor
 				Size = new Size(this.GetBattlerInputWidth(), 24),
 				TabIndex = 31
 			};
-			this.TurnProfileComboBox.Items.AddRange(new object[]
-			{
-				"0: single turn ($70/$70/$70/$70)",
-				"1: single turn ($70/$70/$70/$70)",
-				"2: 1-2 turns, mixed ($70/$40/$70/$40)",
-				"3: 2 turns ($40/$40/$40/$40)",
-				"4: 1-3 turns, RNG ($70/$40/$30/$30)",
-				"5: 1-2 turns, mixed ($70/$70/$40/$40)"
-			});
+			this.TurnProfileComboBox.Items.AddRange(this.GetTurnProfileItems().ToArray());
 			this.TurnProfileComboBox.SelectedIndexChanged += this.TurnProfileComboBox_SelectedIndexChanged;
 
 			this.MultiActionLabel = new Label
@@ -88,7 +72,7 @@ namespace DBZ_LotSS_Editor
 			this.MultiActionToolTip = new ToolTip();
 			this.MultiActionToolTip.SetToolTip(
 				this.TurnProfileComboBox,
-				"Packed nibble at ROM offset 0x068269. Controls whether this battler can act again in the same round with a refreshed card.");
+				"Controls whether this battler can act again in the same round with a refreshed card.");
 			this.MultiActionToolTip.SetToolTip(
 				this.MultiActionSummary,
 				"Derived from the battler action list and card attack profile. These are action-list selector bytes like $39; they are not the multi-turn profile.");
@@ -223,7 +207,7 @@ namespace DBZ_LotSS_Editor
 				var rom = HexStorage.Memory;
 				var profile = battlerIndex < 0 ? -1 : this.ReadTurnProfile(rom, battlerIndex);
 				this.TurnProfileComboBox.Enabled = profile >= 0;
-				this.TurnProfileComboBox.SelectedIndex = profile >= 0 && profile < BattlerTurnProfileCount ? profile : -1;
+				this.TurnProfileComboBox.SelectedIndex = profile >= 0 && profile < this.GetTurnProfileCount() ? profile : -1;
 			}
 			finally
 			{
@@ -285,7 +269,8 @@ namespace DBZ_LotSS_Editor
 
 		private int ReadTurnProfile(byte[] rom, int battlerIndex)
 		{
-			var profileOffset = this.ToRomOffset(rom, BattlerTurnProfileOffset + battlerIndex / 2);
+			var definition = this.MultiActionDefinition;
+			var profileOffset = this.ToRomOffset(definition.TurnProfileOffset) + battlerIndex / 2;
 			if (!this.CanRead(rom, profileOffset, 1))
 			{
 				return -1;
@@ -297,8 +282,9 @@ namespace DBZ_LotSS_Editor
 
 		private void WriteTurnProfile(byte[] rom, int battlerIndex, int profile)
 		{
-			var profileOffset = this.ToRomOffset(rom, BattlerTurnProfileOffset + battlerIndex / 2);
-			if (!this.CanRead(rom, profileOffset, 1) || profile < 0 || profile >= BattlerTurnProfileCount)
+			var definition = this.MultiActionDefinition;
+			var profileOffset = this.ToRomOffset(definition.TurnProfileOffset) + battlerIndex / 2;
+			if (!this.CanRead(rom, profileOffset, 1) || profile < 0 || profile >= this.GetTurnProfileCount())
 			{
 				return;
 			}
@@ -318,15 +304,16 @@ namespace DBZ_LotSS_Editor
 
 		private List<int> ReadBattlerActions(byte[] rom, int battlerIndex)
 		{
+			var definition = this.MultiActionDefinition;
 			var actions = new List<int>();
-			var pointerOffset = this.ToRomOffset(rom, BattlerSkillPointerOffset + battlerIndex * 2);
+			var pointerOffset = this.ToRomOffset(definition.SkillPointerOffset) + battlerIndex * 2;
 			if (!this.CanRead(rom, pointerOffset, 2))
 			{
 				return actions;
 			}
 
 			var pointer = rom[pointerOffset] | rom[pointerOffset + 1] << 8;
-			var actionListOffset = this.ToRomOffset(rom, this.LoRomPointerToPc(BattlerSkillBankIndex, pointer));
+			var actionListOffset = this.LoRomPointerToRomOffset(definition.SkillPointerBank, pointer);
 			if (!this.CanRead(rom, actionListOffset, 1))
 			{
 				return actions;
@@ -343,7 +330,8 @@ namespace DBZ_LotSS_Editor
 
 		private int ReadAttackProfile(byte[] rom, int battlerIndex)
 		{
-			var setupOffset = this.ToRomOffset(rom, CardSetupActorWordOffset + battlerIndex * 2);
+			var definition = this.MultiActionDefinition;
+			var setupOffset = this.ToRomOffset(definition.CardSetupActorWordOffset) + battlerIndex * 2;
 			if (!this.CanRead(rom, setupOffset, 2))
 			{
 				return 0;
@@ -358,7 +346,7 @@ namespace DBZ_LotSS_Editor
 			}
 
 			var attackProfile = highByte >> 4 & 0x0F;
-			return attackProfile < CardSetupValueProfileCount ? attackProfile : 0;
+			return attackProfile < definition.CardSetupValueProfileCount ? attackProfile : 0;
 		}
 
 		private string DescribeSelector(int action, int attackProfile, int continuationSlots)
@@ -375,8 +363,10 @@ namespace DBZ_LotSS_Editor
 
 		private string GetSelectorOdds(int action, int attackProfile)
 		{
-			var profileOffset = this.ToRomOffset(HexStorage.Memory, CardSetupValueProfileOffset + attackProfile * CardSetupValueProfileLength);
-			if (!this.CanRead(HexStorage.Memory, profileOffset, CardSetupValueProfileLength))
+			var definition = this.MultiActionDefinition;
+			var profileLength = definition.CardSetupValueProfileLength;
+			var profileOffset = this.ToRomOffset(definition.CardSetupValueProfileOffset) + attackProfile * profileLength;
+			if (!this.CanRead(HexStorage.Memory, profileOffset, profileLength))
 			{
 				return "odds unavailable";
 			}
@@ -384,7 +374,7 @@ namespace DBZ_LotSS_Editor
 			var extra0 = 0;
 			var extra1 = 0;
 			var extra2 = 0;
-			for (var index = 0; index < CardSetupValueProfileLength; index++)
+			for (var index = 0; index < profileLength; index++)
 			{
 				switch (this.GetExtraSlotCount(action, HexStorage.Memory[profileOffset + index]))
 				{
@@ -402,10 +392,10 @@ namespace DBZ_LotSS_Editor
 
 			if (action == 0x39 || action == 0x3A)
 			{
-				return string.Format("tiers low/mid/high = {0}/{1}/{2} of 32", extra0, extra1, extra2);
+				return string.Format("tiers low/mid/high = {0}/{1}/{2} of {3}", extra0, extra1, extra2, profileLength);
 			}
 
-			return string.Format("cont 0/+1/+2 = {0}/{1}/{2} of 32", extra0, extra1, extra2);
+			return string.Format("cont 0/+1/+2 = {0}/{1}/{2} of {3}", extra0, extra1, extra2, profileLength);
 		}
 
 		private int GetExtraSlotCount(int action, int cardAttack)
@@ -447,15 +437,55 @@ namespace DBZ_LotSS_Editor
 			return count;
 		}
 
-		private int LoRomPointerToPc(int bank, int pointer)
+		private BattlerMultiActionDefinition MultiActionDefinition
 		{
-			return bank * 0x8000 + (pointer & 0x7FFF);
+			get
+			{
+				var context = HexDefinitionManager.Instance.Context as AppDefinitionContext;
+				return context?.DataEditor?.Battlers?.MultiAction ?? new BattlerMultiActionDefinition();
+			}
 		}
 
-		private int ToRomOffset(byte[] rom, int pcOffset)
+		private List<object> GetTurnProfileItems()
 		{
-			var headerSize = rom != null && rom.Length % 0x8000 == 512 ? 512 : 0;
-			return headerSize + pcOffset;
+			var definition = this.MultiActionDefinition;
+			var labels = definition.TurnProfileLabels ?? new List<string>();
+			var count = this.GetTurnProfileCount();
+			var items = new List<object>();
+
+			for (var index = 0; index < count; index++)
+			{
+				items.Add(index < labels.Count ? labels[index] : string.Format("{0}: profile {0}", index));
+			}
+
+			return items;
+		}
+
+		private int GetTurnProfileCount()
+		{
+			var definition = this.MultiActionDefinition;
+			if (definition.TurnProfileCount > 0)
+			{
+				return definition.TurnProfileCount;
+			}
+
+			return definition.TurnProfileLabels?.Count ?? 0;
+		}
+
+		private int LoRomPointerToRomOffset(int bank, int pointer)
+		{
+			var snesAddress = bank << 16 | pointer;
+			return HexConvert.SnesToPC(HexConvert.IntToHex(snesAddress, 5), false);
+		}
+
+		private int ToRomOffset(string pcOffset)
+		{
+			if (string.IsNullOrWhiteSpace(pcOffset))
+			{
+				return -1;
+			}
+
+			return HexStorage.GlobalOffset + HexConvert.HexToInt(HexConvert.AddressToHex(pcOffset));
 		}
 
 		private bool CanRead(byte[] rom, int offset, int length)
