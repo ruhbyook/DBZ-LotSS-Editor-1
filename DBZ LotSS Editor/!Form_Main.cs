@@ -161,10 +161,10 @@ namespace DBZ_LotSS_Editor
             LoadRecentList();
             LoadMDIList();
             LoadAppSettings();
+            AppDefinition = new AppDefinition(this);
             ObjectExtension.AllForms = My.MyProject.Forms.Forms;
             300.WaitThenExecute((_, __) => ReloadRecentFile());
             AddHandlers();
-            AppDefinition = new AppDefinition(this);
             My.MyProject.Forms.Form_ToolFont.LoadProjectTable();
         }
 

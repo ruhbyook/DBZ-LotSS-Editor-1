@@ -12,6 +12,10 @@ namespace DBZ_LotSS_Editor
 		private const int BattlerEditorLeftMargin = 12;
 		private const int BattlerEditorInputLeft = 107;
 		private const int BattlerEditorRightMargin = 12;
+		private static readonly BattlerMultiActionDefinition DefaultMultiActionDefinition =
+			new BasicTools.BasicJsonDefinition<BattlerDataDefinition>(My.Resources.Resources.DataEditor_Battlers)
+				.Definition
+				.MultiAction;
 
 		private Label TurnProfileLabel;
 		private ComboBox TurnProfileComboBox;
@@ -81,6 +85,8 @@ namespace DBZ_LotSS_Editor
 			this.HandleCreated += this.MultiAction_HandleCreated;
 			this.VisibleChanged += this.MultiAction_VisibleChanged;
 			this.Enter += this.MultiAction_Enter;
+			this.Disposed += this.MultiAction_Disposed;
+			HexDefinitionManager.OnLoad += this.MultiAction_DefinitionsLoaded;
 			this.HexPanel2.Controls.Add(this.TurnProfileLabel);
 			this.HexPanel2.Controls.Add(this.TurnProfileComboBox);
 			this.HexPanel2.Controls.Add(this.MultiActionLabel);
@@ -173,6 +179,21 @@ namespace DBZ_LotSS_Editor
 		private void MultiAction_Enter(object sender, EventArgs e)
 		{
 			this.QueueMultiActionUpdate();
+		}
+
+		private void MultiAction_DefinitionsLoaded()
+		{
+			if (!this.IsHandleCreated || this.IsDisposed)
+			{
+				return;
+			}
+
+			this.BeginInvoke(new MethodInvoker(this.ReloadTurnProfileItems));
+		}
+
+		private void MultiAction_Disposed(object sender, EventArgs e)
+		{
+			HexDefinitionManager.OnLoad -= this.MultiAction_DefinitionsLoaded;
 		}
 
 		private void QueueMultiActionUpdate()
@@ -441,9 +462,46 @@ namespace DBZ_LotSS_Editor
 		{
 			get
 			{
-				var context = HexDefinitionManager.Instance.Context as AppDefinitionContext;
-				return context?.DataEditor?.Battlers?.MultiAction ?? new BattlerMultiActionDefinition();
+				return this.TryGetMultiActionDefinition() ?? DefaultMultiActionDefinition;
 			}
+		}
+
+		private BattlerMultiActionDefinition TryGetMultiActionDefinition()
+		{
+			try
+			{
+				var context = HexDefinitionManager.Instance.Context as AppDefinitionContext;
+				return context?.DataEditor?.Battlers?.MultiAction;
+			}
+			catch (InvalidOperationException)
+			{
+				return null;
+			}
+		}
+
+		private void ReloadTurnProfileItems()
+		{
+			if (this.TurnProfileComboBox == null)
+			{
+				return;
+			}
+
+			this.UpdatingTurnProfile = true;
+			try
+			{
+				var selectedIndex = this.TurnProfileComboBox.SelectedIndex;
+				this.TurnProfileComboBox.Items.Clear();
+				this.TurnProfileComboBox.Items.AddRange(this.GetTurnProfileItems().ToArray());
+				this.TurnProfileComboBox.SelectedIndex = selectedIndex >= 0 && selectedIndex < this.TurnProfileComboBox.Items.Count
+					? selectedIndex
+					: -1;
+			}
+			finally
+			{
+				this.UpdatingTurnProfile = false;
+			}
+
+			this.UpdateMultiActionControl();
 		}
 
 		private List<object> GetTurnProfileItems()
