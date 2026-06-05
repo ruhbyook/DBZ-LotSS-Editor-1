@@ -75,7 +75,7 @@ namespace DBZ_LotSS_Editor
 				"Controls whether this battler can act again in the same round with a refreshed card.");
 			this.MultiActionToolTip.SetToolTip(
 				this.MultiActionSummary,
-				"Derived from the battler action list and card attack profile. These are action-list selector bytes like $39; they are not the multi-turn profile.");
+				"Derived from the battler action list and card attack profile. ROM selector values are shown in parentheses.");
 
 			this.HexListBox1.SelectedIndexChanged += this.MultiAction_SelectedBattlerChanged;
 			this.HandleCreated += this.MultiAction_HandleCreated;
@@ -261,7 +261,7 @@ namespace DBZ_LotSS_Editor
 
 			if (summaries.Count == 0)
 			{
-				return "No selector actions ($38-$3E).";
+				return "No multi-action selector actions found.";
 			}
 
 			return string.Join(Environment.NewLine, summaries);
@@ -353,12 +353,13 @@ namespace DBZ_LotSS_Editor
 		{
 			var odds = this.GetSelectorOdds(action, attackProfile);
 			return string.Format(
-				"${0:X2}: {1}{4}FF continuations: {2}; card profile: {3}",
+				"Multi-action selector {0} (ROM ${1:X2}){4}{2}{4}Reserved follow-up slots: {3}; card odds profile: {5}",
+				action - 0x37,
 				action,
 				odds,
 				continuationSlots,
-				attackProfile,
-				Environment.NewLine);
+				Environment.NewLine,
+				attackProfile);
 		}
 
 		private string GetSelectorOdds(int action, int attackProfile)
@@ -392,10 +393,10 @@ namespace DBZ_LotSS_Editor
 
 			if (action == 0x39 || action == 0x3A)
 			{
-				return string.Format("tiers low/mid/high = {0}/{1}/{2} of {3}", extra0, extra1, extra2, profileLength);
+				return string.Format("Extra action chance by card tier: low/no extra {0}/{3}, mid/+1 action {1}/{3}, high/+2 actions {2}/{3}", extra0, extra1, extra2, profileLength);
 			}
 
-			return string.Format("cont 0/+1/+2 = {0}/{1}/{2} of {3}", extra0, extra1, extra2, profileLength);
+			return string.Format("Extra action chance: none {0}/{3}, +1 action {1}/{3}, +2 actions {2}/{3}", extra0, extra1, extra2, profileLength);
 		}
 
 		private int GetExtraSlotCount(int action, int cardAttack)
