@@ -21,6 +21,7 @@ namespace DBZ_LotSS_Editor
             Register(new PalettePortraitDefinitionAccessor(synchronizingObject));
             Register(new PaletteBattlerDefinitionAccessor(synchronizingObject));
             Register(new PaletteFlyerDefinitionAccessor(synchronizingObject));
+            Register(new DataBattlerDefinitionAccessor(synchronizingObject));
         }
     }
 
@@ -150,10 +151,25 @@ namespace DBZ_LotSS_Editor
         }
     }
 
+    public class DataBattlerDefinitionAccessor : HexAppPartialDefinition<BattlerDataDefinition>
+    {
+        public DataBattlerDefinitionAccessor(ISynchronizeInvoke synchronizingObject) : base(synchronizingObject) { }
+
+        public override byte[] DefaultDefinition => My.Resources.Resources.DataEditor_Battlers;
+
+        public override string DefinitionFileName => "DataEditor_Battlers.json";
+
+        public override void ContainerChanged()
+        {
+            HexDefinitionManager.Instance.Context.DataEditor.Battlers = Container.Current.Definition;
+        }
+    }
+
     public class AppDefinitionContext : HexAppDefinitionContext
     {
         public AppDefinitionContext(HexAppDefinition appDefinition) : base(appDefinition) { }
 
+        public DataEditorDefinition DataEditor { get; set; } = new DataEditorDefinition();
         public SpriteEditorDefinition SpriteEditor { get; set; } = new SpriteEditorDefinition();
         public GenericArtEditorDefinition PaletteEditor { get; set; } = new GenericArtEditorDefinition();
     }
@@ -177,6 +193,29 @@ namespace DBZ_LotSS_Editor
     public class GenericArtEditorDefinition : ArtEditorDefinition<AssetDefinition> { }
 
     public class SpriteEditorDefinition : ArtEditorDefinition<SpriteGenericDefinition, SpriteGenericDefinition, SpritePortraitDefinition, SpriteGenericDefinition, SpriteGenericDefinition> { }
+
+    public class DataEditorDefinition
+    {
+        public BattlerDataDefinition Battlers { get; set; } = new BattlerDataDefinition();
+    }
+
+    public class BattlerDataDefinition
+    {
+        public BattlerMultiActionDefinition MultiAction { get; set; } = new BattlerMultiActionDefinition();
+    }
+
+    public class BattlerMultiActionDefinition
+    {
+        public string TurnProfileOffset { get; set; }
+        public int TurnProfileCount { get; set; }
+        public string SkillPointerOffset { get; set; }
+        public int SkillPointerBank { get; set; }
+        public string CardSetupActorWordOffset { get; set; }
+        public string CardSetupValueProfileOffset { get; set; }
+        public int CardSetupValueProfileCount { get; set; }
+        public int CardSetupValueProfileLength { get; set; }
+        public List<string> TurnProfileLabels { get; set; } = new List<string>();
+    }
 
     public class AssetDefinition
     {

@@ -1,0 +1,20 @@
+{
+	"MultiAction": {
+		"TurnProfileOffset": "0x068269",
+		"TurnProfileCount": 6,
+		"SkillPointerOffset": "0x0137D2",
+		"SkillPointerBank": 2,
+		"CardSetupActorWordOffset": "0x06829E",
+		"CardSetupValueProfileOffset": "0x0E8CD0",
+		"CardSetupValueProfileCount": 5,
+		"CardSetupValueProfileLength": 32,
+		"TurnProfileLabels": [
+			"0: single turn (100%)",
+			"1: single turn (100%, alternate)",
+			"2: single or double turn (50% each)",
+			"3: double turn (100%)",
+			"4: single/double/triple turn (25%/25%/50%)",
+			"5: single or double turn (50% each)"
+		]
+	}
+}
