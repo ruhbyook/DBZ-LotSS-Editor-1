@@ -1,11 +1,11 @@
-﻿using System;
+﻿using HexTools;
+using Microsoft.VisualBasic.CompilerServices;
+using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Diagnostics;
 using System.Linq;
 using System.Windows.Forms;
-using HexTools;
-using Microsoft.VisualBasic.CompilerServices;
 
 namespace DBZ_LotSS_Editor
 {
@@ -97,7 +97,7 @@ namespace DBZ_LotSS_Editor
                 var TimeStamp = CreateChangeRecordItem("Modified", Action.Modified, new HistoryContextActions(Action.Modified));
                 var Control = CreateChangeRecordItem("Control", Action.Name, new HistoryContextActions(Action.RawChanges), (TreeNode)Offset, (TreeNode)OldValue, (TreeNode)NewValue, (TreeNode)TimeStamp);
                 var Owner = CreateChangeRecord("Module", Action.OwnerName, (TreeNode)Control);
-                TreeViewHistory.Nodes.Add(Owner.ToString());
+                TreeViewHistory.Nodes.Add(Owner as TreeNode);
             }
             TreeViewHistory.ExpandAll();
         }
