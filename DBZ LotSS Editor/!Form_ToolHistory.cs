@@ -43,6 +43,7 @@ namespace DBZ_LotSS_Editor
         private object CreateChangeRecordItem(string Label, object Value, HistoryContextActions ContentActions, params TreeNode[] Children)
         {
             var Node = new TreeNode($"{Label}: {Value.ToString()}", Children);
+            Node.Name = Value.ToString();
             if (ContentActions != null)
             {
                 Node.ContextMenuStrip = ChangeContextMenuStrip;
@@ -96,8 +97,15 @@ namespace DBZ_LotSS_Editor
                 var NewValue = CreateChangeRecordItem("New Value", Action.NewValue.HexChanges, new HistoryContextActions(Action.NewValue.HexChanges));
                 var TimeStamp = CreateChangeRecordItem("Modified", Action.Modified, new HistoryContextActions(Action.Modified));
                 var Control = CreateChangeRecordItem("Control", Action.Name, new HistoryContextActions(Action.RawChanges), (TreeNode)Offset, (TreeNode)OldValue, (TreeNode)NewValue, (TreeNode)TimeStamp);
-                var Owner = CreateChangeRecord("Module", Action.OwnerName, (TreeNode)Control);
-                TreeViewHistory.Nodes.Add(Owner as TreeNode);
+                var Owner = CreateChangeRecord("Module", Action.OwnerName, (TreeNode)Control) as TreeNode;
+                if (TreeViewHistory.Nodes.ContainsKey(Owner.Name))
+                {
+                    TreeViewHistory.Nodes[TreeViewHistory.Nodes.IndexOfKey(Owner.Name)].Nodes.Add((TreeNode)Control);
+                }
+                else
+                {
+                    TreeViewHistory.Nodes.Add(Owner);
+                }
             }
             TreeViewHistory.ExpandAll();
         }
