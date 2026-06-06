@@ -12,6 +12,9 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BasicTools", "..\Reverse-Engineering-Toolkit\BasicTools\BasicTools.csproj", "{6B60ABD6-DAD9-01FC-0980-FB0980845278}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HexTools", "..\Reverse-Engineering-Toolkit\HexTools\HexTools.csproj", "{4281A4B5-2A71-0FDD-0AEC-6A60A56A81E5}"
+	ProjectSection(ProjectDependencies) = postProject
+		{6B60ABD6-DAD9-01FC-0980-FB0980845278} = {6B60ABD6-DAD9-01FC-0980-FB0980845278}
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

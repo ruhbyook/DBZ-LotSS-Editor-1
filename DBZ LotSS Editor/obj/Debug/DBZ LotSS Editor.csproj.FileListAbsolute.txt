@@ -144,3 +144,76 @@ C:\Users\MakoInfused\source\repos\MakoInfused\DBZ LotSS Editor\DBZ LotSS Editor\
 C:\Users\MakoInfused\source\repos\MakoInfused\DBZ LotSS Editor\DBZ LotSS Editor\obj\Debug\DBZ LotSS Editor.csproj.CopyComplete
 C:\Users\MakoInfused\source\repos\MakoInfused\DBZ LotSS Editor\DBZ LotSS Editor\obj\Debug\DBZ LotSS Editor.exe
 C:\Users\MakoInfused\source\repos\MakoInfused\DBZ LotSS Editor\DBZ LotSS Editor\obj\Debug\DBZ LotSS Editor.pdb
+C:\Users\MakoInfused\Source\Repos\DBZ-LotSS-Editor\DBZ LotSS Editor\obj\Debug\DBZ LotSS Editor.csproj.AssemblyReference.cache
+C:\Users\MakoInfused\Source\Repos\DBZ-LotSS-Editor\DBZ LotSS Editor\obj\Debug\DBZ_LotSS_Editor.Form_EditorPalette.resources
+C:\Users\MakoInfused\Source\Repos\DBZ-LotSS-Editor\DBZ LotSS Editor\obj\Debug\DBZ_LotSS_Editor.Form_ToolGraphic.resources
+C:\Users\MakoInfused\Source\Repos\DBZ-LotSS-Editor\DBZ LotSS Editor\obj\Debug\DBZ_LotSS_Editor.Form_ToolData.resources
+C:\Users\MakoInfused\Source\Repos\DBZ-LotSS-Editor\DBZ LotSS Editor\obj\Debug\DBZ_LotSS_Editor.Form_ToolHistory.resources
+C:\Users\MakoInfused\Source\Repos\DBZ-LotSS-Editor\DBZ LotSS Editor\obj\Debug\DBZ_LotSS_Editor.Form_OptionsPreferences.resources
+C:\Users\MakoInfused\Source\Repos\DBZ-LotSS-Editor\DBZ LotSS Editor\obj\Debug\DBZ_LotSS_Editor.Form_HelpAbout.resources
+C:\Users\MakoInfused\Source\Repos\DBZ-LotSS-Editor\DBZ LotSS Editor\obj\Debug\DBZ_LotSS_Editor.Form_ToolFont.resources
+C:\Users\MakoInfused\Source\Repos\DBZ-LotSS-Editor\DBZ LotSS Editor\obj\Debug\DBZ_LotSS_Editor.Form_EditorText.resources
+C:\Users\MakoInfused\Source\Repos\DBZ-LotSS-Editor\DBZ LotSS Editor\obj\Debug\DBZ_LotSS_Editor.Form_EditorSprite.resources
+C:\Users\MakoInfused\Source\Repos\DBZ-LotSS-Editor\DBZ LotSS Editor\obj\Debug\DBZ_LotSS_Editor.Form_EditorDatabase.resources
+C:\Users\MakoInfused\Source\Repos\DBZ-LotSS-Editor\DBZ LotSS Editor\obj\Debug\DBZ_LotSS_Editor.Data_Global.resources
+C:\Users\MakoInfused\Source\Repos\DBZ-LotSS-Editor\DBZ LotSS Editor\obj\Debug\DBZ_LotSS_Editor.Data_Groups.resources
+C:\Users\MakoInfused\Source\Repos\DBZ-LotSS-Editor\DBZ LotSS Editor\obj\Debug\DBZ_LotSS_Editor.Palette_System.resources
+C:\Users\MakoInfused\Source\Repos\DBZ-LotSS-Editor\DBZ LotSS Editor\obj\Debug\DBZ_LotSS_Editor.Palette_Characters.resources
+C:\Users\MakoInfused\Source\Repos\DBZ-LotSS-Editor\DBZ LotSS Editor\obj\Debug\DBZ_LotSS_Editor.Palette_Flyers.resources
+C:\Users\MakoInfused\Source\Repos\DBZ-LotSS-Editor\DBZ LotSS Editor\obj\Debug\DBZ_LotSS_Editor.Sprite_System.resources
+C:\Users\MakoInfused\Source\Repos\DBZ-LotSS-Editor\DBZ LotSS Editor\obj\Debug\DBZ_LotSS_Editor.Sprite_Characters.resources
+C:\Users\MakoInfused\Source\Repos\DBZ-LotSS-Editor\DBZ LotSS Editor\obj\Debug\DBZ_LotSS_Editor.Text_Skills.resources
+C:\Users\MakoInfused\Source\Repos\DBZ-LotSS-Editor\DBZ LotSS Editor\obj\Debug\DBZ_LotSS_Editor.Text_Items.resources
+C:\Users\MakoInfused\Source\Repos\DBZ-LotSS-Editor\DBZ LotSS Editor\obj\Debug\DBZ_LotSS_Editor.Text_Characters.resources
+C:\Users\MakoInfused\Source\Repos\DBZ-LotSS-Editor\DBZ LotSS Editor\obj\Debug\DBZ_LotSS_Editor.Text_Battlers.resources
+C:\Users\MakoInfused\Source\Repos\DBZ-LotSS-Editor\DBZ LotSS Editor\obj\Debug\DBZ_LotSS_Editor.Text_Game.resources
+C:\Users\MakoInfused\Source\Repos\DBZ-LotSS-Editor\DBZ LotSS Editor\obj\Debug\DBZ_LotSS_Editor.Data_Items.resources
+C:\Users\MakoInfused\Source\Repos\DBZ-LotSS-Editor\DBZ LotSS Editor\obj\Debug\DBZ_LotSS_Editor.Data_Maps.resources
+C:\Users\MakoInfused\Source\Repos\DBZ-LotSS-Editor\DBZ LotSS Editor\obj\Debug\DBZ_LotSS_Editor.Data_Skills.resources
+C:\Users\MakoInfused\Source\Repos\DBZ-LotSS-Editor\DBZ LotSS Editor\obj\Debug\DBZ_LotSS_Editor.Data_Characters.resources
+C:\Users\MakoInfused\Source\Repos\DBZ-LotSS-Editor\DBZ LotSS Editor\obj\Debug\DBZ_LotSS_Editor.Form_Main.resources
+C:\Users\MakoInfused\Source\Repos\DBZ-LotSS-Editor\DBZ LotSS Editor\obj\Debug\DBZ_LotSS_Editor.Sprite_Portrait.resources
+C:\Users\MakoInfused\Source\Repos\DBZ-LotSS-Editor\DBZ LotSS Editor\obj\Debug\DBZ_LotSS_Editor.Palette_Portrait.resources
+C:\Users\MakoInfused\Source\Repos\DBZ-LotSS-Editor\DBZ LotSS Editor\obj\Debug\DBZ_LotSS_Editor.Palette_Battlers.resources
+C:\Users\MakoInfused\Source\Repos\DBZ-LotSS-Editor\DBZ LotSS Editor\obj\Debug\DBZ_LotSS_Editor.Sprite_Battlers.resources
+C:\Users\MakoInfused\Source\Repos\DBZ-LotSS-Editor\DBZ LotSS Editor\obj\Debug\DBZ_LotSS_Editor.Resources.resources
+C:\Users\MakoInfused\Source\Repos\DBZ-LotSS-Editor\DBZ LotSS Editor\obj\Debug\DBZ_LotSS_Editor.Data_Battlers.resources
+C:\Users\MakoInfused\Source\Repos\DBZ-LotSS-Editor\DBZ LotSS Editor\obj\Debug\DBZ LotSS Editor.csproj.GenerateResource.cache
+C:\Users\MakoInfused\Source\Repos\DBZ-LotSS-Editor\DBZ LotSS Editor\obj\Debug\DBZ LotSS Editor.csproj.CoreCompileInputs.cache
+C:\Users\MakoInfused\Source\Repos\DBZ-LotSS-Editor\DBZ LotSS Editor\obj\Debug\DBZ LotSS Editor.exe
+C:\Users\MakoInfused\Source\Repos\DBZ-LotSS-Editor\DBZ LotSS Editor\obj\Debug\DBZ LotSS Editor.pdb
+C:\Users\MakoInfused\Source\Repos\DBZ-LotSS-Editor\DBZ LotSS Editor\bin\Debug\Resources\PaletteEditor_System.json
+C:\Users\MakoInfused\Source\Repos\DBZ-LotSS-Editor\DBZ LotSS Editor\bin\Debug\Resources\SpriteEditor_System.json
+C:\Users\MakoInfused\Source\Repos\DBZ-LotSS-Editor\DBZ LotSS Editor\bin\Debug\Resources\SpriteEditor_Characters.json
+C:\Users\MakoInfused\Source\Repos\DBZ-LotSS-Editor\DBZ LotSS Editor\bin\Debug\Resources\SpriteEditor_Battlers.json
+C:\Users\MakoInfused\Source\Repos\DBZ-LotSS-Editor\DBZ LotSS Editor\bin\Debug\Resources\TextEditor_Battlers.json
+C:\Users\MakoInfused\Source\Repos\DBZ-LotSS-Editor\DBZ LotSS Editor\bin\Debug\Resources\PaletteEditor_Flyers.json
+C:\Users\MakoInfused\Source\Repos\DBZ-LotSS-Editor\DBZ LotSS Editor\bin\Debug\Resources\PaletteEditor_Battlers.json
+C:\Users\MakoInfused\Source\Repos\DBZ-LotSS-Editor\DBZ LotSS Editor\bin\Debug\Resources\PaletteEditor_Characters.json
+C:\Users\MakoInfused\Source\Repos\DBZ-LotSS-Editor\DBZ LotSS Editor\bin\Debug\Resources\PaletteEditor_Portraits.json
+C:\Users\MakoInfused\Source\Repos\DBZ-LotSS-Editor\DBZ LotSS Editor\bin\Debug\Resources\FontTable.tbl
+C:\Users\MakoInfused\Source\Repos\DBZ-LotSS-Editor\DBZ LotSS Editor\bin\Debug\Resources\SpriteEditor_Portraits.json
+C:\Users\MakoInfused\Source\Repos\DBZ-LotSS-Editor\DBZ LotSS Editor\bin\Debug\DBZ LotSS Editor.exe.config
+C:\Users\MakoInfused\Source\Repos\DBZ-LotSS-Editor\DBZ LotSS Editor\bin\Debug\DBZ LotSS Editor.xml
+C:\Users\MakoInfused\Source\Repos\DBZ-LotSS-Editor\DBZ LotSS Editor\bin\Debug\DBZ LotSS Editor.exe
+C:\Users\MakoInfused\Source\Repos\DBZ-LotSS-Editor\DBZ LotSS Editor\bin\Debug\DBZ LotSS Editor.pdb
+C:\Users\MakoInfused\Source\Repos\DBZ-LotSS-Editor\DBZ LotSS Editor\bin\Debug\BasicTools.dll
+C:\Users\MakoInfused\Source\Repos\DBZ-LotSS-Editor\DBZ LotSS Editor\bin\Debug\HexTools.dll
+C:\Users\MakoInfused\Source\Repos\DBZ-LotSS-Editor\DBZ LotSS Editor\bin\Debug\Newtonsoft.Json.dll
+C:\Users\MakoInfused\Source\Repos\DBZ-LotSS-Editor\DBZ LotSS Editor\bin\Debug\Microsoft.VisualBasic.PowerPacks.Vs.dll
+C:\Users\MakoInfused\Source\Repos\DBZ-LotSS-Editor\DBZ LotSS Editor\bin\Debug\AnyClone.dll
+C:\Users\MakoInfused\Source\Repos\DBZ-LotSS-Editor\DBZ LotSS Editor\bin\Debug\WPFHexaEditor.dll
+C:\Users\MakoInfused\Source\Repos\DBZ-LotSS-Editor\DBZ LotSS Editor\bin\Debug\BasicTools.pdb
+C:\Users\MakoInfused\Source\Repos\DBZ-LotSS-Editor\DBZ LotSS Editor\bin\Debug\BasicTools.xml
+C:\Users\MakoInfused\Source\Repos\DBZ-LotSS-Editor\DBZ LotSS Editor\bin\Debug\BasicTools.dll.config
+C:\Users\MakoInfused\Source\Repos\DBZ-LotSS-Editor\DBZ LotSS Editor\bin\Debug\HexTools.pdb
+C:\Users\MakoInfused\Source\Repos\DBZ-LotSS-Editor\DBZ LotSS Editor\bin\Debug\HexTools.xml
+C:\Users\MakoInfused\Source\Repos\DBZ-LotSS-Editor\DBZ LotSS Editor\bin\Debug\HexTools.dll.config
+C:\Users\MakoInfused\Source\Repos\DBZ-LotSS-Editor\DBZ LotSS Editor\bin\Debug\Microsoft.VisualBasic.PowerPacks.xml
+C:\Users\MakoInfused\Source\Repos\DBZ-LotSS-Editor\DBZ LotSS Editor\bin\Debug\Newtonsoft.Json.xml
+C:\Users\MakoInfused\Source\Repos\DBZ-LotSS-Editor\DBZ LotSS Editor\bin\Debug\fr-CA\WPFHexaEditor.resources.dll
+C:\Users\MakoInfused\Source\Repos\DBZ-LotSS-Editor\DBZ LotSS Editor\bin\Debug\pl-PL\WPFHexaEditor.resources.dll
+C:\Users\MakoInfused\Source\Repos\DBZ-LotSS-Editor\DBZ LotSS Editor\bin\Debug\pt-BR\WPFHexaEditor.resources.dll
+C:\Users\MakoInfused\Source\Repos\DBZ-LotSS-Editor\DBZ LotSS Editor\bin\Debug\ru-RU\WPFHexaEditor.resources.dll
+C:\Users\MakoInfused\Source\Repos\DBZ-LotSS-Editor\DBZ LotSS Editor\bin\Debug\zh-CN\WPFHexaEditor.resources.dll
+C:\Users\MakoInfused\Source\Repos\DBZ-LotSS-Editor\DBZ LotSS Editor\obj\Debug\DBZ LotS.9C222B4D.Up2Date
