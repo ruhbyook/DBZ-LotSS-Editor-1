@@ -294,6 +294,7 @@ namespace DBZ_LotSS_Editor
             // 
             // HexPanel7
             // 
+            this.HexPanel7.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.HexPanel7.Controls.Add(this.Label13);
             this.HexPanel7.Controls.Add(this.PortraitSpriteIndex);
             this.HexPanel7.HexOffset = "&H01257C";
