@@ -1,7 +1,6 @@
-﻿using System;
+﻿using HexTools;
 using System.Collections.Generic;
 using System.ComponentModel;
-using HexTools;
 
 namespace DBZ_LotSS_Editor
 {
@@ -21,6 +20,7 @@ namespace DBZ_LotSS_Editor
             Register(new PalettePortraitDefinitionAccessor(synchronizingObject));
             Register(new PaletteBattlerDefinitionAccessor(synchronizingObject));
             Register(new PaletteFlyerDefinitionAccessor(synchronizingObject));
+            Register(new DataCharacterDefinitionAccessor(synchronizingObject));
         }
     }
 
@@ -150,10 +150,25 @@ namespace DBZ_LotSS_Editor
         }
     }
 
+    public class DataCharacterDefinitionAccessor : HexAppPartialDefinition<CharacterDataDefinition>
+    {
+        public DataCharacterDefinitionAccessor(ISynchronizeInvoke synchronizingObject) : base(synchronizingObject) { }
+
+        public override byte[] DefaultDefinition => My.Resources.Resources.DataEditor_Characters;
+
+        public override string DefinitionFileName => "DataEditor_Characters.json";
+
+        public override void ContainerChanged()
+        {
+            HexDefinitionManager.Instance.Context.DataEditor.Characters = Container.Current.Definition;
+        }
+    }
+
     public class AppDefinitionContext : HexAppDefinitionContext
     {
         public AppDefinitionContext(HexAppDefinition appDefinition) : base(appDefinition) { }
 
+        public DataEditorDefinition DataEditor { get; set; } = new DataEditorDefinition();
         public SpriteEditorDefinition SpriteEditor { get; set; } = new SpriteEditorDefinition();
         public GenericArtEditorDefinition PaletteEditor { get; set; } = new GenericArtEditorDefinition();
     }
@@ -178,6 +193,15 @@ namespace DBZ_LotSS_Editor
 
     public class SpriteEditorDefinition : ArtEditorDefinition<SpriteGenericDefinition, SpriteGenericDefinition, SpritePortraitDefinition, SpriteGenericDefinition, SpriteGenericDefinition> { }
 
+    public class DataEditorDefinition
+    {
+        public CharacterDataDefinition Characters { get; set; } = new CharacterDataDefinition();
+    }
+    public class CharacterDataDefinition
+    {
+        public List<CharacterListItemDefinition> List { get; set; } = new List<CharacterListItemDefinition>();
+    }
+
     public class AssetDefinition
     {
         public List<ListItemDefinition> List { get; set; } = new List<ListItemDefinition>();
@@ -197,6 +221,13 @@ namespace DBZ_LotSS_Editor
     {
         public string Offset { get; set; }
         public string Name { get; set; }
+    }
+
+    public class CharacterListItemDefinition : ListItemDefinition
+    {
+        public bool CanLevel { get; set; }
+        public bool CanBattle { get; set; }
+        public bool CanTransform { get; set; }
     }
 
     public class SpriteListItemDefinition : ListItemDefinition

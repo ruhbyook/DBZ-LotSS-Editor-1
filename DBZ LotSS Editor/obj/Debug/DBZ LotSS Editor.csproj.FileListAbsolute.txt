@@ -217,3 +217,4 @@ C:\Users\MakoInfused\Source\Repos\DBZ-LotSS-Editor\DBZ LotSS Editor\bin\Debug\pt
 C:\Users\MakoInfused\Source\Repos\DBZ-LotSS-Editor\DBZ LotSS Editor\bin\Debug\ru-RU\WPFHexaEditor.resources.dll
 C:\Users\MakoInfused\Source\Repos\DBZ-LotSS-Editor\DBZ LotSS Editor\bin\Debug\zh-CN\WPFHexaEditor.resources.dll
 C:\Users\MakoInfused\Source\Repos\DBZ-LotSS-Editor\DBZ LotSS Editor\obj\Debug\DBZ LotS.9C222B4D.Up2Date
+C:\Users\MakoInfused\Source\Repos\DBZ-LotSS-Editor\DBZ LotSS Editor\bin\Debug\Resources\DataEditor_Characters.json

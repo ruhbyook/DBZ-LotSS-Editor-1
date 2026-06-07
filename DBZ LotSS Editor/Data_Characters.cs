@@ -1,15 +1,16 @@
-﻿using System.Linq;
-using System.Windows.Forms;
+﻿using System.Collections.Generic;
 using System.IO;
+using System.Linq;
+using System.Windows.Forms;
 using static System.Windows.Forms.ListViewItem;
-using System.Collections.Generic;
 
 namespace DBZ_LotSS_Editor
 {
     public partial class Data_Characters : HexTools.HexUserControl
     {
-        readonly int[] CannotLevel = new int[] { 8, 9, 10, 12 };
-        readonly int[] CannotBattle = new int[] { 12 };
+        private static readonly CharacterDataDefinition DefaultCharacterDefinition =
+            new BasicTools.BasicJsonDefinition<CharacterDataDefinition>(My.Resources.Resources.DataEditor_Characters)
+                .Definition;
 
         public Data_Characters()
         {
@@ -18,16 +19,23 @@ namespace DBZ_LotSS_Editor
 
         private void HexListBox1_SelectedIndexChanged(object sender, System.EventArgs e)
         {
+            UpdateControls();
+        }
+
+        private void UpdateControls()
+        {
             var selectedIndex = HexListBox1.SelectedIndex;
 
-            Transformation.Visible = selectedIndex <= 7;
-            NoTransformation.Visible = !Transformation.Visible;
+            var character = DefaultCharacterDefinition.List[selectedIndex];
 
-            Levels.Enabled = !CannotLevel.Contains(selectedIndex);
-            NoLevel.Visible = !Levels.Enabled;
+            Transformation.Visible = character.CanTransform;
+            NoTransformation.Visible = !character.CanTransform;
 
-            Battler.Visible = !CannotBattle.Contains(selectedIndex);
-            NoBattler.Visible = !Battler.Visible;
+            Levels.Enabled = character.CanLevel;
+            NoLevel.Visible = !character.CanLevel;
+
+            Battler.Visible = character.CanBattle;
+            NoBattler.Visible = !character.CanBattle;
         }
 
         private void ExportLevelData_Click(object sender, System.EventArgs e)

@@ -247,4 +247,7 @@
   <data name="SpriteEditor_System" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>resources\spriteeditor_system.json;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
+  <data name="DataEditor_Characters" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\DataEditor_Characters.json;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
 </root>
