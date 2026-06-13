@@ -1,0 +1,382 @@
+https://www.scribd.com/document/219035442/Dragon-Ball-Z-Legend-of-the-Super-Saiyan-Cheat-List-by-Nassif9000#
+
+Needs Identification:
+Damage Formulas for Skills
+Formulas for Items
+Shop Items
+Drop Items
+
+Font Table: 0x40000 compressed 2BPP, 0x88036 uncompressed 2BPP
+
+Title Screen:
+Start of Text: 306A
+Credits: 309D
+00 Space
+80 0
+81 1
+82 2
+83 3
+84 4
+85 5
+86 6
+87 7
+88 8
+89 9
+9A
+D0 0 Upper
+D1 1 Upper
+D2 2 Upper
+D3 3 Upper
+D4 4 Upper
+D5 5 Upper
+D6 6 Upper
+D7 7 Upper
+D8 8 Upper
+D9 9 Upper
+DA A
+DB B
+DC C
+DD D
+DE E
+DF F
+E0 0 Lower
+E1 1 Lower
+E2 2 Lower
+E3 3 Lower
+E4 4 Lower
+E5 5 Lower
+E6 6 Lower
+E7 7 Lower
+E8 8 Lower
+E9 9 Lower
+EA G
+EB H
+EC I
+ED J
+EE K
+EF L
+F0 M
+F1 N
+F2 O
+F3 P
+F4 Q
+F5 R
+F6 S
+F7 T
+F8 U
+F9 V
+FA W
+FB X
+FC Y
+FD Z
+FE Copyright
+FF .
+
+Battler Sprites:
+$158060 - A8260 might be the ROM address for each character's pointers to their sprite assembly and possibly compressed graphics?.
+The first pointer there, $1C81D1 - 0E03D1 I think, is what leads to all of their compressed graphics.
+Then after that pointer, $158126, I think that is his sprite assembly pointers for each sprite.
+
+Pointer Table: $1C8BBE - 0E0DBE + 1C hardcoded in front which comes from 158060
+	Spritesheet $158060 --> $1C81D1 -> $1C8C6E
+	Spriteset $158063 --> $158126
+	It grabs the $1C from there and uses that as the bank
+For Goku's base battle pose... $1C94FC - E14FC is, I think, part of the compressed graphics for his battle pose and $1581CE is the start of the sprite assembly... but that looks like the data is compressed too
+Goku: 0E14FC (E0C6C) Color 0F4EAE Size: 128 x 328
+Piccolo: 0E540C Color: 0F4EEE Size: 128 x 284
+Gohan: 0E9729 Color: 0F502E Size: 128 x 112
+Raditz: Pointer says $1DACBF EAEBF, actual found at EAEAB/EAEAD?
+
+Portrait Sprites:
+0125B4 is the pointer list. They're 24-bit (3-bytes each)
+Goku, Gohan, Piccolo, Krillin: B0000
+Color Human: 4D400
+
+Arrow, Ki Blast: 78000
+Goku Character Sprite Offset: 781F7
+Gohan: 789F7
+Piccolo: 78F7E
+Roshi, Baba, Bulma, Nimbus: 79C96
+Human Palette: 8EC80
+
+Rage Sprite:
+Goku: 
+Color Goku: 097EF8
+
+Human Palette 00 7C 00 00 FF 42 39 26 52 09 BF 03 DF 02 1F 02
+Goku Palette 00 7C 00 00 FF 42 39 26 52 09 BF 03 DF 02 1F 02 EB 71 07 51
+Goku Battler Palette 00 7C 00 00 FF 42 39 26 52 09 BF 03 DF 02 1F 02 EB 71 07 51 3F 01
+Goku Flying Palette 00 00 BF 03 (1F: 255, 1D: 239, 00: 0) DF 02 1F 02 6F 7E 
+(offset: 97EF8) begins at 97778, bank at 2139F, bank for battlers reference to flying palette: E8E67
+Goku Character Palette 00 7C 00 00 FF 42 39 26 52 09 BF 03 DF 02 1F 02 E9 51 40 72
+(offset: 8EC80)
+
+3113
+
+3127 FF 7F
+F4EC2 3F 01
+
+39 67 10 42 25 7D
+Goku Portrait Palette 
+ROM: 4D400
+Game: D200
+Diff: 40200
+
+168387
+
+Debug Menu
+1A0D - A90F Off / A90A On
+16432 05 Off / 07 On
+
+1ECE2E - 0F4E2E = F8000
+VALUE - HEXOFFSET = X
+
+MAX: 200400 / 2,098,176 b
+
+Nail 0135F0:
+Favorite: 3 (1 byte)
+Level: 25 (1 byte)
+HP: 375 (2 bytes)
+BP: 42,000 (3 bytes)
+KI: 100 (2 bytes)
+1E 04 00 00 00
+
+Tsumuri 0135FE:
+Rage: 3 (1 byte)
+Level: 15 (1 byte)
+HP: 
+
+7E:9294
+
+Item Type
+25: AID 0010 0101
+40: EXT, No Target 0100 0000
+41: EXT, But Never Usable 0100 0001
+44: EXT, No Target 0100 0100
+84: INT, No Target 1000 0100
+85: INT, But Never Usable 1000 0101
+88: INT, Single Friendly Target 1000 1000
+90: INT, No Target 1001 0000
+92: INT, No Target 1001 0010
+CA: INT, EXT, Checks HP isn't max before using 1100 1010
+C8: INT, EXT, Single Friendly Target 1100 1000
+80: INT, No Target 1000 0000
+D0: INT, EXT, No Target 1101 0000
+D2: INT, EXT, No Target 1101 0010
+
+Usable in Battle (INT): 1st Bit
+Usable on Field (EXT): 2nd Bit
+Usable by Event (AID): 3rd Bit
+???: 4th Bit
+Single Friendly Target: 5th Bit
+???: 6th Bit
+Validate HP Isn't Max: 7th Bit
+Cannot Be Used: 8th Bit
+
+Save Menu
+$01/8295 29 10       AND #$10                A:0000 X:0020 Y:0002 P:envMxdIZC
+$01/8297 D0 36       BNE $36    [$82CF]      A:0000 X:0020 Y:0002 P:envMxdIZC
+$01/8299 A9 00       LDA #$00                A:0000 X:0020 Y:0002 P:envMxdIZC
+$01/829B EB          XBA                     A:0000 X:0020 Y:0002 P:envMxdIZC
+$01/829C A5 10       LDA $10    [$00:0010]   A:0000 X:0020 Y:0002 P:envMxdIZC
+$01/829E 0A          ASL A                   A:0000 X:0020 Y:0002 P:envMxdIZC
+$01/829F AA          TAX                     A:0000 X:0020 Y:0002 P:envMxdIZc
+$01/82A0 C2 20       REP #$20                A:0000 X:0000 Y:0002 P:envMxdIZc
+$01/82A2 BF 00 80 02 LDA $028000,x[$02:8000] A:0000 X:0000 Y:0002 P:envmxdIZc
+$01/82A6 85 18       STA $18    [$00:0018]   A:8262 X:0000 Y:0002 P:eNvmxdIzc
+$01/82A8 E2 20       SEP #$20                A:8262 X:0000 Y:0002 P:eNvmxdIzc
+$01/82AA A9 02       LDA #$02                A:8262 X:0000 Y:0002 P:eNvMxdIzc
+$01/82AC 85 1A       STA $1A    [$00:001A]   A:8202 X:0000 Y:0002 P:envMxdIzc
+$01/82AE 85 02       STA $02    [$00:0002]   A:8202 X:0000 Y:0002 P:envMxdIzc
+$01/82B0 A9 00       LDA #$00                A:8202 X:0000 Y:0002 P:envMxdIzc
+$01/82B2 EB          XBA                     A:8200 X:0000 Y:0002 P:envMxdIZc
+$01/82B3 A5 11       LDA $11    [$00:0011]   A:0082 X:0000 Y:0002 P:eNvMxdIzc
+$01/82B5 0A          ASL A                   A:0005 X:0000 Y:0002 P:envMxdIzc
+$01/82B6 A8          TAY                     A:000A X:0000 Y:0002 P:envMxdIzc
+$01/82B7 B7 18       LDA [$18],y[$02:826C]   A:000A X:0000 Y:000A P:envMxdIzc
+$01/82B9 85 00       STA $00    [$00:0000]   A:00DE X:0000 Y:000A P:eNvMxdIzc
+$01/82BB C8          INY                     A:00DE X:0000 Y:000A P:eNvMxdIzc
+$01/82BC B7 18       LDA [$18],y[$02:826D]   A:00DE X:0000 Y:000B P:envMxdIzc
+$01/82BE 85 01       STA $01    [$00:0001]   A:0087 X:0000 Y:000B P:eNvMxdIzc
+$01/82C0 A5 11       LDA $11    [$00:0011]   A:0087 X:0000 Y:000B P:eNvMxdIzc
+$01/82C2 C9 19       CMP #$19                A:0005 X:0000 Y:000B P:envMxdIzc
+$01/82C4 D0 05       BNE $05    [$82CB]      A:0005 X:0000 Y:000B P:eNvMxdIzc
+$01/82CB 22 9C 84 00 JSL $00849C[$00:849C]   A:0005 X:0000 Y:000B P:eNvMxdIzc
+
+12344-12464 Battle/Event Sprite Portraits Assembly
+01 Byte01: Size 0 Tiny, Size 1 Portrait
+00 Byte02: Bottom Right Offset Y
+0E Byte03: Bottom Right Clip Y, Sprite Index
+00 Byte04: Bottom Right Rotation, Palette Index
+00 Byte05: Bottom Right Offset X
+00 Byte06: Bottom Left Offset  Y
+0C Byte07: Bottom Left Clip Y, Sprite Index
+30 Byte08: Bottom Left Rotation, Palette Index
+F0 Byte09: Bottom Left Offset X
+F0 Byte10: Top Right Offset Y
+0A Byte11: Top Right Clip Y, Sprite Index
+30 Byte12: Top Right Rotation
+00 Byte13: Top Right Offset X
+F0 Byte14: Top Left Offset Y
+08 Byte15: Top Left Clip Y, Sprite Index
+30 Byte16: Top Left Rotation
+F0 Byte17: Top Left Offset X
+80 Byte18: EOL??
+Goku/Sprite 1
+Piccolo/Sprite 2
+Gohan/Sprite 3
+??
+??
+??
+??
+??
+??
+??
+??
+??
+??
+Talking Event
+??
+
+Mirror Flags = (40 = Mirror X, 80 = Mirror Y, C0 = Mirror Both)
+
+12464-12484 Pointers to Portrait sprite something?
+
+12484-12556 Battler Portrait Palette
+12556-125B4 Item Portrait Palette
+125B4-126EF Battler Portrait Sprite
+126EF-1277C Item Portrait Sprite
+
+1277C-F8
+4th Bit of 2nd Byte = 0 Then Goku, 1 Then Gohan
+0, 2, 4 - Goku
+1, 3, 5 - Gohan
+3rd Bit of 1st Byte = 0 Then Piccolo, 1 Then Krillin
+12788-62
+3rd Bit = 0 Then Piccolo, 1 Then Krillin
+0, 1, 4, 5, 8, 9, C, D - Piccolo
+2, 3, 6, 7, A, B, E, F - Krillin
+
+Portraits Sprite start 168000
+
+[X] Null Portraits Sprite 09E9FE
+[X] Battler Change crashes
+[X] Item Type BitMask -> GroupCheckBox
+[X] About Screen
+[X] Progress Bar
+[X] Null Sprite Palette 000000
+[X] App Icon
+[X] Preferences with Option to Reload Last Opened
+[X] Real Progress Bar
+[X] Reload HexTableView on Write
+[X] Table Add Previous Values for Display
+[X] Credit Justin
+[X] Viewer with Hex/Number
+[X] Fix Bug TableView write cumulative values, storing whole values
+[X] Autobackup feature and controls in preferences
+[X] Fix Bug with UseScript/Map Raw Data Hex Failing, Test 
+DD2ADC6EBF4420073CAD -> 
+DD3ADC6EBF4420073CAD
+[X] Warning with checkbox about unknown controls and advanced mode in preferences
+[X] Modification history - showing all changes made and allowing IPS export/import: https://github.com/vector-man/LibIPS.NET
+
+Difference: 3FE
+09E600 Kami Alternate/Guru Alternate
+09E9FE Transparent/Kaio Planet
+09EBE4 Gravity Chamber/Dinosaur
+168000 Goku/Gohan
+168367 Piccolo/Krillin
+16872A Tien/Yamcha
+168A9B Chiaotzu/Vegeta
+168E09 Nail/Tsumuri
+1691D4 Maima/Dende
+169590 SS Goku/SS Gohan
+1699C5 SS Vegeta/?
+169C00 Raditz/Saibaman
+169FA7 Nappa/Kui
+16A354 Appule/Banan
+16A780 Dodoria/Zarbon
+16ABAB Zarbon (Transformed)/Guldo
+16AF64 Recoome/Burter
+16B350 Jeice/Captain Ginyu
+16BF06 King Kai/Oozaru
+16B727 Frieza (Form 1)/Frieza (Form 2)
+16BB4F Frieza (Form 3)/Frieza (Form 4)
+16C281 Armored Oozaru/Kid Gohan
+16C60A Kami/Roshi
+16CA44 Bulma/Mr. Popo
+16CDEF Puar/Guru
+16D205 Korin/Shenron
+16D5D9 Oolong/Yemma
+16D941 Baba/Chi Chi
+16DCAD Grandpa Gohan/Yajirobe
+16E090 Bubbles/Escape
+16E3EA Scouter A/Scouter B
+16E67C Launch (Brunette)/Launch (Blonde)
+16EA80 Moon & Tail/Porunga
+16EE4E Namekian Frog/DragonBall Radar
+16F1E8 Kame Turtle/Upset Kid Gohan
+16F578 DragonBall 1/DragonBall 2
+16F76A DragonBall 3/DragonBall 4
+16F981 DragonBall 5/DragonBall 6
+16FB8D DragonBall 7/Elder Namekian
+
+
+003F87-004288
+Secret ending text
+Character Text Pointer Bank: 012D66
+012DBF-012E0A
+Character Names (02ABC9 02ABBE)
+012E12-012ED8
+Random Battle Text
+Enemy Text Pointer Bank: 012EE8
+012FBB-013135
+Enemy Names
+Skill Text Pointer Bank: 0130A6
+013136-013329 (02FEE0 02AF4A)
+Skill names
+Item Text Pointer Bank: 0132D9
+01332A-013403, 012E0B-012E11
+Item Card names
+015D33-015D50
+Attack without whole party confirmation
+015D33-015D6A
+Save complete confirmation
+015CBA-015D13, 015D14-015D2E, 015D6C-015D84, 015E02-015E2F
+Stats Menu text
+016062-0162D8
+Battle system text
+
+47 11 0C 01 14 05 15 5B 05 1A 01 06 05 0A 15 54 5C
+T  h  e     S  a  i  y  a  n     R  a  d  i  t  z
+03BCCF
+
+Game Text Pointer Bank: 030000
+0304DC-035306
+First legitimate game text seems to appear?
+0395AE-039941, 03D890-03D99D
+Item Description text seems to be stored
+039942-03A12E
+Battle system text appears to be stored
+03A12F-03D88F, 03EF80-03F04b
+More game text
+03F04C-0401FF, 045B23-045E00, 04CE5C-04D3FF, 056EEB-05729E, 057A8D-0581FF, 08A203-08C1FE, 09EF92-0A01FF
+Free space!
+
+[X] Cancel out of font table editor removes value
+[X] Character level table doesn't refresh on undo/redo
+[X] Saving hex tables still causes issues :(
+[X] Bit Flags not saving changes
+[] Memory Mapped Files
+
+Undo/Redo
+Separator
+Cut
+Copy Text
+Copy Bytes
+Paste
+Delete
+Separator
+De/Select All
+Separator
+View->Right To left Reading order
