@@ -5,7 +5,7 @@ using System.Windows.Forms;
 namespace DBZ_LotSS_Editor
 {
     [Microsoft.VisualBasic.CompilerServices.DesignerGenerated()]
-    public partial class Text_Game : HexTools.HexUserControl
+    public partial class Data_Dialogues : HexTools.HexUserControl
     {
 
         // Form overrides dispose to clean up the component list.
@@ -35,6 +35,7 @@ namespace DBZ_LotSS_Editor
         private void InitializeComponent()
         {
             HexTools.HexListBoxItem hexListBoxItem1 = new HexTools.HexListBoxItem();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Data_Dialogues));
             HexTools.HexListBoxItem hexListBoxItem2 = new HexTools.HexListBoxItem();
             HexTools.HexListBoxItem hexListBoxItem3 = new HexTools.HexListBoxItem();
             HexTools.HexListBoxItem hexListBoxItem4 = new HexTools.HexListBoxItem();
@@ -401,30 +402,69 @@ namespace DBZ_LotSS_Editor
             HexTools.HexListBoxItem hexListBoxItem365 = new HexTools.HexListBoxItem();
             HexTools.HexListBoxItem hexListBoxItem366 = new HexTools.HexListBoxItem();
             this.BasicListBoxAssociate1 = new BasicTools.BasicControls.BasicListBoxAssociate();
-            this.MessageBox = new HexTools.HexMessageBox();
+            this.MessagePanel = new HexTools.HexPanel();
+            this.MessageBox = new HexTools.HexComboBox();
+            this.LabelName = new System.Windows.Forms.Label();
             this.HexListBox1 = new HexTools.HexListBox();
             this.BasicListBoxAssociate1.SuspendLayout();
+            this.MessagePanel.SuspendLayout();
             this.SuspendLayout();
             // 
             // BasicListBoxAssociate1
             // 
-            this.BasicListBoxAssociate1.Controls.Add(this.MessageBox);
+            this.BasicListBoxAssociate1.Controls.Add(this.MessagePanel);
             this.BasicListBoxAssociate1.ListBox = this.HexListBox1;
-            this.BasicListBoxAssociate1.Location = new System.Drawing.Point(255, 17);
+            this.BasicListBoxAssociate1.Location = new System.Drawing.Point(406, 27);
+            this.BasicListBoxAssociate1.Margin = new System.Windows.Forms.Padding(6);
             this.BasicListBoxAssociate1.Name = "BasicListBoxAssociate1";
-            this.BasicListBoxAssociate1.Size = new System.Drawing.Size(518, 550);
-            this.BasicListBoxAssociate1.TabIndex = 19;
+            this.BasicListBoxAssociate1.Padding = new System.Windows.Forms.Padding(6);
+            this.BasicListBoxAssociate1.Size = new System.Drawing.Size(736, 859);
+            this.BasicListBoxAssociate1.TabIndex = 15;
             this.BasicListBoxAssociate1.TabStop = false;
             this.BasicListBoxAssociate1.Text = "HexListBox1";
             // 
+            // MessagePanel
+            // 
+            this.MessagePanel.Controls.Add(this.MessageBox);
+            this.MessagePanel.Controls.Add(this.LabelName);
+            this.MessagePanel.HexOffset = "&H030000";
+            this.MessagePanel.IndexOffset = "&H000002";
+            this.MessagePanel.Location = new System.Drawing.Point(20, 37);
+            this.MessagePanel.Margin = new System.Windows.Forms.Padding(6);
+            this.MessagePanel.Name = "MessagePanel";
+            this.MessagePanel.Size = new System.Drawing.Size(704, 42);
+            this.MessagePanel.TabIndex = 46;
+            // 
             // MessageBox
             // 
-            this.MessageBox.AutoSize = true;
-            this.MessageBox.Location = new System.Drawing.Point(6, 21);
-            this.MessageBox.MinimumSize = new System.Drawing.Size(250, 125);
+            this.MessageBox.Definition = "TextEditor.Dialogues.List";
+            this.MessageBox.DefinitionOffsetFormat = HexTools.HexEnumerations.HexAddressFormatType.SNES_LoROM;
+            this.MessageBox.Display = HexTools.HexEnumerations.DisplayType.Hex;
+            this.MessageBox.DisplayMember = "Text";
+            this.MessageBox.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.MessageBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.MessageBox.Endian = HexTools.HexEnumerations.EndianType.Little_Endian;
+            this.MessageBox.FormatString = "X4";
+            this.MessageBox.FormattingEnabled = true;
+            this.MessageBox.Location = new System.Drawing.Point(112, 4);
+            this.MessageBox.Margin = new System.Windows.Forms.Padding(6);
+            this.MessageBox.MaxDropDownItems = 15;
+            this.MessageBox.MaxLength = 2;
             this.MessageBox.Name = "MessageBox";
-            this.MessageBox.Size = new System.Drawing.Size(316, 267);
-            this.MessageBox.TabIndex = 0;
+            this.MessageBox.Size = new System.Drawing.Size(382, 32);
+            this.MessageBox.TabIndex = 31;
+            this.MessageBox.ValueDisplay = true;
+            this.MessageBox.ValueMember = "Value";
+            // 
+            // LabelName
+            // 
+            this.LabelName.AutoSize = true;
+            this.LabelName.Location = new System.Drawing.Point(6, 7);
+            this.LabelName.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
+            this.LabelName.Name = "LabelName";
+            this.LabelName.Size = new System.Drawing.Size(100, 25);
+            this.LabelName.TabIndex = 26;
+            this.LabelName.Text = "Message";
             // 
             // HexListBox1
             // 
@@ -432,11 +472,13 @@ namespace DBZ_LotSS_Editor
             this.HexListBox1.FormatString = "X2";
             this.HexListBox1.FormattingEnabled = true;
             this.HexListBox1.IndexDisplay = true;
-            hexListBoxItem1.Text = "Index00";
-            hexListBoxItem2.Text = "Index01";
-            hexListBoxItem3.Text = "Index02";
-            hexListBoxItem4.Text = "Index03";
-            hexListBoxItem5.Text = "Index04";
+            hexListBoxItem1.HexOffset = null;
+            hexListBoxItem1.Strings = ((System.Collections.Specialized.StringCollection)(resources.GetObject("hexListBoxItem1.Strings")));
+            hexListBoxItem1.Text = "Kame House/Roshi #1";
+            hexListBoxItem2.Text = "Kame House/Bulma #1";
+            hexListBoxItem3.Text = "Kame House/Krillin #1";
+            hexListBoxItem4.Text = "Kame House/Krillin #2";
+            hexListBoxItem5.Text = "Kame House/Krillin #3";
             hexListBoxItem6.Text = "Index05";
             hexListBoxItem7.Text = "Index06";
             hexListBoxItem8.Text = "Index07";
@@ -588,7 +630,7 @@ namespace DBZ_LotSS_Editor
             hexListBoxItem154.Text = "Index153";
             hexListBoxItem155.Text = "Index154";
             hexListBoxItem156.Text = "Index155";
-            hexListBoxItem157.Text = "Index146";
+            hexListBoxItem157.Text = "Index156";
             hexListBoxItem158.Text = "Index157";
             hexListBoxItem159.Text = "Index158";
             hexListBoxItem160.Text = "Index159";
@@ -1164,30 +1206,32 @@ namespace DBZ_LotSS_Editor
             this.HexListBox1.Items.Add(hexListBoxItem364);
             this.HexListBox1.Items.Add(hexListBoxItem365);
             this.HexListBox1.Items.Add(hexListBoxItem366);
-            this.HexListBox1.Location = new System.Drawing.Point(16, 17);
-            this.HexListBox1.Margin = new System.Windows.Forms.Padding(4);
+            this.HexListBox1.Location = new System.Drawing.Point(24, 27);
+            this.HexListBox1.Margin = new System.Windows.Forms.Padding(6);
             this.HexListBox1.Name = "HexListBox1";
-            this.HexListBox1.SelectedItem = hexListBoxItem1;
-            this.HexListBox1.Size = new System.Drawing.Size(232, 550);
-            this.HexListBox1.TabIndex = 18;
+            this.HexListBox1.SelectedItem = null;
+            this.HexListBox1.Size = new System.Drawing.Size(346, 849);
+            this.HexListBox1.TabIndex = 14;
             // 
-            // Text_Game
+            // Data_Dialogues
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.BasicListBoxAssociate1);
             this.Controls.Add(this.HexListBox1);
-            this.Margin = new System.Windows.Forms.Padding(4);
-            this.Name = "Text_Game";
-            this.Size = new System.Drawing.Size(787, 603);
+            this.Margin = new System.Windows.Forms.Padding(6);
+            this.Name = "Data_Dialogues";
+            this.Size = new System.Drawing.Size(1180, 942);
             this.BasicListBoxAssociate1.ResumeLayout(false);
-            this.BasicListBoxAssociate1.PerformLayout();
+            this.MessagePanel.ResumeLayout(false);
+            this.MessagePanel.PerformLayout();
             this.ResumeLayout(false);
 
         }
-
-        internal BasicTools.BasicControls.BasicListBoxAssociate BasicListBoxAssociate1;
         internal HexTools.HexListBox HexListBox1;
-        internal HexTools.HexMessageBox MessageBox;
+        internal BasicTools.BasicControls.BasicListBoxAssociate BasicListBoxAssociate1;
+        internal HexTools.HexPanel MessagePanel;
+        internal HexTools.HexComboBox MessageBox;
+        internal Label LabelName;
     }
 }

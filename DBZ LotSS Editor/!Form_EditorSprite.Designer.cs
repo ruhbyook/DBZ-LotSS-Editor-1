@@ -44,11 +44,14 @@ namespace DBZ_LotSS_Editor
             this.Sprite_Portraits = new DBZ_LotSS_Editor.Sprite_Portrait();
             this.TabBattlers = new BasicTools.BasicControls.BasicTabPage();
             this.Sprite_Battlers = new DBZ_LotSS_Editor.Sprite_Battlers();
+            this.TabFlyers = new BasicTools.BasicControls.BasicTabPage();
+            this.Sprite_Flyers = new DBZ_LotSS_Editor.Sprite_Flyers();
             this.TabControl1.SuspendLayout();
             this.TabSystem.SuspendLayout();
             this.TabCharacters.SuspendLayout();
             this.TabPortraits.SuspendLayout();
             this.TabBattlers.SuspendLayout();
+            this.TabFlyers.SuspendLayout();
             this.SuspendLayout();
             // 
             // TabControl1
@@ -57,6 +60,7 @@ namespace DBZ_LotSS_Editor
             this.TabControl1.Controls.Add(this.TabCharacters);
             this.TabControl1.Controls.Add(this.TabPortraits);
             this.TabControl1.Controls.Add(this.TabBattlers);
+            this.TabControl1.Controls.Add(this.TabFlyers);
             this.TabControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.TabControl1.Enabled = false;
             this.TabControl1.Location = new System.Drawing.Point(0, 0);
@@ -73,7 +77,7 @@ namespace DBZ_LotSS_Editor
             this.TabSystem.Location = new System.Drawing.Point(4, 30);
             this.TabSystem.Name = "TabSystem";
             this.TabSystem.Size = new System.Drawing.Size(931, 707);
-            this.TabSystem.TabIndex = 3;
+            this.TabSystem.TabIndex = 0;
             this.TabSystem.Text = "System";
             // 
             // Sprite_System
@@ -91,7 +95,7 @@ namespace DBZ_LotSS_Editor
             this.TabCharacters.Location = new System.Drawing.Point(4, 30);
             this.TabCharacters.Name = "TabCharacters";
             this.TabCharacters.Size = new System.Drawing.Size(931, 707);
-            this.TabCharacters.TabIndex = 2;
+            this.TabCharacters.TabIndex = 1;
             this.TabCharacters.Text = "Characters";
             this.TabCharacters.UseVisualStyleBackColor = true;
             // 
@@ -111,7 +115,7 @@ namespace DBZ_LotSS_Editor
             this.TabPortraits.Location = new System.Drawing.Point(4, 30);
             this.TabPortraits.Name = "TabPortraits";
             this.TabPortraits.Size = new System.Drawing.Size(931, 707);
-            this.TabPortraits.TabIndex = 0;
+            this.TabPortraits.TabIndex = 2;
             this.TabPortraits.Text = "Portraits";
             this.TabPortraits.UseVisualStyleBackColor = true;
             // 
@@ -131,7 +135,7 @@ namespace DBZ_LotSS_Editor
             this.TabBattlers.Location = new System.Drawing.Point(4, 30);
             this.TabBattlers.Name = "TabBattlers";
             this.TabBattlers.Size = new System.Drawing.Size(931, 707);
-            this.TabBattlers.TabIndex = 1;
+            this.TabBattlers.TabIndex = 3;
             this.TabBattlers.Text = "Battlers";
             // 
             // Sprite_Battlers
@@ -143,6 +147,25 @@ namespace DBZ_LotSS_Editor
             this.Sprite_Battlers.Name = "Sprite_Battlers";
             this.Sprite_Battlers.Size = new System.Drawing.Size(931, 707);
             this.Sprite_Battlers.TabIndex = 0;
+            // 
+            // TabFlyers
+            // 
+            this.TabFlyers.Controls.Add(this.Sprite_Flyers);
+            this.TabFlyers.Location = new System.Drawing.Point(4, 30);
+            this.TabFlyers.Name = "TabFlyers";
+            this.TabFlyers.Size = new System.Drawing.Size(931, 707);
+            this.TabFlyers.TabIndex = 4;
+            this.TabFlyers.Text = "Flyers";
+            // 
+            // Sprite_Flyers
+            // 
+            this.Sprite_Flyers.BackColor = System.Drawing.SystemColors.Control;
+            this.Sprite_Flyers.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.Sprite_Flyers.Location = new System.Drawing.Point(0, 0);
+            this.Sprite_Flyers.Margin = new System.Windows.Forms.Padding(5);
+            this.Sprite_Flyers.Name = "Sprite_Flyers";
+            this.Sprite_Flyers.Size = new System.Drawing.Size(931, 707);
+            this.Sprite_Flyers.TabIndex = 0;
             // 
             // Form_EditorSprite
             // 
@@ -159,17 +182,20 @@ namespace DBZ_LotSS_Editor
             this.TabCharacters.ResumeLayout(false);
             this.TabPortraits.ResumeLayout(false);
             this.TabBattlers.ResumeLayout(false);
+            this.TabFlyers.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
         internal BasicTabControl TabControl1;
         internal BasicTabPage TabBattlers;
         internal Sprite_Battlers Sprite_Battlers;
-        private BasicTabPage TabPortraits;
-        private Sprite_Portrait Sprite_Portraits;
-        private BasicTabPage TabCharacters;
+        internal BasicTabPage TabPortraits;
+        internal Sprite_Portrait Sprite_Portraits;
+        internal BasicTabPage TabCharacters;
         internal Sprite_Characters Sprite_Characters;
-        private BasicTabPage TabSystem;
-        private Sprite_System Sprite_System;
+        internal BasicTabPage TabSystem;
+        internal Sprite_System Sprite_System;
+        internal BasicTabPage TabFlyers;
+        internal Sprite_Flyers Sprite_Flyers;
     }
 }

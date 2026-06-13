@@ -26,7 +26,7 @@
 19=m
 1A=n
 1B=o
-1C=-
+1C=_
 1D=p
 1E=<1E>
 1F=<1F>
@@ -302,6 +302,7 @@ F494=<Turtle B>\n
 F495=<Planet Kai L>\n
 F496=<Fake Goku>\n
 F497=<Dinosaur>\n
+FC=Ž
 FD=<CLOSE TEXT>\n
 FE=<NEW PAGE>
 FF=<LINE BREAK>\n

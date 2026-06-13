@@ -1,0 +1,42 @@
+{
+	"Table": 
+	{
+		"Offset": "0x030000"
+	},
+	"List": [
+		{ "Offset": "0x0093AE", "Name": "Kami" },
+		{ "Offset": "0x0093C1", "Name": "Roshi" },
+		{ "Offset": "0x0093D2", "Name": "Bulma" },
+		{ "Offset": "0x0093E3", "Name": "Mr. Popo" },
+		{ "Offset": "0x009403", "Name": "Puar" },
+		{ "Offset": "0x00941B", "Name": "Kaio" },
+		{ "Offset": "0x009434", "Name": "Guru" },
+		{ "Offset": "0x00944D", "Name": "Grandpa Gohan" },
+		{ "Offset": "0x009471", "Name": "Korin" },
+		{ "Offset": "0x009491", "Name": "Launch (Brunette)" },
+		{ "Offset": "0x0094B1", "Name": "Yemma" },
+		{ "Offset": "0x0094CE", "Name": "Baba" },
+		{ "Offset": "0x0094EC", "Name": "Chi-Chi" },
+		{ "Offset": "0x009513", "Name": "Oolong" },
+		{ "Offset": "0x009533", "Name": "Shenron" },
+		{ "Offset": "0x009555", "Name": "Porunga" },
+		{ "Offset": "0x00956E", "Name": "Scouter" },
+		{ "Offset": "0x00958F", "Name": "Scouter" },
+		{ "Offset": "0x0095B0", "Name": "Yajirobe" },
+		{ "Offset": "0x0095CD", "Name": "Vegeta" },
+		{ "Offset": "0x0095E8", "Name": "Moon & Tail" },
+		{ "Offset": "0x009601", "Name": "Bubbles" },
+		{ "Offset": "0x00961D", "Name": "Escape" },
+		{ "Offset": "0x009646", "Name": "Dragonball Radar" },
+		{ "Offset": "0x009660", "Name": "Namekian Frog" },
+		{ "Offset": "0x00966F", "Name": "Kame" },
+		{ "Offset": "0x009699", "Name": "Gohan" },
+		{ "Offset": "0x0096B3", "Name": "Launch (Blonde)" },
+		{ "Offset": "0x0096DA", "Name": "Goku" },
+		{ "Offset": "0x009701", "Name": "Piccolo" },
+		{ "Offset": "0x00971B", "Name": "Saibamen" },
+		{ "Offset": "0x00971E", "Name": "Gohan" },
+		{ "Offset": "0x009721", "Name": "Frog" },
+		{ "Offset": "0x009727", "Name": "Dragonball" }
+	]
+}

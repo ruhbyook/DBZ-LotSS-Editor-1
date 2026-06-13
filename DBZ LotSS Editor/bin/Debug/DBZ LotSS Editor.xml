@@ -220,6 +220,11 @@
               Looks up a localized resource of type System.Byte[].
             </summary>
         </member>
+        <member name="P:DBZ_LotSS_Editor.My.Resources.Resources.SpriteEditor_Flyers">
+            <summary>
+              Looks up a localized resource of type System.Byte[].
+            </summary>
+        </member>
         <member name="P:DBZ_LotSS_Editor.My.Resources.Resources.SpriteEditor_Portraits">
             <summary>
               Looks up a localized resource of type System.Byte[].
@@ -233,6 +238,36 @@
         <member name="P:DBZ_LotSS_Editor.My.Resources.Resources.styleset16">
             <summary>
               Looks up a localized resource of type System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:DBZ_LotSS_Editor.My.Resources.Resources.TextEditor_Battlers">
+            <summary>
+              Looks up a localized resource of type System.Byte[].
+            </summary>
+        </member>
+        <member name="P:DBZ_LotSS_Editor.My.Resources.Resources.TextEditor_Characters">
+            <summary>
+              Looks up a localized resource of type System.Byte[].
+            </summary>
+        </member>
+        <member name="P:DBZ_LotSS_Editor.My.Resources.Resources.TextEditor_Descriptions">
+            <summary>
+              Looks up a localized resource of type System.Byte[].
+            </summary>
+        </member>
+        <member name="P:DBZ_LotSS_Editor.My.Resources.Resources.TextEditor_Dialogues">
+            <summary>
+              Looks up a localized resource of type System.Byte[].
+            </summary>
+        </member>
+        <member name="P:DBZ_LotSS_Editor.My.Resources.Resources.TextEditor_Items">
+            <summary>
+              Looks up a localized resource of type System.Byte[].
+            </summary>
+        </member>
+        <member name="P:DBZ_LotSS_Editor.My.Resources.Resources.TextEditor_Skills">
+            <summary>
+              Looks up a localized resource of type System.Byte[].
             </summary>
         </member>
         <member name="P:DBZ_LotSS_Editor.My.Resources.Resources.undo16">

@@ -1,0 +1,55 @@
+{
+    "Table": {
+        "Offset": "0x8000",
+        "Index": {
+            "Offset": null,
+            "Bit": 0
+        },
+        "Pointer": {
+            "Offset": null,
+            "Bank": 0,
+            "Length": 0,
+            "IgnoreHeader": false
+        }
+    },
+    "List": [
+        { "Offset": "0x00B129", "Name": "Kami" },
+        { "Offset": "0x00B12E", "Name": "Roshi" },
+        { "Offset": "0x00B134", "Name": "Bulma" },
+        { "Offset": "0x00B13A", "Name": "Mr. Popo" },
+        { "Offset": "0x00B141", "Name": "Puar" },
+        { "Offset": "0x00B146", "Name": "Kaio" },
+        { "Offset": "0x00B14D", "Name": "Guru" },
+        { "Offset": "0x00B152", "Name": "Grandpa Gohan" },
+        { "Offset": "0x00B15A", "Name": "Korin" },
+        { "Offset": "0x00F470", "Name": "Launch (Brunette)" },
+        { "Offset": "0x00B160", "Name": "Yemma" },
+        { "Offset": "0x00B166", "Name": "Baba" },
+        { "Offset": "0x00B16B", "Name": "Chi-Chi" },
+        { "Offset": "0x00F477", "Name": "Oolong" },
+        { "Offset": "0x00B172", "Name": "Shenron" },
+        { "Offset": "0x00B17A", "Name": "Porunga" },
+        { "Offset": "0x00B182", "Name": "Scouter" },
+        { "Offset": "0x00B18A", "Name": "Yajirobe" },
+        { "Offset": "0x00F4A0", "Name": "Vegeta" },
+        { "Offset": "0x00B193", "Name": "Moon & Tail" },
+        { "Offset": "0x00B19A", "Name": "Bubbles" },
+        { "Offset": "0x00B1AB", "Name": "Escape" },
+        { "Offset": "0x00B1B2", "Name": "Dragonball Radar" },
+        { "Offset": "0x00F480", "Name": "Namekian Frog" },
+        { "Offset": "0x00B1BA", "Name": "Kame" },
+        { "Offset": "0x00ABC3", "Name": "Gohan" },
+        { "Offset": "0x00B1C3", "Name": "Launch (Blonde)" },
+        { "Offset": "0x00ABBE", "Name": "Goku" },
+        { "Offset": "0x00ABC9", "Name": "Piccolo" },
+        { "Offset": "0x00B1CC", "Name": "Saibamen" },
+        { "Offset": "0x00ABC3", "Name": "Gohan" },
+        { "Offset": "0x00B1D3", "Name": "Dragonball 1" },
+        { "Offset": "0x00B1DA", "Name": "Dragonball 2" },
+        { "Offset": "0x00B1E1", "Name": "Dragonball 3" },
+        { "Offset": "0x00B1E8", "Name": "Dragonball 4" },
+        { "Offset": "0x00B1EF", "Name": "Dragonball 5" },
+        { "Offset": "0x00B1F6", "Name": "Dragonball 6" },
+        { "Offset": "0x00B1FD", "Name": "Dragonball 7" }
+    ]
+}

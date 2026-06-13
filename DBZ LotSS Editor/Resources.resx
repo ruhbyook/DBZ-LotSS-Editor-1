@@ -250,4 +250,25 @@
   <data name="DataEditor_Characters" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>Resources\DataEditor_Characters.json;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
+  <data name="TextEditor_Battlers" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\TextEditor_Battlers.json;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="TextEditor_Characters" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\TextEditor_Characters.json;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="TextEditor_Skills" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\TextEditor_Skills.json;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="TextEditor_Items" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\TextEditor_Items.json;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="TextEditor_Dialogues" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\TextEditor_Dialogues.json;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="TextEditor_Descriptions" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\TextEditor_Descriptions.json;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="SpriteEditor_Flyers" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\SpriteEditor_Flyers.json;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
 </root>

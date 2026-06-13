@@ -7,7 +7,7 @@
 		{ "Offset": "0x014995", "Name": "Tien", "CanLevel": true, "CanBattle": true, "CanTransform": true },
 		{ "Offset": "0x014BA5", "Name": "Yamcha", "CanLevel": true, "CanBattle": true, "CanTransform": true },
 		{ "Offset": "0x014DB5", "Name": "Chiaotzu", "CanLevel": true, "CanBattle": true, "CanTransform": true },
-		{ "Offset": "0x014FC5", "Name": "Vegeta", "CanLevel": true, "CanBattle": true, "CanTransform": true },
+		{ "Offset": "0x014FC5", "Name": "Vegeta", "CanLevel": true, "CanBattle": true, "CanTransform": false },
 		{ "Offset": "0x0135F0", "Name": "Nail", "CanLevel": false, "CanBattle": true, "CanTransform": false },
 		{ "Offset": "0x0135FE", "Name": "Tsumari", "CanLevel": false, "CanBattle": true, "CanTransform": false },
 		{ "Offset": "0x01360C", "Name": "Mai-ma", "CanLevel": false, "CanBattle": true, "CanTransform": false },

@@ -102,7 +102,7 @@ namespace DBZ_LotSS_Editor
             this.ExperimentRawMapData.Control = this.UnknownRawMapData;
             this.ExperimentRawMapData.Location = new System.Drawing.Point(206, 258);
             this.ExperimentRawMapData.Name = "ExperimentRawMapData";
-            this.ExperimentRawMapData.ShowConfirmation = false;
+            this.ExperimentRawMapData.ShowConfirmation = true;
             this.ExperimentRawMapData.Size = new System.Drawing.Size(155, 33);
             this.ExperimentRawMapData.TabIndex = 20;
             // 

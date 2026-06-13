@@ -15,12 +15,19 @@ namespace DBZ_LotSS_Editor
             Register(new SpriteCharacterDefinitionAccessor(synchronizingObject));
             Register(new SpriteBattlerDefinitionAccessor(synchronizingObject));
             Register(new SpritePortraitDefinitionAccessor(synchronizingObject));
+            Register(new SpriteFlyersDefinitionAccessor(synchronizingObject));
             Register(new PaletteSystemDefinitionAccessor(synchronizingObject));
             Register(new PaletteCharacterDefinitionAccessor(synchronizingObject));
             Register(new PalettePortraitDefinitionAccessor(synchronizingObject));
             Register(new PaletteBattlerDefinitionAccessor(synchronizingObject));
             Register(new PaletteFlyerDefinitionAccessor(synchronizingObject));
             Register(new DataCharacterDefinitionAccessor(synchronizingObject));
+            Register(new TextCharacterDefinitionAccessor(synchronizingObject));
+            Register(new TextBattlerDefinitionAccessor(synchronizingObject));
+            Register(new TextSkillDefinitionAccessor(synchronizingObject));
+            Register(new TextItemDefinitionAccessor(synchronizingObject));
+            Register(new TextDialogueDefinitionAccessor(synchronizingObject));
+            Register(new TextDescriptionDefinitionAccessor(synchronizingObject));
         }
     }
 
@@ -77,6 +84,20 @@ namespace DBZ_LotSS_Editor
         public override void ContainerChanged()
         {
             HexDefinitionManager.Instance.Context.SpriteEditor.Battlers = Container.Current.Definition;
+        }
+    }
+
+    public class SpriteFlyersDefinitionAccessor : HexAppPartialDefinition<SpriteGenericDefinition>
+    {
+        public SpriteFlyersDefinitionAccessor(ISynchronizeInvoke synchronizingObject) : base(synchronizingObject) { }
+
+        public override byte[] DefaultDefinition => My.Resources.Resources.SpriteEditor_Flyers;
+
+        public override string DefinitionFileName => "SpriteEditor_Flyers.json";
+
+        public override void ContainerChanged()
+        {
+            HexDefinitionManager.Instance.Context.SpriteEditor.Flyers = Container.Current.Definition;
         }
     }
 
@@ -164,6 +185,90 @@ namespace DBZ_LotSS_Editor
         }
     }
 
+    public class TextCharacterDefinitionAccessor : HexAppPartialDefinition<AssetDefinition>
+    {
+        public TextCharacterDefinitionAccessor(ISynchronizeInvoke synchronizingObject) : base(synchronizingObject) { }
+
+        public override byte[] DefaultDefinition => My.Resources.Resources.TextEditor_Characters;
+
+        public override string DefinitionFileName => "TextEditor_Characters.json";
+
+        public override void ContainerChanged()
+        {
+            HexDefinitionManager.Instance.Context.TextEditor.Characters = Container.Current.Definition;
+        }
+    }
+
+    public class TextBattlerDefinitionAccessor : HexAppPartialDefinition<AssetDefinition>
+    {
+        public TextBattlerDefinitionAccessor(ISynchronizeInvoke synchronizingObject) : base(synchronizingObject) { }
+
+        public override byte[] DefaultDefinition => My.Resources.Resources.TextEditor_Battlers;
+
+        public override string DefinitionFileName => "TextEditor_Battlers.json";
+
+        public override void ContainerChanged()
+        {
+            HexDefinitionManager.Instance.Context.TextEditor.Battlers = Container.Current.Definition;
+        }
+    }
+
+    public class TextSkillDefinitionAccessor : HexAppPartialDefinition<AssetDefinition>
+    {
+        public TextSkillDefinitionAccessor(ISynchronizeInvoke synchronizingObject) : base(synchronizingObject) { }
+
+        public override byte[] DefaultDefinition => My.Resources.Resources.TextEditor_Skills;
+
+        public override string DefinitionFileName => "TextEditor_Skills.json";
+
+        public override void ContainerChanged()
+        {
+            HexDefinitionManager.Instance.Context.TextEditor.Skills = Container.Current.Definition;
+        }
+    }
+
+    public class TextItemDefinitionAccessor : HexAppPartialDefinition<AssetDefinition>
+    {
+        public TextItemDefinitionAccessor(ISynchronizeInvoke synchronizingObject) : base(synchronizingObject) { }
+
+        public override byte[] DefaultDefinition => My.Resources.Resources.TextEditor_Items;
+
+        public override string DefinitionFileName => "TextEditor_Items.json";
+
+        public override void ContainerChanged()
+        {
+            HexDefinitionManager.Instance.Context.TextEditor.Items = Container.Current.Definition;
+        }
+    }
+
+    public class TextDialogueDefinitionAccessor : HexAppPartialDefinition<AssetDefinition>
+    {
+        public TextDialogueDefinitionAccessor(ISynchronizeInvoke synchronizingObject) : base(synchronizingObject) { }
+
+        public override byte[] DefaultDefinition => My.Resources.Resources.TextEditor_Dialogues;
+
+        public override string DefinitionFileName => "TextEditor_Dialogues.json";
+
+        public override void ContainerChanged()
+        {
+            HexDefinitionManager.Instance.Context.TextEditor.Dialogues = Container.Current.Definition;
+        }
+    }
+
+    public class TextDescriptionDefinitionAccessor : HexAppPartialDefinition<AssetDefinition>
+    {
+        public TextDescriptionDefinitionAccessor(ISynchronizeInvoke synchronizingObject) : base(synchronizingObject) { }
+
+        public override byte[] DefaultDefinition => My.Resources.Resources.TextEditor_Descriptions;
+
+        public override string DefinitionFileName => "TextEditor_Descriptions.json";
+
+        public override void ContainerChanged()
+        {
+            HexDefinitionManager.Instance.Context.TextEditor.Descriptions = Container.Current.Definition;
+        }
+    }
+
     public class AppDefinitionContext : HexAppDefinitionContext
     {
         public AppDefinitionContext(HexAppDefinition appDefinition) : base(appDefinition) { }
@@ -171,6 +276,7 @@ namespace DBZ_LotSS_Editor
         public DataEditorDefinition DataEditor { get; set; } = new DataEditorDefinition();
         public SpriteEditorDefinition SpriteEditor { get; set; } = new SpriteEditorDefinition();
         public GenericArtEditorDefinition PaletteEditor { get; set; } = new GenericArtEditorDefinition();
+        public TextEditorDefinition TextEditor { get; set; } = new TextEditorDefinition();
     }
 
     public class ArtEditorDefinition<T0, T1, T2, T3, T4>
@@ -202,8 +308,40 @@ namespace DBZ_LotSS_Editor
         public List<CharacterListItemDefinition> List { get; set; } = new List<CharacterListItemDefinition>();
     }
 
+    public class TextEditorDefinition
+    {
+        public AssetDefinition Characters { get; set; } = new AssetDefinition();
+        public AssetDefinition Battlers { get; set; } = new AssetDefinition();
+        public AssetDefinition Skills { get; set; } = new AssetDefinition();
+        public AssetDefinition Items { get; set; } = new AssetDefinition();
+        public AssetDefinition Dialogues { get; set; } = new AssetDefinition();
+        public AssetDefinition Descriptions { get; set; } = new AssetDefinition();
+    }
+
+    public struct TableDefinition
+    {
+        public string Offset { get; set; }
+        public TableIndexDefinition Index { get; set; }
+        public TablePointerDefinition Pointer { get; set; }
+    }
+
+    public struct TableIndexDefinition
+    {
+        public string Offset { get; set; }
+        public byte Bit { get; set; }
+    }
+
+    public struct TablePointerDefinition
+    {
+        public string Offset { get; set; }
+        public byte Bank { get; set; }
+        public byte Length { get; set; }
+        public bool IgnoreHeader { get; set; }
+    }
+
     public class AssetDefinition
     {
+        public TableDefinition Table { get; set; }
         public List<ListItemDefinition> List { get; set; } = new List<ListItemDefinition>();
     }
 

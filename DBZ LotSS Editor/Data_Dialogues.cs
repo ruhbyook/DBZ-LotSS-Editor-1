@@ -1,9 +1,9 @@
 ﻿
 namespace DBZ_LotSS_Editor
 {
-    public partial class Text_Game : HexTools.HexUserControl
+    public partial class Data_Dialogues : HexTools.HexUserControl
     {
-        public Text_Game()
+        public Data_Dialogues()
         {
             InitializeComponent();
         }

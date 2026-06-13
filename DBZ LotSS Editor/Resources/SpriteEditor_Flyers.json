@@ -1,0 +1,28 @@
+{
+    "List": [
+        { "Palette": "0x097CF8", "Size": 32, "Offset": "0x090000", "Name": "Goku" },
+		{ "Palette": "0x097D38", "Size": 32, "Offset": "0x090612", "Name": "Piccolo" },
+		{ "Palette": "0x097D78", "Size": 32, "Offset": "0x090AFC", "Name": "Raditz" },
+		{ "Palette": "0x097D98", "Size": 32, "Offset": "0x090EDE", "Name": "Gohan" },
+		{ "Palette": "0x097DD8", "Size": 24, "Offset": "0x0913C6", "Name": "Krillin" },
+		{ "Palette": "0x097DF8", "Size": 32, "Offset": "0x09179E", "Name": "Tien" },
+		{ "Palette": "0x097E08", "Size": 32, "Offset": "0x091BFC", "Name": "Yamcha" },
+		{ "Palette": "0x097E28", "Size": 24, "Offset": "0x0920C2", "Name": "Chiaotzu" },
+		{ "Palette": "0x097E42", "Size": 40, "Offset": "0x0923E6", "Name": "Nappa" },
+		{ "Palette": "0x097E62", "Size": 32, "Offset": "0x092992", "Name": "Vegeta" },
+		{ "Palette": "0x097EA2", "Size": 32, "Offset": "0x092F3A", "Name": "Kui" },
+		{ "Palette": "0x097F02", "Size": 40, "Offset": "0x0933E0", "Name": "Dodoria" },
+		{ "Palette": "0x097F5A", "Size": 40, "Offset": "0x0939DC", "Name": "Zarbon" },
+		{ "Palette": "0x09A0D4", "Size": 40, "Offset": "0x09404A", "Name": "Zarbon (Transformed)" },
+		{ "Palette": "0x09A134", "Size": 32, "Offset": "0x094758", "Name": "Nail" },
+		{ "Palette": "0x09A174", "Size": 24, "Offset": "0x094C86", "Name": "Guldo" },
+		{ "Palette": "0x09A1CE", "Size": 40, "Offset": "0x0950AE", "Name": "Recoome" },
+		{ "Palette": "0x09A22E", "Size": 40, "Offset": "0x095690", "Name": "Burter" },
+		{ "Palette": "0x09A28E", "Size": 32, "Offset": "0x095CE6", "Name": "Jeice" },
+		{ "Palette": "0x09A2EE", "Size": 40, "Offset": "0x096218", "Name": "Ginyu" },
+		{ "Palette": "0x09A34E", "Size": 32, "Offset": "0x0967CC", "Name": "Frieza (Form 1)" },
+		{ "Palette": "0x09A36E", "Size": 40, "Offset": "0x096CA2", "Name": "Frieza (Form 2)" },
+		{ "Palette": "0x09A38E", "Size": 40, "Offset": "0x097292", "Name": "Frieza (Form 3)" },
+		{ "Palette": "0x09A3AE", "Size": 32, "Offset": "0x0978C6", "Name": "Frieza (Form 4)" }
+    ]
+}

@@ -463,6 +463,16 @@ namespace DBZ_LotSS_Editor.My.Resources {
         /// <summary>
         ///   Looks up a localized resource of type System.Byte[].
         /// </summary>
+        internal static byte[] SpriteEditor_Flyers {
+            get {
+                object obj = ResourceManager.GetObject("SpriteEditor_Flyers", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Byte[].
+        /// </summary>
         internal static byte[] SpriteEditor_Portraits {
             get {
                 object obj = ResourceManager.GetObject("SpriteEditor_Portraits", resourceCulture);
@@ -487,6 +497,66 @@ namespace DBZ_LotSS_Editor.My.Resources {
             get {
                 object obj = ResourceManager.GetObject("styleset16", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Byte[].
+        /// </summary>
+        internal static byte[] TextEditor_Battlers {
+            get {
+                object obj = ResourceManager.GetObject("TextEditor_Battlers", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Byte[].
+        /// </summary>
+        internal static byte[] TextEditor_Characters {
+            get {
+                object obj = ResourceManager.GetObject("TextEditor_Characters", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Byte[].
+        /// </summary>
+        internal static byte[] TextEditor_Descriptions {
+            get {
+                object obj = ResourceManager.GetObject("TextEditor_Descriptions", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Byte[].
+        /// </summary>
+        internal static byte[] TextEditor_Dialogues {
+            get {
+                object obj = ResourceManager.GetObject("TextEditor_Dialogues", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Byte[].
+        /// </summary>
+        internal static byte[] TextEditor_Items {
+            get {
+                object obj = ResourceManager.GetObject("TextEditor_Items", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Byte[].
+        /// </summary>
+        internal static byte[] TextEditor_Skills {
+            get {
+                object obj = ResourceManager.GetObject("TextEditor_Skills", resourceCulture);
+                return ((byte[])(obj));
             }
         }
         

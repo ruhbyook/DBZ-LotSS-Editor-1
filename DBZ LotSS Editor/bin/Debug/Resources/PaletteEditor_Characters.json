@@ -1,4 +1,17 @@
 {
+    "Table": {
+        "Offset": null,
+        "Index": {
+            "Offset": null,
+            "Bit": 0
+        },
+        "Pointer": {
+            "Offset": null,
+            "Bank": 0,
+            "Length": 0,
+            "IgnoreHeader": false
+        }
+    },
     "List": [
         { "Offset": "0xEA80", "Name": "Saiyan & Human 1" },
         { "Offset": "0xEAA0", "Name": "Saiyan & Human 2" },

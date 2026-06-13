@@ -1,4 +1,17 @@
 {
+    "Table": {
+        "Offset": null,
+        "Index": {
+            "Offset": null,
+            "Bit": 0
+        },
+        "Pointer": {
+            "Offset": null,
+            "Bank": 0,
+            "Length": 0,
+            "IgnoreHeader": false
+        }
+    },
     "List": [
         { "Offset": "0x097CF8", "Name": "Goku" },
         { "Offset": "0x097D18", "Name": "SS Goku" },

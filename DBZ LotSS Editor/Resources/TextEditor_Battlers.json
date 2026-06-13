@@ -1,7 +1,50 @@
 {
+	"Table": 
+	{
+		"Offset": "0x8000"
+	},
 	"List": [
-		{ "Offset": "0x012BBF", "Name": "Goku" },
-		{ "Offset": "0x012BCA", "Name": "Piccolo" },
-		{ "Offset": "0x012DBB", "Name": "Raditz" }
+		{ "Offset": "0x00ADBA", "Name": "Raditz" },
+		{ "Offset": "0x00ADC1", "Name": "J. Sai" },
+		{ "Offset": "0x00ADC8", "Name": "Saibai" },
+		{ "Offset": "0x00ADCF", "Name": "Imite" },
+		{ "Offset": "0x00ADD5", "Name": "Saibaimen" },
+		{ "Offset": "0x00ADDC", "Name": "Baimen" },
+		{ "Offset": "0x00ADE3", "Name": "Grimen" },
+		{ "Offset": "0x00F490", "Name": "Nappa" },
+		{ "Offset": "0x00F4C8", "Name": "Slug" },
+		{ "Offset": "0x00AE00", "Name": "Bug" },
+		{ "Offset": "0x00AE04", "Name": "Bugy" },
+		{ "Offset": "0x00AE13", "Name": "Bun" },
+		{ "Offset": "0x00AE0D", "Name": "Bund" },
+		{ "Offset": "0x00AE09", "Name": "Bud" },
+		{ "Offset": "0x00ADEC", "Name": "Kui" },
+		{ "Offset": "0x00ADF2", "Name": "Cid" },
+		{ "Offset": "0x00ADF6", "Name": "Zoak" },
+		{ "Offset": "0x00F4C0", "Name": "Dodoria" },
+		{ "Offset": "0x00AE1B", "Name": "Dren" },
+		{ "Offset": "0x00AE20", "Name": "Bobo" },
+		{ "Offset": "0x00F4B6", "Name": "Zarbon" },
+		{ "Offset": "0x00AE2F", "Name": "Red" },
+		{ "Offset": "0x00AE56", "Name": "G.bly" },
+		{ "Offset": "0x00F4F0", "Name": "Guldo" },
+		{ "Offset": "0x00F597", "Name": "Lu" },
+		{ "Offset": "0x00AE3F", "Name": "Lu2" },
+		{ "Offset": "0x00F500", "Name": "Recoome" },
+		{ "Offset": "0x00F590", "Name": "Jissu" },
+		{ "Offset": "0x00AE4A", "Name": "Jissu2" },
+		{ "Offset": "0x00F517", "Name": "Burter" },
+		{ "Offset": "0x00AE33", "Name": "F.ver" },
+		{ "Offset": "0x00AE5C", "Name": "F.ver2" },
+		{ "Offset": "0x00F510", "Name": "Jeice" },
+		{ "Offset": "0x00AE64", "Name": "Jeice3" },
+		{ "Offset": "0x00AE6C", "Name": "Ginyu" },
+		{ "Offset": "0x00AE72", "Name": "Gur" },
+		{ "Offset": "0x00AE76", "Name": "Gur2" },
+		{ "Offset": "0x00AE8E", "Name": "King Kai" },
+		{ "Offset": "0x00AE7A", "Name": "Frieza" },
+		{ "Offset": "0x00AEA4", "Name": "Unused" },
+		{ "Offset": "0x00F496", "Name": "Yajirobe" },
+		{ "Offset": "0x00AE9B", "Name": "Gravity" }
 	]
 }

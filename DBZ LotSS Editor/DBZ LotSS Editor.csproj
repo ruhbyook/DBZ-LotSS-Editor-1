@@ -104,6 +104,12 @@
       <DependentUpon>!Form_ToolGraphic.cs</DependentUpon>
     </Compile>
     <Compile Include="AppDefinition.cs" />
+    <Compile Include="Data_Skills.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Data_Skills.Designer.cs">
+      <DependentUpon>Data_Skills.cs</DependentUpon>
+    </Compile>
     <Compile Include="My Project\MyNamespace.Dynamic.Designer.cs" />
     <Compile Include="My Project\MyNamespace.Static.1.Designer.cs" />
     <Compile Include="My Project\MyNamespace.Static.2.Designer.cs" />
@@ -203,6 +209,12 @@
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
     <Compile Include="Settings.cs" />
+    <Compile Include="Sprite_Flyers.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Sprite_Flyers.Designer.cs">
+      <DependentUpon>Sprite_Flyers.cs</DependentUpon>
+    </Compile>
     <Compile Include="Sprite_System.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -217,6 +229,12 @@
     </Compile>
     <Compile Include="Sprite_Control.cs">
       <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Text_Descriptions.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Text_Descriptions.Designer.cs">
+      <DependentUpon>Text_Descriptions.cs</DependentUpon>
     </Compile>
     <Compile Include="Text_Skills.Designer.cs">
       <DependentUpon>Text_Skills.cs</DependentUpon>
@@ -242,10 +260,10 @@
     <Compile Include="Text_Battlers.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Text_Game.Designer.cs">
-      <DependentUpon>Text_Game.cs</DependentUpon>
+    <Compile Include="Text_Dialogues.Designer.cs">
+      <DependentUpon>Text_Dialogues.cs</DependentUpon>
     </Compile>
-    <Compile Include="Text_Game.cs">
+    <Compile Include="Text_Dialogues.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="Data_Items.Designer.cs">
@@ -260,10 +278,10 @@
     <Compile Include="Data_Maps.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Data_Skills.Designer.cs">
-      <DependentUpon>Data_Skills.cs</DependentUpon>
+    <Compile Include="Data_Dialogues.Designer.cs">
+      <DependentUpon>Data_Dialogues.cs</DependentUpon>
     </Compile>
-    <Compile Include="Data_Skills.cs">
+    <Compile Include="Data_Dialogues.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="Data_Characters.Designer.cs">
@@ -353,6 +371,9 @@
     <EmbeddedResource Include="Data_Groups.resx">
       <DependentUpon>Data_Groups.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Data_Skills.resx">
+      <DependentUpon>Data_Skills.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Palette_System.resx">
       <DependentUpon>Palette_System.cs</DependentUpon>
     </EmbeddedResource>
@@ -362,11 +383,17 @@
     <EmbeddedResource Include="Palette_Flyers.resx">
       <DependentUpon>Palette_Flyers.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Sprite_Flyers.resx">
+      <DependentUpon>Sprite_Flyers.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Sprite_System.resx">
       <DependentUpon>Sprite_System.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Sprite_Characters.resx">
       <DependentUpon>Sprite_Characters.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Text_Descriptions.resx">
+      <DependentUpon>Text_Descriptions.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Text_Skills.resx">
       <DependentUpon>Text_Skills.cs</DependentUpon>
@@ -380,8 +407,8 @@
     <EmbeddedResource Include="Text_Battlers.resx">
       <DependentUpon>Text_Battlers.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Text_Game.resx">
-      <DependentUpon>Text_Game.cs</DependentUpon>
+    <EmbeddedResource Include="Text_Dialogues.resx">
+      <DependentUpon>Text_Dialogues.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Data_Items.resx">
       <DependentUpon>Data_Items.cs</DependentUpon>
@@ -389,8 +416,8 @@
     <EmbeddedResource Include="Data_Maps.resx">
       <DependentUpon>Data_Maps.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Data_Skills.resx">
-      <DependentUpon>Data_Skills.cs</DependentUpon>
+    <EmbeddedResource Include="Data_Dialogues.resx">
+      <DependentUpon>Data_Dialogues.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Data_Characters.resx">
       <DependentUpon>Data_Characters.cs</DependentUpon>
@@ -441,6 +468,9 @@
     <None Include="Resources\PaletteEditor_System.json">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
+    <None Include="Resources\SpriteEditor_Flyers.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
     <None Include="Resources\SpriteEditor_System.json">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
@@ -451,6 +481,18 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
     <None Include="Resources\DataEditor_Characters.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Resources\TextEditor_Dialogues.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Resources\TextEditor_Descriptions.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Resources\TextEditor_Items.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Resources\TextEditor_Characters.json">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
     <None Include="Resources\TextEditor_Battlers.json">
@@ -509,6 +551,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\SpriteEditor_Portraits.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Resources\TextEditor_Skills.json">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
     <None Include="Resources\undo16.png" />

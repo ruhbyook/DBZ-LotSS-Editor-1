@@ -62,6 +62,9 @@ namespace DBZ_LotSS_Editor
             this.NoBattler = new System.Windows.Forms.Label();
             this.Battler = new HexTools.HexComboBox();
             this.LabelBattler = new System.Windows.Forms.Label();
+            this.MaxLevelPanel = new HexTools.HexPanel();
+            this.MaxLevel = new HexTools.HexNumericBox();
+            this.LabelMaxLevel = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.EditableListViewItemControl_16.Control)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.EditableListViewItemControl_17.Control)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.EditableListViewItemControl_18.Control)).BeginInit();
@@ -71,6 +74,8 @@ namespace DBZ_LotSS_Editor
             this.NamePanel.SuspendLayout();
             this.TransformationPanel.SuspendLayout();
             this.BaseFormPanel.SuspendLayout();
+            this.MaxLevelPanel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.MaxLevel)).BeginInit();
             this.SuspendLayout();
             // 
             // EditableListViewItem2
@@ -190,6 +195,7 @@ namespace DBZ_LotSS_Editor
             // 
             // BasicListBoxAssociate1
             // 
+            this.BasicListBoxAssociate1.Controls.Add(this.MaxLevelPanel);
             this.BasicListBoxAssociate1.Controls.Add(this.NamePanel);
             this.BasicListBoxAssociate1.Controls.Add(this.NoLevel);
             this.BasicListBoxAssociate1.Controls.Add(this.TransformationPanel);
@@ -200,7 +206,7 @@ namespace DBZ_LotSS_Editor
             this.BasicListBoxAssociate1.Margin = new System.Windows.Forms.Padding(6);
             this.BasicListBoxAssociate1.Name = "BasicListBoxAssociate1";
             this.BasicListBoxAssociate1.Padding = new System.Windows.Forms.Padding(6);
-            this.BasicListBoxAssociate1.Size = new System.Drawing.Size(764, 859);
+            this.BasicListBoxAssociate1.Size = new System.Drawing.Size(764, 898);
             this.BasicListBoxAssociate1.TabIndex = 15;
             this.BasicListBoxAssociate1.TabStop = false;
             this.BasicListBoxAssociate1.Text = "HexListBox1";
@@ -211,14 +217,15 @@ namespace DBZ_LotSS_Editor
             this.NamePanel.Controls.Add(this.LabelName);
             this.NamePanel.HexOffset = "&H012B66";
             this.NamePanel.IndexOffset = "&H000002";
-            this.NamePanel.Location = new System.Drawing.Point(12, 44);
+            this.NamePanel.Location = new System.Drawing.Point(12, 30);
             this.NamePanel.Margin = new System.Windows.Forms.Padding(6);
             this.NamePanel.Name = "NamePanel";
-            this.NamePanel.Size = new System.Drawing.Size(720, 42);
+            this.NamePanel.Size = new System.Drawing.Size(583, 42);
             this.NamePanel.TabIndex = 44;
             // 
             // NameBox
             // 
+            this.NameBox.Definition = "TextEditor.Characters.List";
             this.NameBox.Display = HexTools.HexEnumerations.DisplayType.Hex;
             this.NameBox.DisplayMember = "Text";
             this.NameBox.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
@@ -226,7 +233,6 @@ namespace DBZ_LotSS_Editor
             this.NameBox.Endian = HexTools.HexEnumerations.EndianType.Little_Endian;
             this.NameBox.FormatString = "X4";
             this.NameBox.FormattingEnabled = true;
-            this.NameBox.ItemCollection = "Text_Characters.HexListBox1";
             this.NameBox.Location = new System.Drawing.Point(186, 2);
             this.NameBox.Margin = new System.Windows.Forms.Padding(6);
             this.NameBox.MaxDropDownItems = 15;
@@ -250,7 +256,7 @@ namespace DBZ_LotSS_Editor
             // NoLevel
             // 
             this.NoLevel.AutoSize = true;
-            this.NoLevel.Location = new System.Drawing.Point(67, 226);
+            this.NoLevel.Location = new System.Drawing.Point(67, 260);
             this.NoLevel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.NoLevel.Name = "NoLevel";
             this.NoLevel.Size = new System.Drawing.Size(608, 50);
@@ -268,7 +274,7 @@ namespace DBZ_LotSS_Editor
             this.TransformationPanel.Controls.Add(this.LabelTransformation);
             this.TransformationPanel.HexOffset = "&H01867B";
             this.TransformationPanel.IndexOffset = "&H000001";
-            this.TransformationPanel.Location = new System.Drawing.Point(12, 134);
+            this.TransformationPanel.Location = new System.Drawing.Point(12, 120);
             this.TransformationPanel.Margin = new System.Windows.Forms.Padding(6);
             this.TransformationPanel.Name = "TransformationPanel";
             this.TransformationPanel.Size = new System.Drawing.Size(720, 42);
@@ -352,7 +358,7 @@ namespace DBZ_LotSS_Editor
             this.Levels.HexOffsetCountType = HexTools.HexEnumerations.OffsetType.Indexed;
             this.Levels.HexOffsetLength = "&H00000B";
             this.Levels.HideSelection = false;
-            this.Levels.Location = new System.Drawing.Point(12, 180);
+            this.Levels.Location = new System.Drawing.Point(12, 214);
             this.Levels.Margin = new System.Windows.Forms.Padding(6);
             this.Levels.Name = "Levels";
             this.Levels.OwnerDraw = true;
@@ -399,7 +405,7 @@ namespace DBZ_LotSS_Editor
             this.BaseFormPanel.Controls.Add(this.LabelBattler);
             this.BaseFormPanel.HexOffset = "&H000AE5";
             this.BaseFormPanel.IndexOffset = "&H000001";
-            this.BaseFormPanel.Location = new System.Drawing.Point(12, 89);
+            this.BaseFormPanel.Location = new System.Drawing.Point(12, 75);
             this.BaseFormPanel.Margin = new System.Windows.Forms.Padding(6);
             this.BaseFormPanel.Name = "BaseFormPanel";
             this.BaseFormPanel.Size = new System.Drawing.Size(720, 42);
@@ -446,6 +452,36 @@ namespace DBZ_LotSS_Editor
             this.LabelBattler.TabIndex = 26;
             this.LabelBattler.Text = "Base Form:";
             // 
+            // MaxLevelPanel
+            // 
+            this.MaxLevelPanel.Controls.Add(this.LabelMaxLevel);
+            this.MaxLevelPanel.Controls.Add(this.MaxLevel);
+            this.MaxLevelPanel.HexOffset = "&H01850E";
+            this.MaxLevelPanel.IndexOffset = "&H000001";
+            this.MaxLevelPanel.Location = new System.Drawing.Point(15, 166);
+            this.MaxLevelPanel.Name = "MaxLevelPanel";
+            this.MaxLevelPanel.Size = new System.Drawing.Size(326, 39);
+            this.MaxLevelPanel.TabIndex = 45;
+            // 
+            // MaxLevel
+            // 
+            this.MaxLevel.ExcludeRanged = new int[0];
+            this.MaxLevel.Location = new System.Drawing.Point(182, 3);
+            this.MaxLevel.MaxLength = 1;
+            this.MaxLevel.Name = "MaxLevel";
+            this.MaxLevel.Size = new System.Drawing.Size(120, 31);
+            this.MaxLevel.TabIndex = 1;
+            // 
+            // LabelMaxLevel
+            // 
+            this.LabelMaxLevel.AutoSize = true;
+            this.LabelMaxLevel.Location = new System.Drawing.Point(69, 5);
+            this.LabelMaxLevel.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
+            this.LabelMaxLevel.Name = "LabelMaxLevel";
+            this.LabelMaxLevel.Size = new System.Drawing.Size(117, 25);
+            this.LabelMaxLevel.TabIndex = 27;
+            this.LabelMaxLevel.Text = "Max Level:";
+            // 
             // Data_Characters
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
@@ -468,6 +504,9 @@ namespace DBZ_LotSS_Editor
             this.TransformationPanel.PerformLayout();
             this.BaseFormPanel.ResumeLayout(false);
             this.BaseFormPanel.PerformLayout();
+            this.MaxLevelPanel.ResumeLayout(false);
+            this.MaxLevelPanel.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.MaxLevel)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -499,5 +538,8 @@ namespace DBZ_LotSS_Editor
         internal HexTools.HexComboBox NameBox;
         internal Label LabelName;
         private Button ExportLevelData;
+        private HexTools.HexPanel MaxLevelPanel;
+        private HexTools.HexNumericBox MaxLevel;
+        internal Label LabelMaxLevel;
     }
 }

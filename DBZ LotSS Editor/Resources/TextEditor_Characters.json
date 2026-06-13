@@ -1,0 +1,21 @@
+{
+	"Table": 
+	{
+		"Offset": "0x8000"
+	},
+	"List": [
+		{ "Offset": "0x00ABBE", "Name": "Goku" },
+		{ "Offset": "0x00ABC3", "Name": "Gohan" },
+		{ "Offset": "0x00ABC9", "Name": "Piccolo" },
+		{ "Offset": "0x00ABD1", "Name": "Krillin" },
+		{ "Offset": "0x00ABD9", "Name": "Tien" },
+		{ "Offset": "0x00ABDE", "Name": "Yamcha" },
+		{ "Offset": "0x00ABE5", "Name": "Chiaotzu" },
+		{ "Offset": "0x00ABEE", "Name": "Vegeta" },
+		{ "Offset": "0x00ABF5", "Name": "Nail" },
+		{ "Offset": "0x00ABFA", "Name": "Tsumari" },
+		{ "Offset": "0x00F4D0", "Name": "Mai-ma" },
+		{ "Offset": "0x00AC03", "Name": "Dende" },
+		{ "Offset": "0x00F4B0", "Name": "Emi" }
+	]
+}

@@ -32,6 +32,12 @@ namespace DBZ_LotSS_Editor
             }
         }
 
+        private void HexListBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            NamePanel.Visible = DescriptionPanel.Visible = HexPanel1.Visible = HexPanel4.Visible
+                = HexListBox1.SelectedIndex < 40;
+        }
+
         // Private Sub DataGridView1_Layout(sender As Object, e As LayoutEventArgs) Handles DataGridView1.Layout
         // If DataGridView1.Rows.Count = 0 Then
         // DataGridView1.Rows.Add("1", "00")

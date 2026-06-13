@@ -1,4 +1,17 @@
 {
+    "Table": {
+        "Offset": null,
+        "Index": {
+            "Offset": null,
+            "Bit": 0
+        },
+        "Pointer": {
+            "Offset": null,
+            "Bank": 0,
+            "Length": 0,
+            "IgnoreHeader": false
+        }
+    },
     "List": [
         { "Offset": "0x045D44", "Name": "Card Symbol Generic" },
         { "Offset": "0x045D4C", "Name": "Font" },
