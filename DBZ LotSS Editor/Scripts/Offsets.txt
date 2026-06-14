@@ -1,0 +1,22 @@
+Graphics
+3F000 x 1024 - Text & World Tiles
+48000 x 1024 - World Tiles
+70000 x 1024 - Battle Tiles
+78000 x 1024 - Character Sprites
+8B000 x 1024 - More World Tiles?
+90000 x 1024 - Flying Portraits Begin
+98000 x 1024 - Battle Rock Animation
+B0000 x 1024 - Portrait Sprites
+
+Text
+003F87 - Ending Text
+012E12 - Status Menu Text
+015CBA - Menu Commands Text
+016300 - Menu Stats Text
+03912E - Item Description Table
+0395AE - Text Item Descriptions
+03917E - Battle Text Table
+039942 - Battle Text
+03BA19 - Cinematic Events Text
+03D316 - Menu Options Text
+03EF80 - Introduction Text

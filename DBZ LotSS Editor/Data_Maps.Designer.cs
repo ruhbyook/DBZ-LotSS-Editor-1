@@ -100,10 +100,10 @@ namespace DBZ_LotSS_Editor
             // ExperimentRawMapData
             // 
             this.ExperimentRawMapData.Control = this.UnknownRawMapData;
-            this.ExperimentRawMapData.Location = new System.Drawing.Point(206, 258);
+            this.ExperimentRawMapData.Location = new System.Drawing.Point(309, 403);
+            this.ExperimentRawMapData.Margin = new System.Windows.Forms.Padding(6, 8, 6, 8);
             this.ExperimentRawMapData.Name = "ExperimentRawMapData";
-            this.ExperimentRawMapData.ShowConfirmation = true;
-            this.ExperimentRawMapData.Size = new System.Drawing.Size(155, 33);
+            this.ExperimentRawMapData.Size = new System.Drawing.Size(232, 52);
             this.ExperimentRawMapData.TabIndex = 20;
             // 
             // UnknownRawMapData
@@ -135,10 +135,11 @@ namespace DBZ_LotSS_Editor
             this.UnknownRawMapData.HexOffsetLength = "&H000008";
             this.UnknownRawMapData.HexOffsetLengthType = HexTools.HexEnumerations.OffsetType.Value;
             this.UnknownRawMapData.HideSelection = false;
-            this.UnknownRawMapData.Location = new System.Drawing.Point(15, 300);
+            this.UnknownRawMapData.Location = new System.Drawing.Point(22, 469);
+            this.UnknownRawMapData.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.UnknownRawMapData.Name = "UnknownRawMapData";
             this.UnknownRawMapData.OwnerDraw = true;
-            this.UnknownRawMapData.Size = new System.Drawing.Size(453, 204);
+            this.UnknownRawMapData.Size = new System.Drawing.Size(678, 316);
             this.UnknownRawMapData.Style = BasicTools.BasicControls.BasicTableView.TableViewStyles.Columns;
             this.UnknownRawMapData.TabIndex = 42;
             this.UnknownRawMapData.TempTableType = HexTools.HexTableView.TableType.Map;
@@ -387,22 +388,22 @@ namespace DBZ_LotSS_Editor
             this.HexListBox1.Items.Add(hexListBoxItem24);
             this.HexListBox1.Items.Add(hexListBoxItem25);
             this.HexListBox1.Items.Add(hexListBoxItem26);
-            this.HexListBox1.Location = new System.Drawing.Point(16, 17);
-            this.HexListBox1.Margin = new System.Windows.Forms.Padding(4);
+            this.HexListBox1.Location = new System.Drawing.Point(24, 27);
+            this.HexListBox1.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.HexListBox1.Name = "HexListBox1";
             this.HexListBox1.SelectedItem = hexListBoxItem1;
-            this.HexListBox1.Size = new System.Drawing.Size(232, 550);
+            this.HexListBox1.Size = new System.Drawing.Size(346, 849);
             this.HexListBox1.TabIndex = 14;
             // 
             // BasicListBoxAssociate1
             // 
             this.BasicListBoxAssociate1.Controls.Add(this.HexPanel1);
             this.BasicListBoxAssociate1.ListBox = this.HexListBox1;
-            this.BasicListBoxAssociate1.Location = new System.Drawing.Point(269, 17);
-            this.BasicListBoxAssociate1.Margin = new System.Windows.Forms.Padding(4);
+            this.BasicListBoxAssociate1.Location = new System.Drawing.Point(404, 27);
+            this.BasicListBoxAssociate1.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.BasicListBoxAssociate1.Name = "BasicListBoxAssociate1";
-            this.BasicListBoxAssociate1.Padding = new System.Windows.Forms.Padding(4);
-            this.BasicListBoxAssociate1.Size = new System.Drawing.Size(495, 550);
+            this.BasicListBoxAssociate1.Padding = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.BasicListBoxAssociate1.Size = new System.Drawing.Size(742, 859);
             this.BasicListBoxAssociate1.TabIndex = 15;
             this.BasicListBoxAssociate1.TabStop = false;
             this.BasicListBoxAssociate1.Text = "HexListBox1";
@@ -424,21 +425,22 @@ namespace DBZ_LotSS_Editor
             this.HexPanel1.Controls.Add(this.ExperimentRawMapData);
             this.HexPanel1.HexOffset = "&H010000";
             this.HexPanel1.IndexOffset = "&H000002";
-            this.HexPanel1.Location = new System.Drawing.Point(4, 28);
-            this.HexPanel1.Margin = new System.Windows.Forms.Padding(4);
+            this.HexPanel1.Location = new System.Drawing.Point(6, 44);
+            this.HexPanel1.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.HexPanel1.Name = "HexPanel1";
-            this.HexPanel1.Padding = new System.Windows.Forms.Padding(4);
+            this.HexPanel1.Padding = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.HexPanel1.Pointer = "&H0156EA";
             this.HexPanel1.PointerLength = 2;
-            this.HexPanel1.Size = new System.Drawing.Size(487, 514);
+            this.HexPanel1.Size = new System.Drawing.Size(730, 803);
             this.HexPanel1.TabIndex = 17;
             // 
             // Label6
             // 
             this.Label6.AutoSize = true;
-            this.Label6.Location = new System.Drawing.Point(16, 266);
+            this.Label6.Location = new System.Drawing.Point(24, 416);
+            this.Label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.Label6.Name = "Label6";
-            this.Label6.Size = new System.Drawing.Size(162, 17);
+            this.Label6.Size = new System.Drawing.Size(248, 25);
             this.Label6.TabIndex = 43;
             this.Label6.Text = "Unknown Raw Map Data";
             this.Label6.Click += new System.EventHandler(this.Label6_Click);
@@ -454,12 +456,13 @@ namespace DBZ_LotSS_Editor
             this.Group1.FormattingEnabled = true;
             this.Group1.IntegralHeight = false;
             this.Group1.ItemCollection = "Data_Groups.HexListBox1";
-            this.Group1.Location = new System.Drawing.Point(10, 25);
+            this.Group1.Location = new System.Drawing.Point(15, 39);
+            this.Group1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Group1.MaxDropDownItems = 15;
             this.Group1.MaxLength = 1;
             this.Group1.Name = "Group1";
             this.Group1.NullValue = "&HFF";
-            this.Group1.Size = new System.Drawing.Size(400, 23);
+            this.Group1.Size = new System.Drawing.Size(598, 32);
             this.Group1.TabIndex = 24;
             this.Group1.ValueDisplay = true;
             this.Group1.ValueMember = "Value";
@@ -467,20 +470,20 @@ namespace DBZ_LotSS_Editor
             // Label5
             // 
             this.Label5.AutoSize = true;
-            this.Label5.Location = new System.Drawing.Point(8, 204);
-            this.Label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.Label5.Location = new System.Drawing.Point(12, 319);
+            this.Label5.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.Label5.Name = "Label5";
-            this.Label5.Size = new System.Drawing.Size(68, 17);
+            this.Label5.Size = new System.Drawing.Size(101, 25);
             this.Label5.TabIndex = 33;
             this.Label5.Text = "Group #5";
             // 
             // Label1
             // 
             this.Label1.AutoSize = true;
-            this.Label1.Location = new System.Drawing.Point(8, 4);
-            this.Label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.Label1.Location = new System.Drawing.Point(12, 6);
+            this.Label1.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.Label1.Name = "Label1";
-            this.Label1.Size = new System.Drawing.Size(68, 17);
+            this.Label1.Size = new System.Drawing.Size(101, 25);
             this.Label1.TabIndex = 25;
             this.Label1.Text = "Group #1";
             // 
@@ -496,12 +499,13 @@ namespace DBZ_LotSS_Editor
             this.Group5.HexOffset = "&H000004";
             this.Group5.IntegralHeight = false;
             this.Group5.ItemCollection = "Data_Groups.HexListBox1";
-            this.Group5.Location = new System.Drawing.Point(10, 225);
+            this.Group5.Location = new System.Drawing.Point(15, 352);
+            this.Group5.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Group5.MaxDropDownItems = 15;
             this.Group5.MaxLength = 1;
             this.Group5.Name = "Group5";
             this.Group5.NullValue = "&HFF";
-            this.Group5.Size = new System.Drawing.Size(400, 23);
+            this.Group5.Size = new System.Drawing.Size(598, 32);
             this.Group5.TabIndex = 32;
             this.Group5.ValueDisplay = true;
             this.Group5.ValueMember = "Value";
@@ -518,12 +522,13 @@ namespace DBZ_LotSS_Editor
             this.Group2.HexOffset = "&H000001";
             this.Group2.IntegralHeight = false;
             this.Group2.ItemCollection = "Data_Groups.HexListBox1";
-            this.Group2.Location = new System.Drawing.Point(10, 75);
+            this.Group2.Location = new System.Drawing.Point(15, 117);
+            this.Group2.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Group2.MaxDropDownItems = 15;
             this.Group2.MaxLength = 1;
             this.Group2.Name = "Group2";
             this.Group2.NullValue = "&HFF";
-            this.Group2.Size = new System.Drawing.Size(400, 23);
+            this.Group2.Size = new System.Drawing.Size(598, 32);
             this.Group2.TabIndex = 26;
             this.Group2.ValueDisplay = true;
             this.Group2.ValueMember = "Value";
@@ -531,20 +536,20 @@ namespace DBZ_LotSS_Editor
             // Label4
             // 
             this.Label4.AutoSize = true;
-            this.Label4.Location = new System.Drawing.Point(8, 154);
-            this.Label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.Label4.Location = new System.Drawing.Point(12, 241);
+            this.Label4.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.Label4.Name = "Label4";
-            this.Label4.Size = new System.Drawing.Size(68, 17);
+            this.Label4.Size = new System.Drawing.Size(101, 25);
             this.Label4.TabIndex = 31;
             this.Label4.Text = "Group #4";
             // 
             // Label2
             // 
             this.Label2.AutoSize = true;
-            this.Label2.Location = new System.Drawing.Point(8, 54);
-            this.Label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.Label2.Location = new System.Drawing.Point(12, 84);
+            this.Label2.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.Label2.Name = "Label2";
-            this.Label2.Size = new System.Drawing.Size(68, 17);
+            this.Label2.Size = new System.Drawing.Size(101, 25);
             this.Label2.TabIndex = 27;
             this.Label2.Text = "Group #2";
             // 
@@ -560,12 +565,13 @@ namespace DBZ_LotSS_Editor
             this.Group4.HexOffset = "&H000003";
             this.Group4.IntegralHeight = false;
             this.Group4.ItemCollection = "Data_Groups.HexListBox1";
-            this.Group4.Location = new System.Drawing.Point(10, 175);
+            this.Group4.Location = new System.Drawing.Point(15, 273);
+            this.Group4.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Group4.MaxDropDownItems = 15;
             this.Group4.MaxLength = 1;
             this.Group4.Name = "Group4";
             this.Group4.NullValue = "&HFF";
-            this.Group4.Size = new System.Drawing.Size(400, 23);
+            this.Group4.Size = new System.Drawing.Size(598, 32);
             this.Group4.TabIndex = 30;
             this.Group4.ValueDisplay = true;
             this.Group4.ValueMember = "Value";
@@ -582,12 +588,13 @@ namespace DBZ_LotSS_Editor
             this.Group3.HexOffset = "&H000002";
             this.Group3.IntegralHeight = false;
             this.Group3.ItemCollection = "Data_Groups.HexListBox1";
-            this.Group3.Location = new System.Drawing.Point(10, 125);
+            this.Group3.Location = new System.Drawing.Point(15, 195);
+            this.Group3.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Group3.MaxDropDownItems = 15;
             this.Group3.MaxLength = 1;
             this.Group3.Name = "Group3";
             this.Group3.NullValue = "&HFF";
-            this.Group3.Size = new System.Drawing.Size(400, 23);
+            this.Group3.Size = new System.Drawing.Size(598, 32);
             this.Group3.TabIndex = 28;
             this.Group3.ValueDisplay = true;
             this.Group3.ValueMember = "Value";
@@ -595,22 +602,22 @@ namespace DBZ_LotSS_Editor
             // Label3
             // 
             this.Label3.AutoSize = true;
-            this.Label3.Location = new System.Drawing.Point(8, 104);
-            this.Label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.Label3.Location = new System.Drawing.Point(12, 162);
+            this.Label3.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.Label3.Name = "Label3";
-            this.Label3.Size = new System.Drawing.Size(68, 17);
+            this.Label3.Size = new System.Drawing.Size(101, 25);
             this.Label3.TabIndex = 29;
             this.Label3.Text = "Group #3";
             // 
             // Data_Maps
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.BasicListBoxAssociate1);
             this.Controls.Add(this.HexListBox1);
-            this.Margin = new System.Windows.Forms.Padding(4);
+            this.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.Name = "Data_Maps";
-            this.Size = new System.Drawing.Size(787, 603);
+            this.Size = new System.Drawing.Size(1180, 942);
             this.BasicListBoxAssociate1.ResumeLayout(false);
             this.HexPanel1.ResumeLayout(false);
             this.HexPanel1.PerformLayout();

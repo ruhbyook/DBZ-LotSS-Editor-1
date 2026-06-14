@@ -60,11 +60,11 @@ namespace DBZ_LotSS_Editor
             this.HexListBox1.FormatString = "X2";
             this.HexListBox1.FormattingEnabled = true;
             this.HexListBox1.IndexDisplay = true;
-            this.HexListBox1.Location = new System.Drawing.Point(24, 27);
-            this.HexListBox1.Margin = new System.Windows.Forms.Padding(6);
+            this.HexListBox1.Location = new System.Drawing.Point(16, 17);
+            this.HexListBox1.Margin = new System.Windows.Forms.Padding(4);
             this.HexListBox1.Name = "HexListBox1";
             this.HexListBox1.SelectedItem = null;
-            this.HexListBox1.Size = new System.Drawing.Size(346, 849);
+            this.HexListBox1.Size = new System.Drawing.Size(232, 550);
             this.HexListBox1.TabIndex = 14;
             // 
             // BasicListBoxAssociate1
@@ -72,11 +72,11 @@ namespace DBZ_LotSS_Editor
             this.BasicListBoxAssociate1.Controls.Add(this.HexPanel1);
             this.BasicListBoxAssociate1.FormatAddress = "X6";
             this.BasicListBoxAssociate1.ListBox = this.HexListBox1;
-            this.BasicListBoxAssociate1.Location = new System.Drawing.Point(386, 27);
-            this.BasicListBoxAssociate1.Margin = new System.Windows.Forms.Padding(6);
+            this.BasicListBoxAssociate1.Location = new System.Drawing.Point(257, 17);
+            this.BasicListBoxAssociate1.Margin = new System.Windows.Forms.Padding(4);
             this.BasicListBoxAssociate1.Name = "BasicListBoxAssociate1";
-            this.BasicListBoxAssociate1.Padding = new System.Windows.Forms.Padding(6);
-            this.BasicListBoxAssociate1.Size = new System.Drawing.Size(776, 859);
+            this.BasicListBoxAssociate1.Padding = new System.Windows.Forms.Padding(4);
+            this.BasicListBoxAssociate1.Size = new System.Drawing.Size(517, 550);
             this.BasicListBoxAssociate1.TabIndex = 15;
             this.BasicListBoxAssociate1.TabStop = false;
             this.BasicListBoxAssociate1.Text = "HexListBox1";
@@ -85,10 +85,9 @@ namespace DBZ_LotSS_Editor
             // 
             this.HexPanel1.AutoScroll = true;
             this.HexPanel1.Controls.Add(this.SpriteGroupBox1);
-            this.HexPanel1.Location = new System.Drawing.Point(10, 44);
-            this.HexPanel1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.HexPanel1.Location = new System.Drawing.Point(7, 28);
             this.HexPanel1.Name = "HexPanel1";
-            this.HexPanel1.Size = new System.Drawing.Size(753, 814);
+            this.HexPanel1.Size = new System.Drawing.Size(502, 521);
             this.HexPanel1.TabIndex = 0;
             // 
             // SpriteGroupBox1
@@ -98,11 +97,9 @@ namespace DBZ_LotSS_Editor
             this.SpriteGroupBox1.Controls.Add(this.ImportButton1);
             this.SpriteGroupBox1.Controls.Add(this.HexImage);
             this.SpriteGroupBox1.Controls.Add(this.PalettePanel);
-            this.SpriteGroupBox1.Location = new System.Drawing.Point(4, 5);
-            this.SpriteGroupBox1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.SpriteGroupBox1.Location = new System.Drawing.Point(3, 3);
             this.SpriteGroupBox1.Name = "SpriteGroupBox1";
-            this.SpriteGroupBox1.Padding = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.SpriteGroupBox1.Size = new System.Drawing.Size(698, 748);
+            this.SpriteGroupBox1.Size = new System.Drawing.Size(465, 470);
             this.SpriteGroupBox1.TabIndex = 2;
             this.SpriteGroupBox1.TabStop = false;
             this.SpriteGroupBox1.Text = "Sprite";
@@ -111,10 +108,9 @@ namespace DBZ_LotSS_Editor
             // 
             this.ExportButton1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.ExportButton1.Image = global::DBZ_LotSS_Editor.My.Resources.Resources.Export;
-            this.ExportButton1.Location = new System.Drawing.Point(586, 184);
-            this.ExportButton1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.ExportButton1.Location = new System.Drawing.Point(391, 118);
             this.ExportButton1.Name = "ExportButton1";
-            this.ExportButton1.Size = new System.Drawing.Size(48, 50);
+            this.ExportButton1.Size = new System.Drawing.Size(32, 32);
             this.ExportButton1.TabIndex = 5;
             this.ExportButton1.UseVisualStyleBackColor = true;
             // 
@@ -122,10 +118,9 @@ namespace DBZ_LotSS_Editor
             // 
             this.ImportButton1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.ImportButton1.Image = global::DBZ_LotSS_Editor.My.Resources.Resources.Import;
-            this.ImportButton1.Location = new System.Drawing.Point(586, 125);
-            this.ImportButton1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.ImportButton1.Location = new System.Drawing.Point(391, 80);
             this.ImportButton1.Name = "ImportButton1";
-            this.ImportButton1.Size = new System.Drawing.Size(48, 50);
+            this.ImportButton1.Size = new System.Drawing.Size(32, 32);
             this.ImportButton1.TabIndex = 4;
             this.ImportButton1.UseVisualStyleBackColor = true;
             // 
@@ -391,11 +386,11 @@ namespace DBZ_LotSS_Editor
         System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))))};
             this.HexImage.Features = ((HexTools.HexImage.HexImageFeatureType)((HexTools.HexImage.HexImageFeatureType.DragAndDrop | HexTools.HexImage.HexImageFeatureType.Previewer)));
             this.HexImage.Length = 128;
-            this.HexImage.Location = new System.Drawing.Point(9, 102);
-            this.HexImage.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.HexImage.Location = new System.Drawing.Point(6, 65);
             this.HexImage.Name = "HexImage";
             this.HexImage.Scale = new System.Drawing.Size(3, 3);
-            this.HexImage.Size = new System.Drawing.Size(576, 600);
+            this.HexImage.Single = false;
+            this.HexImage.Size = new System.Drawing.Size(384, 384);
             // 
             // 
             // 
@@ -404,27 +399,25 @@ namespace DBZ_LotSS_Editor
             this.HexImage.Stride = 128;
             this.HexImage.TabIndex = 2;
             this.HexImage.TabStop = false;
-            this.HexImage.UnscaledHeight = 200;
-            this.HexImage.UnscaledWidth = 192;
+            this.HexImage.UnscaledHeight = 128;
+            this.HexImage.UnscaledWidth = 128;
             // 
             // PalettePanel
             // 
             this.PalettePanel.Controls.Add(this.PaletteLabel1);
             this.PalettePanel.Controls.Add(this.Palette1);
-            this.PalettePanel.Location = new System.Drawing.Point(9, 47);
-            this.PalettePanel.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.PalettePanel.Location = new System.Drawing.Point(6, 30);
             this.PalettePanel.Name = "PalettePanel";
-            this.PalettePanel.Size = new System.Drawing.Size(576, 45);
+            this.PalettePanel.Size = new System.Drawing.Size(384, 29);
             this.PalettePanel.TabIndex = 3;
             // 
             // PaletteLabel1
             // 
             this.PaletteLabel1.AutoSize = true;
             this.PaletteLabel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.PaletteLabel1.Location = new System.Drawing.Point(4, 0);
-            this.PaletteLabel1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.PaletteLabel1.Location = new System.Drawing.Point(3, 0);
             this.PaletteLabel1.Name = "PaletteLabel1";
-            this.PaletteLabel1.Size = new System.Drawing.Size(161, 42);
+            this.PaletteLabel1.Size = new System.Drawing.Size(105, 29);
             this.PaletteLabel1.TabIndex = 0;
             this.PaletteLabel1.Text = "Preview Palette";
             this.PaletteLabel1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -438,12 +431,11 @@ namespace DBZ_LotSS_Editor
             this.Palette1.FormattingEnabled = true;
             this.Palette1.ItemCollection = "Form_EditorPalette.TabControl1.TabFlyers.Palette_Flyers.HexListBox1";
             this.Palette1.ItemCollectionType = BasicTools.BasicEnumerations.ReferenceType.Instanced;
-            this.Palette1.Location = new System.Drawing.Point(173, 5);
-            this.Palette1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.Palette1.Location = new System.Drawing.Point(114, 3);
             this.Palette1.MaxDropDownItems = 15;
             this.Palette1.Name = "Palette1";
             this.Palette1.NullValue = "&H000000";
-            this.Palette1.Size = new System.Drawing.Size(376, 32);
+            this.Palette1.Size = new System.Drawing.Size(252, 23);
             this.Palette1.TabIndex = 1;
             this.Palette1.ValueDisplay = true;
             this.Palette1.ValueField = "HexOffset";
@@ -451,13 +443,13 @@ namespace DBZ_LotSS_Editor
             // 
             // Sprite_Flyers
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.BasicListBoxAssociate1);
             this.Controls.Add(this.HexListBox1);
-            this.Margin = new System.Windows.Forms.Padding(6);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "Sprite_Flyers";
-            this.Size = new System.Drawing.Size(1180, 942);
+            this.Size = new System.Drawing.Size(787, 603);
             this.BasicListBoxAssociate1.ResumeLayout(false);
             this.HexPanel1.ResumeLayout(false);
             this.HexPanel1.PerformLayout();

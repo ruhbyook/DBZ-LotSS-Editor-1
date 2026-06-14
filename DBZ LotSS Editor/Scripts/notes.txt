@@ -78,14 +78,43 @@ The first pointer there, $1C81D1 - 0E03D1 I think, is what leads to all of their
 Then after that pointer, $158126, I think that is his sprite assembly pointers for each sprite.
 
 Pointer Table: $1C8BBE - 0E0DBE + 1C hardcoded in front which comes from 158060
-	Spritesheet $158060 --> $1C81D1 -> $1C8C6E
-	Spriteset $158063 --> $158126
+	Example - Spritesheet $158060 (first 3 bytes) is $1C81D1, this takes you to a location which contains this value --> $1C8C6E, which is Goku's 			spritesheet.
+	Example - Sprite Assembly $158063 --> $158126
 	It grabs the $1C from there and uses that as the bank
-For Goku's base battle pose... $1C94FC - E14FC is, I think, part of the compressed graphics for his battle pose and $1581CE is the start of the sprite assembly... but that looks like the data is compressed too
-Goku: 0E14FC (E0C6C) Color 0F4EAE Size: 128 x 328
-Piccolo: 0E540C Color: 0F4EEE Size: 128 x 284
-Gohan: 0E9729 Color: 0F502E Size: 128 x 112
-Raditz: Pointer says $1DACBF EAEBF, actual found at EAEAB/EAEAD?
+
+Goku: D1 81 1C -> SNES $1C81D1 -> PC 0E01D1 + 200 Header = 0E03D1 -> 6E 8C 1C -> SNES $1C8C6E -> PC 0E0C6E
+Piccolo: 49 82 1C ->
+Raditz: A3 82 1C -> 
+Saibaman: F7 82 1C -> SNES $1C82F7 -> PC 0E02F7 + 200 Header = 0E04F7 -> 24 D8 07 -> SNES $07D824 -> PC 03D824
+Gohan: 48 83 1C -> SNES $1C8348 -> PC 0E0348 + 200 Header = 0E0548 -> 29 97 1D -> SNES $1D9729 -> PC 0E9729
+Krillin: A5 83 1C -> SNES $1C83A5 -> PC 0E03A5 + 200 Header = 0E05A5 -> 39 A0 14 -> SNES $14A039 -> PC 0A2039
+Tien: 02 84 1C -> SNES $1C8402 -> PC 0E0402 + 200 Header = 0E0602 -> 71 99 1F -> SNES $1F9971 -> PC 0F9971
+Yamcha: 62 84 1C -> SNES $1C8462 -> PC 0E0462 + 200 Header = E0662 -> D8 84 0D -> SNES $0D84D8 -> PC 0684D8
+Chiaotzu: BC 84 1C -> SNES $1C84BC -> PC 0E04BC + 200 Header = E06BC -> F1 C8 1D -> SNES $1DC8F1 -> PC 0EC8F1
+Nappa: 8B 85 1C -> SNES $1C858B -> PC 0E058B + 200 Header = 0E078B -> 38 D8 1D -> SNES $1DD838 -> PC 0ED838
+Vegeta: 1C 85 1C -> SNES $1C851C -> PC 0E051C + 200 Header = 0E071C -> 34 CF 1E -> SNES $1ECF34 -> PC 0F4F34
+Appule: 36 86 1C -> SNES $1C8636 -> PC 0E0636 + 200 Header = 0E0836 -> 93 BB 1B -> SNES $1BBB93 -> PC 0DBB93 (Actually at DBC77/9? Why? E4/E6 difference?)
+Banan: 84 86 1C -> SNES $1C8684 -> PC 0E0684 + 200 Header = 0E0884 -> 70 89 1B -> SNES $1B8970 -> PC 0D8970
+Kui: D2 86 1C -> SNES $1C86D2 -> PC 0E06D2 + 200 Header = 0E08D2 -> 52 A5 1B -> SNES $1BA552 -> PC 0DA552 (Actually at DA640/2, EE/F0 difference?)
+Dodoria: 26 87 1C -> SNES $1C8726 -> PC 0E0726 + 200 Header = 0E0926 -> E3 B7 14 -> SNES $14B7E3 -> PC 0A37E3
+Zarbon: 7D 87 1C -> SNES $1C877D -> PC 0E077D + 200 Header = 0E097D -> 22 D5 15 -> SNES $15D522 -> PC 0AD522
+Zarbon Transformed: D1 87 1C -> SNES $1C87D1 -> PC 0E07D1 + 200 Header = 0E09D1 -> 25 C2 17 -> SNES $17C225 -> PC 0BC225  
+Nail: E2 85 1C -> SNES $1C85E2 -> PC 0E05E2 + 200 Header = 0E07E2 -> 29 F6 1C -> SNES $1CF629 -> PC 0E7629 (Actually at: E772D. 106 difference?)
+Guldo: 28 88 1C -> SNES $1C8828 -> PC 0E0828 + 200 Header = 0E0A28 -> 2D E7 1B -> SNES $1BE72D -> PC 0DE72D
+Recoome: 7F 88 1C -> SNES $1C887F -> PC 0E087F + 200 Header = 0E0A7F -> 89 9D 10 -> SNES $109D89 -> PC 081D89
+Burter: D5 89 1C -> SNES $1C89D5 -> PC 0E09D5 + 200 Header = 0E0BD5 -> D6 DF 14 -> SNES $14DFD6 -> PC 0A5FD6
+Jeice: 24 89 1C -> SNES $1C8924 -> PC 0E0924 + 200 Header = 0E0B24 -> BF C5 1B -> SNES $1BC5BF -> PC 0DC5BF
+Ginyu: 7B 89 1C -> SNES $1C897B -> PC 0E097B + 200 Header = 0E0B7B -> 6A CD 10 -> SNES $10CD6A -> PC 084D6A
+King Kai: D6 88 1C -> SNES $1C88D6 -> PC 0E08D6 + 200 Header = 0E0AD6 -> 03 EE 17 -> SNES $17EE03 -> PC 0BEE03
+Frieza (Form 1): 26 8A 1C -> SNES $1C8A26 -> 0E0A26 + 200 Header = 0E0C26 -> 54 B7 1F -> SNES $1FB754 -> PC 0FB754
+Frieza (Form 2): 9E 8A 1C -> SNES $1C8A9E -> 0E0A9E + 200 Header = 0E0C9E -> 35 DA 1F -> SNES $1FDA35 -> PC 0FDA35
+Frieza (Form 3): F2 8A 1C -> SNES $1C8AF2 -> 0E0AF2 + 200 Header = 0E0CF2 -> 23 A4 0D -> SNES $0DA423 -> PC 06A423
+Frieza (Form 4): 46 8B 1C -> SNES $1C8B46 -> 0E0B46 + 200 Header = 0E0D46 -> 7F D7 0D -> SNES $0DD77F -> PC 06D77F
+Bubbles: A6 8B 1C -> SNES $1C8BA6 -> PC 0E0BA6 + 200 Header = 0E0DA6 -> C2 90 1F -> SNES $1F90C2 -> PC 0F90C2
+Yajirobe: B5 8B 1C -> SNES $1C8BB5
+Dende: B2 8B 1C -> SNES $1C8BB2 -> PC 0E0BB2 + 200 Header = 0E0DB2 -> BF 92 1F -> SNES $1F92BF -> PC 0F92BF
+Great Ape: 48 83 1C -> SNES $1C8348 = Gohan again?
+Armored Great Ape: 1C 85 1C -> SNES $1C851C = Vegeta again?
 
 Portrait Sprites:
 0125B4 is the pointer list. They're 24-bit (3-bytes each)
@@ -132,6 +161,8 @@ Debug Menu
 VALUE - HEXOFFSET = X
 
 MAX: 200400 / 2,098,176 b
+
+Levels Table: 1433B, 2 Bytes for each Offset which gets a 82 appended at the beginning for the final location.
 
 Nail 0135F0:
 Favorite: 3 (1 byte)

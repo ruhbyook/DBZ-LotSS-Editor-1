@@ -77,7 +77,7 @@ namespace DBZ_LotSS_Editor
             this.TabControl1.Location = new System.Drawing.Point(0, 0);
             this.TabControl1.Margin = new System.Windows.Forms.Padding(6);
             this.TabControl1.Name = "TabControl1";
-            this.TabControl1.SelectedIndex = 4;
+            this.TabControl1.SelectedIndex = 0;
             this.TabControl1.Size = new System.Drawing.Size(1408, 1133);
             this.TabControl1.TabIndex = 0;
             // 
