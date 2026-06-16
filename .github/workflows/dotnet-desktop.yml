@@ -56,7 +56,7 @@ jobs:
     - name: Restore NuGet Packages
       run: |
         nuget restore "${{ env.Solution_Name }}"
-        nuget restore "../{{ env.Reverse_Engineering_Solution_Name }}"
+        nuget restore "../${{ env.Reverse_Engineering_Solution_Name }}"
 
     # Execute all unit tests in the solution
     - name: Execute unit tests
