@@ -45,15 +45,15 @@ jobs:
 
     # Restore NuGet Packages
     - name: Restore NuGet Packages
-      run: nuget restore ${{ env.Solution_Name }}
+      run: nuget restore "${{ env.Solution_Name }}"
 
     # Execute all unit tests in the solution
     - name: Execute unit tests
-      run: dotnet test ${{ env.Solution_Name }} --configuration ${{ env.Build_Configuration }}
+      run: dotnet test "${{ env.Solution_Name }}" --configuration ${{ env.Build_Configuration }}
 
     # Build the application
     - name: Build the application
-      run: msbuild ${{ env.Solution_Name }} /p:Configuration=${{ env.Build_Configuration }} /p:Platform="Any CPU"
+      run: msbuild "${{ env.Solution_Name }}" /p:Configuration=${{ env.Build_Configuration }} /p:Platform="Any CPU"
 
     # Extract version from AssemblyInfo.cs
     - name: Extract Version Number
