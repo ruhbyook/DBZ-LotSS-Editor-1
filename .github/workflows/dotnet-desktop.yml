@@ -38,7 +38,14 @@ jobs:
       uses: actions/checkout@v4
       with:
         fetch-depth: 0
-        submodules: recursive  # pull down the dependency project "Reverse Engineering Toolkit"
+
+    # Clone the external dependency where the solution expects it: adjacent to the editor, using the same parent folder
+    - name: Clone Reverse-Engineering-Toolkit
+      shell: bash
+      run: |
+        # Navigates "up" one level from your workspace root and clones the toolkit there
+        cd ..
+        git clone https://github.com Reverse-Engineering-Toolkit
 
     # Add  MSBuild to the PATH: https://github.com/microsoft/setup-msbuild
     - name: Setup MSBuild.exe
