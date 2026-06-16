@@ -31,7 +31,7 @@ jobs:
 
     env:
       Solution_Name: DBZ LotSS Editor.sln
-      Reverse_Engineering_Solution_Name: Reverse-Engineering-Toolkit/Reverse-Engineering-Toolkit.sln
+      Reverse_Engineering_Solution_Name: Reverse-Engineering-Toolkit/Reverse Engineering Toolkit.sln
       Build_Configuration: Release
     
     steps:
