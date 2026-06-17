@@ -65,8 +65,8 @@ jobs:
     # Build the application
     - name: Build the external toolkit dependencies FIRST, then build the main app
       run: |
-        msbuild "`"${{ env.Reverse_Engineering_Solution_Name }}`"" /p:Configuration=${{ env.Build_Configuration }} /p:Platform="Any CPU"
-        msbuild "`"${{ env.Solution_Name }}`"" /p:Configuration=${{ env.Build_Configuration }} /p:Platform="Any CPU"
+        msbuild "../${{ env.Reverse_Engineering_Solution_Name }}" /p:Configuration=${{ env.Build_Configuration }} /p:Platform="Any CPU"
+        msbuild "${{ env.Solution_Name }}" /p:Configuration=${{ env.Build_Configuration }} /p:Platform="Any CPU"
 
     # Extract version from AssemblyInfo.cs
     - name: Extract Version Number
