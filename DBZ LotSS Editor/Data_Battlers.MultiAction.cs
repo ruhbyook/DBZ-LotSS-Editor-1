@@ -10,7 +10,7 @@ namespace DBZ_LotSS_Editor
 	{
 		private const int BattlerEditorGroupWidth = 720;
 		private const int BattlerEditorLeftMargin = 12;
-		private const int BattlerEditorInputLeft = 107;
+		private const int BattlerEditorInputLeft = 160;
 		private const int BattlerEditorRightMargin = 12;
 		private static readonly BattlerMultiActionDefinition DefaultMultiActionDefinition =
 			new BasicTools.BasicJsonDefinition<BattlerDataDefinition>(My.Resources.Resources.DataEditor_Battlers)
@@ -18,11 +18,14 @@ namespace DBZ_LotSS_Editor
 				.MultiAction;
 
 		private Label TurnProfileLabel;
-		private ComboBox TurnProfileComboBox;
+		private ProfileComboBox TurnProfileComboBox;
+		private Label ActionSelectorProfileLabel;
+		private ProfileComboBox ActionSelectorProfileComboBox;
 		private Label MultiActionLabel;
 		private TextBox MultiActionSummary;
 		private ToolTip MultiActionToolTip;
 		private bool UpdatingTurnProfile;
+		private bool UpdatingActionSelectorProfile;
 
 		private void InitializeMultiActionEditor()
 		{
@@ -38,22 +41,52 @@ namespace DBZ_LotSS_Editor
 				Text = "Turn Profile"
 			};
 
-			this.TurnProfileComboBox = new ComboBox
+			this.TurnProfileComboBox = new ProfileComboBox
 			{
 				DropDownStyle = ComboBoxStyle.DropDownList,
 				FormattingEnabled = true,
-				Location = new Point(107, 123),
+				Location = new Point(BattlerEditorInputLeft, 123),
 				Name = "TurnProfileComboBox",
+				ReloadAction = this.UpdateMultiActionControl,
 				Size = new Size(this.GetBattlerInputWidth(), 24),
 				TabIndex = 31
 			};
 			this.TurnProfileComboBox.Items.AddRange(this.GetTurnProfileItems().ToArray());
 			this.TurnProfileComboBox.SelectedIndexChanged += this.TurnProfileComboBox_SelectedIndexChanged;
 
-			this.MultiActionLabel = new Label
+			this.ActionSelectorProfileLabel = new Label
 			{
 				AutoSize = true,
 				Location = new Point(8, 160),
+				Name = "ActionSelectorProfileLabel",
+				Size = new Size(145, 17),
+				Text = "Action selector profile"
+			};
+
+			this.ActionSelectorProfileComboBox = new ProfileComboBox
+			{
+				DropDownStyle = ComboBoxStyle.DropDownList,
+				FormattingEnabled = true,
+				Location = new Point(BattlerEditorInputLeft, 156),
+				Name = "ActionSelectorProfileComboBox",
+				ReloadAction = this.UpdateMultiActionControl,
+				Size = new Size(this.GetBattlerInputWidth(), 24),
+				TabIndex = 32
+			};
+			this.ActionSelectorProfileComboBox.Items.AddRange(new object[]
+			{
+				"0: broad/default",
+				"1: low/conservative",
+				"2: high/aggressive",
+				"3: uniform",
+				"4: split low/high"
+			});
+			this.ActionSelectorProfileComboBox.SelectedIndexChanged += this.ActionSelectorProfileComboBox_SelectedIndexChanged;
+
+			this.MultiActionLabel = new Label
+			{
+				AutoSize = true,
+				Location = new Point(8, 193),
 				Name = "MultiActionLabel",
 				Size = new Size(82, 17),
 				Text = "Action selectors"
@@ -63,13 +96,13 @@ namespace DBZ_LotSS_Editor
 			{
 				BackColor = SystemColors.Control,
 				BorderStyle = BorderStyle.FixedSingle,
-				Location = new Point(107, 156),
+				Location = new Point(BattlerEditorInputLeft, 189),
 				Multiline = true,
 				Name = "MultiActionSummary",
 				ReadOnly = true,
 				ScrollBars = ScrollBars.Vertical,
 				Size = new Size(this.GetBattlerInputWidth(), 58),
-				TabIndex = 32,
+				TabIndex = 33,
 				Text = string.Empty
 			};
 
@@ -77,6 +110,9 @@ namespace DBZ_LotSS_Editor
 			this.MultiActionToolTip.SetToolTip(
 				this.TurnProfileComboBox,
 				"Controls whether this battler can act again in the same round with a refreshed card.");
+			this.MultiActionToolTip.SetToolTip(
+				this.ActionSelectorProfileComboBox,
+				"Controls the card attack distribution used by action-list selector bytes like $39.");
 			this.MultiActionToolTip.SetToolTip(
 				this.MultiActionSummary,
 				"Shows when this battler's action list can grant extra actions in one turn.");
@@ -89,6 +125,8 @@ namespace DBZ_LotSS_Editor
 			HexDefinitionManager.OnLoad += this.MultiAction_DefinitionsLoaded;
 			this.HexPanel2.Controls.Add(this.TurnProfileLabel);
 			this.HexPanel2.Controls.Add(this.TurnProfileComboBox);
+			this.HexPanel2.Controls.Add(this.ActionSelectorProfileLabel);
+			this.HexPanel2.Controls.Add(this.ActionSelectorProfileComboBox);
 			this.HexPanel2.Controls.Add(this.MultiActionLabel);
 			this.HexPanel2.Controls.Add(this.MultiActionSummary);
 
@@ -101,8 +139,8 @@ namespace DBZ_LotSS_Editor
 			this.BasicListBoxAssociate1.Size = new Size(groupWidth, this.BasicListBoxAssociate1.Height);
 
 			var panelWidth = groupWidth - BattlerEditorLeftMargin - BattlerEditorRightMargin;
-			this.HexPanel2.Size = new Size(panelWidth, 220);
-			this.HexPanel1.Location = new Point(this.HexPanel1.Left, 249);
+			this.HexPanel2.Size = new Size(panelWidth, 253);
+			this.HexPanel1.Location = new Point(this.HexPanel1.Left, 282);
 			this.HexPanel1.Size = new Size(panelWidth, 140);
 			this.Skills.Size = new Size(panelWidth - 11, 137);
 			this.ColumnHeader2.Width = Math.Max(240, this.Skills.Width - this.ColumnHeader1.Width - 8);
@@ -208,13 +246,14 @@ namespace DBZ_LotSS_Editor
 
 		private void UpdateMultiActionControl()
 		{
-			if (this.MultiActionSummary == null || this.TurnProfileComboBox == null)
+			if (this.MultiActionSummary == null || this.TurnProfileComboBox == null || this.ActionSelectorProfileComboBox == null)
 			{
 				return;
 			}
 
 			var battlerIndex = this.HexListBox1.SelectedIndex;
 			this.UpdateTurnProfileControl(battlerIndex);
+			this.UpdateActionSelectorProfileControl(battlerIndex);
 			this.MultiActionSummary.Text = battlerIndex < 0
 				? "Select a battler."
 				: this.BuildMultiActionSummary(battlerIndex);
@@ -250,6 +289,39 @@ namespace DBZ_LotSS_Editor
 			}
 
 			this.WriteTurnProfile(HexStorage.Memory, battlerIndex, this.TurnProfileComboBox.SelectedIndex);
+		}
+
+		private void UpdateActionSelectorProfileControl(int battlerIndex)
+		{
+			this.UpdatingActionSelectorProfile = true;
+			try
+			{
+				var rom = HexStorage.Memory;
+				var profile = battlerIndex < 0 ? -1 : this.ReadAttackProfile(rom, battlerIndex);
+				this.ActionSelectorProfileComboBox.Enabled = profile >= 0;
+				this.ActionSelectorProfileComboBox.SelectedIndex = profile >= 0 && profile < this.MultiActionDefinition.CardSetupValueProfileCount ? profile : -1;
+			}
+			finally
+			{
+				this.UpdatingActionSelectorProfile = false;
+			}
+		}
+
+		private void ActionSelectorProfileComboBox_SelectedIndexChanged(object sender, EventArgs e)
+		{
+			if (this.UpdatingActionSelectorProfile || this.ActionSelectorProfileComboBox.SelectedIndex < 0)
+			{
+				return;
+			}
+
+			var battlerIndex = this.HexListBox1.SelectedIndex;
+			if (battlerIndex < 0)
+			{
+				return;
+			}
+
+			this.WriteAttackProfile(HexStorage.Memory, battlerIndex, this.ActionSelectorProfileComboBox.SelectedIndex);
+			this.MultiActionSummary.Text = this.BuildMultiActionSummary(battlerIndex);
 		}
 
 		private string BuildMultiActionSummary(int battlerIndex)
@@ -320,7 +392,7 @@ namespace DBZ_LotSS_Editor
 				packed = packed & 0xF0 | profile;
 			}
 
-			rom[profileOffset] = (byte)packed;
+			this.WriteMemory(this.TurnProfileComboBox, profileOffset, new byte[] { (byte)packed });
 		}
 
 		private List<int> ReadBattlerActions(byte[] rom, int battlerIndex)
@@ -355,7 +427,7 @@ namespace DBZ_LotSS_Editor
 			var setupOffset = this.ToRomOffset(definition.CardSetupActorWordOffset) + battlerIndex * 2;
 			if (!this.CanRead(rom, setupOffset, 2))
 			{
-				return 0;
+				return -1;
 			}
 
 			var lowByte = rom[setupOffset];
@@ -368,6 +440,20 @@ namespace DBZ_LotSS_Editor
 
 			var attackProfile = highByte >> 4 & 0x0F;
 			return attackProfile < definition.CardSetupValueProfileCount ? attackProfile : 0;
+		}
+
+		private void WriteAttackProfile(byte[] rom, int battlerIndex, int profile)
+		{
+			var definition = this.MultiActionDefinition;
+			var setupOffset = this.ToRomOffset(definition.CardSetupActorWordOffset) + battlerIndex * 2;
+			if (!this.CanRead(rom, setupOffset, 2) || profile < 0 || profile >= definition.CardSetupValueProfileCount)
+			{
+				return;
+			}
+
+			var lowByte = rom[setupOffset] & 0x0F;
+			var highByte = (rom[setupOffset + 1] & 0x0F) | (profile << 4);
+			this.WriteMemory(this.ActionSelectorProfileComboBox, setupOffset, new byte[] { (byte)lowByte, (byte)highByte });
 		}
 
 		private string DescribeSelector(int action, int attackProfile, int continuationSlots)
@@ -548,9 +634,25 @@ namespace DBZ_LotSS_Editor
 			return HexStorage.GlobalOffset + HexConvert.HexToInt(HexConvert.AddressToHex(pcOffset));
 		}
 
+		private void WriteMemory(Control source, int offset, byte[] value)
+		{
+			MemoryLiterator.Write(source, new MemoryOperation(offset, value));
+			HexStorage.DataStore(source);
+		}
+
 		private bool CanRead(byte[] rom, int offset, int length)
 		{
 			return rom != null && offset >= 0 && length >= 0 && offset + length <= rom.Length;
+		}
+
+		private sealed class ProfileComboBox : ComboBox, IHexReader
+		{
+			public Action ReloadAction { get; set; }
+
+			void IHexReader.Load()
+			{
+				this.ReloadAction?.Invoke();
+			}
 		}
 	}
 }

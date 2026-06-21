@@ -13,7 +13,7 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyCompany("Cetra Games")]
 [assembly: AssemblyProduct("DragonBall Z: Legend of the Super Saiyan Editor")]
 [assembly: AssemblyCopyright("Copyright © 2014 by Cetra Games")]
-[assembly: AssemblyTrademark("MakoInfused / Dino Suvalic")]
+[assembly: AssemblyTrademark("MakoInfused / Dino Suvalic / deztroyr1")]
 
 [assembly: ComVisible(false)]
 
