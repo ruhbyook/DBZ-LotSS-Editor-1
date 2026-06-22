@@ -333,6 +333,9 @@
     <Compile Include="Data_Battlers.cs">
       <SubType>UserControl</SubType>
     </Compile>
+    <Compile Include="Data_Battlers.MultiAction.cs">
+      <DependentUpon>Data_Battlers.cs</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="!Form_EditorPalette.resx">
@@ -481,6 +484,9 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
     <None Include="Resources\DataEditor_Characters.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Resources\DataEditor_Battlers.json">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
     <None Include="Resources\TextEditor_Dialogues.json">

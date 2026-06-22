@@ -22,6 +22,7 @@ namespace DBZ_LotSS_Editor
             Register(new PaletteBattlerDefinitionAccessor(synchronizingObject));
             Register(new PaletteFlyerDefinitionAccessor(synchronizingObject));
             Register(new DataCharacterDefinitionAccessor(synchronizingObject));
+            Register(new DataBattlerDefinitionAccessor(synchronizingObject));
             Register(new TextCharacterDefinitionAccessor(synchronizingObject));
             Register(new TextBattlerDefinitionAccessor(synchronizingObject));
             Register(new TextSkillDefinitionAccessor(synchronizingObject));
@@ -185,6 +186,20 @@ namespace DBZ_LotSS_Editor
         }
     }
 
+    public class DataBattlerDefinitionAccessor : HexAppPartialDefinition<BattlerDataDefinition>
+    {
+        public DataBattlerDefinitionAccessor(ISynchronizeInvoke synchronizingObject) : base(synchronizingObject) { }
+
+        public override byte[] DefaultDefinition => My.Resources.Resources.DataEditor_Battlers;
+
+        public override string DefinitionFileName => "DataEditor_Battlers.json";
+
+        public override void ContainerChanged()
+        {
+            HexDefinitionManager.Instance.Context.DataEditor.Battlers = Container.Current.Definition;
+        }
+    }
+
     public class TextCharacterDefinitionAccessor : HexAppPartialDefinition<AssetDefinition>
     {
         public TextCharacterDefinitionAccessor(ISynchronizeInvoke synchronizingObject) : base(synchronizingObject) { }
@@ -302,10 +317,30 @@ namespace DBZ_LotSS_Editor
     public class DataEditorDefinition
     {
         public CharacterDataDefinition Characters { get; set; } = new CharacterDataDefinition();
+        public BattlerDataDefinition Battlers { get; set; } = new BattlerDataDefinition();
     }
+
     public class CharacterDataDefinition
     {
         public List<CharacterListItemDefinition> List { get; set; } = new List<CharacterListItemDefinition>();
+    }
+
+    public class BattlerDataDefinition
+    {
+        public BattlerMultiActionDefinition MultiAction { get; set; } = new BattlerMultiActionDefinition();
+    }
+
+    public class BattlerMultiActionDefinition
+    {
+        public string TurnProfileOffset { get; set; }
+        public int TurnProfileCount { get; set; }
+        public string SkillPointerOffset { get; set; }
+        public int SkillPointerBank { get; set; }
+        public string CardSetupActorWordOffset { get; set; }
+        public string CardSetupValueProfileOffset { get; set; }
+        public int CardSetupValueProfileCount { get; set; }
+        public int CardSetupValueProfileLength { get; set; }
+        public List<string> TurnProfileLabels { get; set; } = new List<string>();
     }
 
     public class TextEditorDefinition
